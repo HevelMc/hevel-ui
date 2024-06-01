@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AdvancedTable from '$lib/components/custom/advanced-table/AdvancedTable.svelte';
   import {
     Button,
     Card,
@@ -12,7 +13,8 @@
     SortableList,
     CopyButton,
     LightSwitch,
-    LoaderButton
+    LoaderButton,
+    type getDataFunction
   } from '$lib/index.js';
   import { resetMode, setMode } from 'mode-watcher';
 
@@ -21,6 +23,17 @@
     { id: '2', name: 'Item B' },
     { id: '3', name: 'Item C' }
   ];
+
+  let getTableData: getDataFunction = async ({ pageIndex, pageSize, sortBy, searchQuery }) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    return {
+      data: [
+        { a: 'a.1', b: 'b.1', c: 'c.1' },
+        { a: 'a.2', b: 'b.2', c: 'c.2' }
+      ],
+      total: 2
+    };
+  };
 </script>
 
 <div class="container flex flex-col gap-4 p-4">
@@ -93,4 +106,16 @@
   <SortableList list={sortableList} let:item let:index on:sort={(event) => (sortableList = event.detail)}>
     <div class="rounded-md border border-border p-4">{index + 1}. {item.name}</div>
   </SortableList>
+
+  <AdvancedTable
+    sortable
+    pagination
+    selectable
+    columns={[
+      { id: 'a', accessor: 'a', cell: (row) => row.value, header: () => 'A', alignment: 'text-center' },
+      { id: 'b', accessor: 'b', cell: (row) => row.value, header: () => 'B', alignment: 'text-center' },
+      { id: 'c', accessor: 'c', cell: (row) => row.value, header: () => 'C', alignment: 'text-center' }
+    ]}
+    getData={getTableData}
+  />
 </div>

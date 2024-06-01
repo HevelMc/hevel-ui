@@ -4,8 +4,8 @@ declare class __sveltets_Render<T extends "single" | "multiple"> {
     props(): {
         type?: T | undefined;
         disabled?: boolean | undefined;
-        orientation?: import("@melt-ui/svelte/internal/types").Orientation | undefined;
         loop?: boolean | undefined;
+        orientation?: import("@melt-ui/svelte/internal/types").Orientation | undefined;
         rovingFocus?: boolean | undefined;
         value?: (T extends "single" ? string : string[]) | undefined;
         onValueChange?: import("bits-ui/dist/internal/types.js").OnChangeFn<(T extends "single" ? string : string[]) | undefined> | undefined;

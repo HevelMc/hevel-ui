@@ -3,6 +3,7 @@ import type { HTMLAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLAttributes<HTMLTableRowElement> & {
         "data-state"?: unknown;
+        builders?: unknown;
     };
     events: {
         click: MouseEvent;

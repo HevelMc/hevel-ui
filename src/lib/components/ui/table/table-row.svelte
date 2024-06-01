@@ -4,6 +4,7 @@
 
 	type $$Props = HTMLAttributes<HTMLTableRowElement> & {
 		"data-state"?: unknown;
+		"builders"?: unknown;
 	};
 
 	let className: $$Props["class"] = undefined;

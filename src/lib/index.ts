@@ -7,7 +7,19 @@ import SortableList from './components/custom/sortable-list/sortable-list.svelte
 import CopyButton from './components/custom/copy-button/copy-button.svelte';
 import LightSwitch from './components/custom/light-switch/light-switch.svelte';
 import LoaderButton from './components/custom/loader-button/loader-button.svelte';
-export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange, SortableList, CopyButton, LightSwitch, LoaderButton };
+import Loader from './components/custom/loader/loader.svelte';
+export * from './components/custom/advanced-table/index.js';
+export {
+  DatePicker,
+  DatePickerRange,
+  MonthPicker,
+  MonthPickerRange,
+  SortableList,
+  CopyButton,
+  LightSwitch,
+  LoaderButton,
+  Loader
+};
 
 // shadcn-svelte
 export * as Accordion from '$lib/components/ui/accordion/index.js';
@@ -45,7 +57,7 @@ export { Separator } from '$lib/components/ui/separator/index.js';
 export * as Sheet from '$lib/components/ui/sheet/index.js';
 export { Skeleton } from '$lib/components/ui/skeleton/index.js';
 export { Slider } from '$lib/components/ui/slider/index.js';
-export * as Sonner from '$lib/components/ui/sonner/index.js';
+import { Toaster } from '$lib/components/ui/sonner/index.js';
 export { Switch } from '$lib/components/ui/switch/index.js';
 export * as Table from '$lib/components/ui/table/index.js';
 export * as Tabs from '$lib/components/ui/tabs/index.js';
@@ -53,3 +65,4 @@ export { Textarea } from '$lib/components/ui/textarea/index.js';
 export { Toggle } from '$lib/components/ui/toggle/index.js';
 export * as ToggleGroup from '$lib/components/ui/toggle-group/index.js';
 export * as Tooltip from '$lib/components/ui/tooltip/index.js';
+export { Toaster };

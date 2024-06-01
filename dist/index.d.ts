@@ -8,6 +8,7 @@ import LightSwitch from './components/custom/light-switch/light-switch.svelte';
 import LoaderButton from './components/custom/loader-button/loader-button.svelte';
 import Loader from './components/custom/loader/loader.svelte';
 export * from './components/custom/advanced-table/index.js';
+export * from './components/custom/month-picker/index.js';
 export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange, SortableList, CopyButton, LightSwitch, LoaderButton, Loader };
 export * as Accordion from './components/ui/accordion/index.js';
 export * as Alert from './components/ui/alert/index.js';

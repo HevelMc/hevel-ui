@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { type Props } from '@/components/ui/button/index.js';
+import { type Props } from '../button/index.js';
 declare const __propDef: {
     props: {
         page: import("bits-ui").Page;

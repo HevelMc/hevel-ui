@@ -1,6 +1,6 @@
 <script>import { Accordion as AccordionPrimitive } from "bits-ui";
 import { slide } from "svelte/transition";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let transition = slide;
 export let transitionConfig = {

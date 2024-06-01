@@ -1,7 +1,7 @@
 <script context="module"></script>
 
 <script generics="T extends Record<string, unknown>, U extends FormPathLeaves<T>">import * as FormPrimitive from "formsnap";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 export let form;
 export let name;
 let className = void 0;

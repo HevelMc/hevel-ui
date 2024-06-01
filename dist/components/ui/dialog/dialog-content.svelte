@@ -1,7 +1,7 @@
 <script>import { Dialog as DialogPrimitive } from "bits-ui";
 import X from "lucide-svelte/icons/x";
 import * as Dialog from "./index.js";
-import { cn, flyAndScale } from "@/utils.js";
+import { cn, flyAndScale } from "../../../utils.js";
 let className = void 0;
 export let transition = flyAndScale;
 export let transitionConfig = {

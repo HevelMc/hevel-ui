@@ -1,6 +1,6 @@
 <script>import { ToggleGroup as ToggleGroupPrimitive } from "bits-ui";
 import { setToggleGroupCtx } from "./index.js";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 export let variant = "default";

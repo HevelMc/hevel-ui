@@ -1,6 +1,6 @@
 <script>import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
 import * as AlertDialog from "./index.js";
-import { cn, flyAndScale } from "@/utils.js";
+import { cn, flyAndScale } from "../../../utils.js";
 export let transition = flyAndScale;
 export let transitionConfig = void 0;
 let className = void 0;

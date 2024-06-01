@@ -1,6 +1,6 @@
 <script>import emblaCarouselSvelte from "embla-carousel-svelte";
 import { getEmblaContext } from "./context.js";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 const { orientation, options, plugins, onInit } = getEmblaContext("<Carousel.Content/>");

@@ -1,4 +1,4 @@
-<script>import { cn } from "@/utils.js";
+<script>import { cn } from "../../../utils.js";
 export let el = void 0;
 export let className = void 0;
 export { className as class };

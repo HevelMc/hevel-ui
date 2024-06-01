@@ -1,7 +1,7 @@
 <script>import { Pagination as PaginationPrimitive } from "bits-ui";
 import ChevronRight from "lucide-svelte/icons/chevron-right";
-import { Button } from "@/components/ui/button/index.js";
-import { cn } from "@/utils.js";
+import { Button } from "../button/index.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 </script>

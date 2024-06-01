@@ -1,7 +1,7 @@
 <script>import ArrowLeft from "lucide-svelte/icons/arrow-left";
 import { getEmblaContext } from "./context.js";
-import { cn } from "@/utils.js";
-import { Button } from "@/components/ui/button/index.js";
+import { cn } from "../../../utils.js";
+import { Button } from "../button/index.js";
 let className = void 0;
 export { className as class };
 export let variant = "outline";

@@ -1,6 +1,6 @@
 <script>import { Pagination as PaginationPrimitive } from "bits-ui";
-import { cn } from "@/utils.js";
-import { buttonVariants } from "@/components/ui/button/index.js";
+import { cn } from "../../../utils.js";
+import { buttonVariants } from "../button/index.js";
 let className = void 0;
 export let page;
 export let size = "icon";

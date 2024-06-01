@@ -1,6 +1,6 @@
 <script>import { Accordion as AccordionPrimitive } from "bits-ui";
 import ChevronDown from "lucide-svelte/icons/chevron-down";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let level = 3;
 export { className as class };

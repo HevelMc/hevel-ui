@@ -1,5 +1,5 @@
 <script>import Ellipsis from "lucide-svelte/icons/ellipsis";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 </script>

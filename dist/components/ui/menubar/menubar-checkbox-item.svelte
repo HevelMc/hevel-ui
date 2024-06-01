@@ -1,6 +1,6 @@
 <script>import { Menubar as MenubarPrimitive } from "bits-ui";
 import Check from "lucide-svelte/icons/check";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let checked = false;
 export { className as class };

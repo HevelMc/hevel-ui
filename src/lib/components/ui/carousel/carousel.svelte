@@ -2,7 +2,7 @@
   import { writable } from 'svelte/store';
   import { onDestroy } from 'svelte';
   import { type CarouselAPI, type CarouselProps, setEmblaContext } from './context.js';
-  import { cn } from '@/utils.js';
+  import { cn } from '$lib/utils.js';
 
   type $$Props = CarouselProps;
 

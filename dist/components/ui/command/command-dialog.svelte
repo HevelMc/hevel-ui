@@ -1,5 +1,5 @@
 <script>import Command from "./command.svelte";
-import * as Dialog from "@/components/ui/dialog/index.js";
+import * as Dialog from "../dialog/index.js";
 export let open = false;
 export let value = void 0;
 </script>

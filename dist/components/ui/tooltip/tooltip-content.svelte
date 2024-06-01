@@ -1,5 +1,5 @@
 <script>import { Tooltip as TooltipPrimitive } from "bits-ui";
-import { cn, flyAndScale } from "@/utils.js";
+import { cn, flyAndScale } from "../../../utils.js";
 let className = void 0;
 export let sideOffset = 4;
 export let transition = flyAndScale;

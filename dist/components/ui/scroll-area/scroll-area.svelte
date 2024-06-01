@@ -1,6 +1,6 @@
 <script>import { ScrollArea as ScrollAreaPrimitive } from "bits-ui";
 import { Scrollbar } from "./index.js";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 export let orientation = "vertical";

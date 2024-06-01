@@ -1,6 +1,6 @@
 <script>import { Dialog as DialogPrimitive } from "bits-ui";
 import { fade } from "svelte/transition";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let transition = fade;
 export let transitionConfig = {

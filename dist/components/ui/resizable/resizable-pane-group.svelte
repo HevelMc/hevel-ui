@@ -1,5 +1,5 @@
 <script>import * as ResizablePrimitive from "paneforge";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let direction;
 export let paneGroup = void 0;

@@ -1,6 +1,6 @@
 <script>import { Button as ButtonPrimitive } from "bits-ui";
 import { buttonVariants } from "./index.js";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let variant = "default";
 export let size = "default";

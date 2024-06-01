@@ -3,7 +3,7 @@
   import X from 'lucide-svelte/icons/x';
   import { fly } from 'svelte/transition';
   import { SheetOverlay, SheetPortal, type Side, sheetTransitions, sheetVariants } from './index.js';
-  import { cn } from '@/utils.js';
+  import { cn } from '$lib/utils.js';
 
   type $$Props = SheetPrimitive.ContentProps & {
     side?: Side;

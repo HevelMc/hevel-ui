@@ -1,7 +1,7 @@
 <script>import { writable } from "svelte/store";
 import { onDestroy } from "svelte";
 import { setEmblaContext } from "./context.js";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 export let opts = {};
 export let plugins = [];
 export let api = void 0;

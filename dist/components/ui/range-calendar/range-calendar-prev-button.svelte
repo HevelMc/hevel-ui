@@ -1,7 +1,7 @@
 <script>import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
 import ChevronLeft from "lucide-svelte/icons/chevron-left";
-import { buttonVariants } from "@/components/ui/button/index.js";
-import { cn } from "@/utils.js";
+import { buttonVariants } from "../button/index.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 </script>

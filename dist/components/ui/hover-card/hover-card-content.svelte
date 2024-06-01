@@ -1,5 +1,5 @@
 <script>import { LinkPreview as HoverCardPrimitive } from "bits-ui";
-import { cn, flyAndScale } from "@/utils.js";
+import { cn, flyAndScale } from "../../../utils.js";
 let className = void 0;
 export let transition = flyAndScale;
 export let transitionConfig = void 0;

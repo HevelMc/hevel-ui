@@ -1,6 +1,6 @@
 <script>import Check from "lucide-svelte/icons/check";
 import { Select as SelectPrimitive } from "bits-ui";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let value;
 export let label = void 0;

@@ -1,6 +1,6 @@
 <script>import { getFormControl } from "formsnap";
-import { cn } from "@/utils.js";
-import { Label } from "@/components/ui/label/index.js";
+import { cn } from "../../../utils.js";
+import { Label } from "../label/index.js";
 let className = void 0;
 export { className as class };
 const { labelAttrs } = getFormControl();

@@ -1,6 +1,6 @@
 <script>import GripVertical from "lucide-svelte/icons/grip-vertical";
 import * as ResizablePrimitive from "paneforge";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 export let withHandle = false;
 export let el = void 0;
 let className = void 0;

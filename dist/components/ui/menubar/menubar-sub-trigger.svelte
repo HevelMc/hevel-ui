@@ -1,6 +1,6 @@
 <script>import { Menubar as MenubarPrimitive } from "bits-ui";
 import ChevronRight from "lucide-svelte/icons/chevron-right";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let inset = void 0;
 export { className as class };

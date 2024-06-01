@@ -1,5 +1,5 @@
 <script>import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let level = "h3";
 export { className as class };

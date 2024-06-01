@@ -1,5 +1,5 @@
 <script>import { Command as CommandPrimitive } from "cmdk-sv";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 export let asChild = false;
 let className = void 0;
 export { className as class };

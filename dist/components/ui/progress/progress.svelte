@@ -1,5 +1,5 @@
 <script>import { Progress as ProgressPrimitive } from "bits-ui";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let max = 100;
 export let value = void 0;

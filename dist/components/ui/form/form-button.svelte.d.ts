@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import * as Button from '@/components/ui/button/index.js';
+import * as Button from '../button/index.js';
 declare const __propDef: {
     props: Button.Props;
     slots: {

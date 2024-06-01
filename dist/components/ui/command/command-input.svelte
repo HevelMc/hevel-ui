@@ -1,6 +1,6 @@
 <script>import { Command as CommandPrimitive } from "cmdk-sv";
 import Search from "lucide-svelte/icons/search";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 export let value = "";

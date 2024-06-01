@@ -1,5 +1,5 @@
 <script>import { Tabs as TabsPrimitive } from "bits-ui";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let value;
 export { className as class };

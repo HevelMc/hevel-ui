@@ -1,5 +1,5 @@
 <script>import ChevronRight from "lucide-svelte/icons/chevron-right";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 export let el = void 0;
 let className = void 0;
 export { className as class };

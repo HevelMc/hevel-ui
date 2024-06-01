@@ -1,6 +1,6 @@
 <script>import { Select as SelectPrimitive } from "bits-ui";
 import { scale } from "svelte/transition";
-import { cn, flyAndScale } from "@/utils.js";
+import { cn, flyAndScale } from "../../../utils.js";
 export let sideOffset = 4;
 export let inTransition = flyAndScale;
 export let inTransitionConfig = void 0;

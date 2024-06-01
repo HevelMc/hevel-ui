@@ -2,7 +2,7 @@
 import X from "lucide-svelte/icons/x";
 import { fly } from "svelte/transition";
 import { SheetOverlay, SheetPortal, sheetTransitions, sheetVariants } from "./index.js";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let side = "right";
 export { className as class };

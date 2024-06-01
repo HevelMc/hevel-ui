@@ -1,5 +1,5 @@
 <script>import { ContextMenu as ContextMenuPrimitive } from "bits-ui";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export let inset = void 0;
 export { className as class };

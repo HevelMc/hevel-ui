@@ -2,7 +2,7 @@
   import type { Dialog as DialogPrimitive } from 'bits-ui';
   import type { Command as CommandPrimitive } from 'cmdk-sv';
   import Command from './command.svelte';
-  import * as Dialog from '@/components/ui/dialog/index.js';
+  import * as Dialog from '$lib/components/ui/dialog/index.js';
 
   type $$Props = DialogPrimitive.Props & CommandPrimitive.CommandProps;
 

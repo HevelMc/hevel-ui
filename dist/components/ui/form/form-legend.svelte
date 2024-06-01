@@ -1,5 +1,5 @@
 <script>import * as FormPrimitive from "formsnap";
-import { cn } from "@/utils.js";
+import { cn } from "../../../utils.js";
 let className = void 0;
 export { className as class };
 </script>

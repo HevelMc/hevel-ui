@@ -6,7 +6,7 @@ import SelectedCountTable from './SelectedCountTable.svelte';
 import StatusBadge from './StatusBadge.svelte';
 import PaginationTable from './PaginationTable.svelte';
 import CellContainer from './CellContainer.svelte';
-export { CheckBoxTable, AdvancedTable, RedirectActionTable, SelectedCountTable, StatusBadge, PaginationTable, CellContainer };
+export { CheckBoxTable, AdvancedTable, RedirectActionTable, SelectedCountTable, StatusBadge, PaginationTable, CellContainer, createRender };
 export let checkboxColumn = {
     id: 'checkbox',
     header: (_, { pluginStates }) => {

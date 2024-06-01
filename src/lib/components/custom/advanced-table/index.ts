@@ -7,7 +7,16 @@ import StatusBadge from './StatusBadge.svelte';
 import PaginationTable from './PaginationTable.svelte';
 import CellContainer from './CellContainer.svelte';
 
-export { CheckBoxTable, AdvancedTable, RedirectActionTable, SelectedCountTable, StatusBadge, PaginationTable, CellContainer };
+export {
+  CheckBoxTable,
+  AdvancedTable,
+  RedirectActionTable,
+  SelectedCountTable,
+  StatusBadge,
+  PaginationTable,
+  CellContainer,
+  createRender
+};
 
 export type Column = {
   id: string;

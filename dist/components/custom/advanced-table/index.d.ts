@@ -1,3 +1,4 @@
+import { createRender } from 'svelte-headless-table';
 import CheckBoxTable from './CheckBoxTable.svelte';
 import AdvancedTable from './AdvancedTable.svelte';
 import RedirectActionTable from './RedirectActionTable.svelte';
@@ -5,7 +6,7 @@ import SelectedCountTable from './SelectedCountTable.svelte';
 import StatusBadge from './StatusBadge.svelte';
 import PaginationTable from './PaginationTable.svelte';
 import CellContainer from './CellContainer.svelte';
-export { CheckBoxTable, AdvancedTable, RedirectActionTable, SelectedCountTable, StatusBadge, PaginationTable, CellContainer };
+export { CheckBoxTable, AdvancedTable, RedirectActionTable, SelectedCountTable, StatusBadge, PaginationTable, CellContainer, createRender };
 export type Column = {
     id: string;
     accessor?: ((item: any) => any) | string;

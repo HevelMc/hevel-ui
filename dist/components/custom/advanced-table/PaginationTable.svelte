@@ -13,8 +13,8 @@ $:
   $currentPageSize = $pageSize;
 </script>
 
-<div class="flex items-center space-x-6 lg:space-x-8">
-  <div class="flex items-center space-x-2">
+<div class="flex items-center gap-6 lg:gap-8">
+  <div class="flex items-center gap-2">
     <p class="text-sm font-medium">Lignes par page</p>
     <Select.Root
       onSelectedChange={(selected) => pageSize.set(Number(selected?.value))}
@@ -38,7 +38,7 @@ $:
   <div>
     <span>Total : {$serverItemCount}</span>
   </div>
-  <div class="flex items-center space-x-2">
+  <div class="flex items-center gap-2">
     {#if !disablePageSkip}
       <Button
         variant="outline"

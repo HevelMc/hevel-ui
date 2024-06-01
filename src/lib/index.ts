@@ -6,7 +6,8 @@ import MonthPickerRange from './components/custom/month-picker-range/month-picke
 import SortableList from './components/custom/sortable-list/sortable-list.svelte';
 import CopyButton from './components/custom/copy-button/copy-button.svelte';
 import LightSwitch from './components/custom/light-switch/light-switch.svelte';
-export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange, SortableList, CopyButton, LightSwitch };
+import LoaderButton from './components/custom/loader-button/loader-button.svelte';
+export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange, SortableList, CopyButton, LightSwitch, LoaderButton };
 
 // shadcn-svelte
 export * as Accordion from '$lib/components/ui/accordion/index.js';

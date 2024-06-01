@@ -11,7 +11,8 @@
     Popover,
     SortableList,
     CopyButton,
-    LightSwitch
+    LightSwitch,
+    LoaderButton
   } from '$lib/index.js';
   import { resetMode, setMode } from 'mode-watcher';
 
@@ -71,7 +72,15 @@
   <div class="flex items-center justify-center gap-8">
     <CopyButton value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
     <LightSwitch {setMode} {resetMode} />
-    <Button variant="outline">Test</Button>
+    <LoaderButton
+      variant="outline"
+      onClick={async () => {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        console.log('2 seconds later...');
+      }}
+    >
+      Test
+    </LoaderButton>
   </div>
 
   <div class="grid grid-cols-4 gap-2">

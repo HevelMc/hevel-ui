@@ -5,7 +5,7 @@
   import { type Props, type Events, buttonVariants } from '$lib/components/ui/button/index.js';
   import { Tooltip } from '$lib/index.js';
 
-  type $$Props = Props & { value: string; tooltipCopy: string; tooltipCopied: string };
+  type $$Props = Props & { value: string; tooltipCopy?: string; tooltipCopied?: string };
   type $$Events = Events;
 
   let className: $$Props['class'] = undefined;

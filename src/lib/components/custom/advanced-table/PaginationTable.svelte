@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { TableViewModel } from 'svelte-headless-table';
   import type { AnyPlugins } from 'svelte-headless-table/plugins';
-  import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-svelte';
+  import ChevronLeft from 'lucide-svelte/icons/chevron-left';
+  import ChevronRight from 'lucide-svelte/icons/chevron-right';
+  import ChevronsLeft from 'lucide-svelte/icons/chevrons-left';
+  import ChevronsRight from 'lucide-svelte/icons/chevrons-right';
   import type { Writable } from 'svelte/store';
   import { Button, Select } from '$lib/index.js';
 

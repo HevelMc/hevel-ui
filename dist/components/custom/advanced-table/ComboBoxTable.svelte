@@ -1,6 +1,7 @@
 <script>import { Button, Command, Popover } from "../../../index.js";
 import { cn } from "../../../utils.js";
-import { Check, ChevronsUpDown } from "lucide-svelte";
+import Check from "lucide-svelte/icons/check";
+import ChevronsUpDown from "lucide-svelte/icons/chevrons-up-down";
 import { tick } from "svelte";
 import { writable } from "svelte/store";
 export let selectPlaceholder = "Select...";

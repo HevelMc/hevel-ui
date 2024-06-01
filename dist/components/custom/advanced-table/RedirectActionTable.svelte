@@ -1,4 +1,4 @@
-<script>import { ChevronRight } from "lucide-svelte";
+<script>import ChevronRight from "lucide-svelte/icons/chevron-right";
 import { Button } from "../../../index.js";
 export let url;
 </script>

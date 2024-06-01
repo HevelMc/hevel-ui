@@ -6,7 +6,9 @@
   import { cn } from '$lib/utils.js';
   import ComboBoxTable from './ComboBoxTable.svelte';
   import PaginationTable from './PaginationTable.svelte';
-  import { ArrowDownNarrowWide, ArrowUpDown, ArrowUpNarrowWide } from 'lucide-svelte';
+  import ArrowDownNarrowWide from 'lucide-svelte/icons/arrow-down-narrow-wide';
+  import ArrowUpDown from 'lucide-svelte/icons/arrow-up-down';
+  import ArrowUpNarrowWide from 'lucide-svelte/icons/arrow-up-narrow-wide';
   import { checkboxColumn, type getDataFunction, type Column } from './index.js';
   import SelectedCountTable from './SelectedCountTable.svelte';
 

@@ -8,8 +8,10 @@ import CopyButton from './components/custom/copy-button/copy-button.svelte';
 import LightSwitch from './components/custom/light-switch/light-switch.svelte';
 import LoaderButton from './components/custom/loader-button/loader-button.svelte';
 import Loader from './components/custom/loader/loader.svelte';
+import type { DateRange } from 'bits-ui';
 export * from './components/custom/advanced-table/index.js';
 export * from './components/custom/month-picker/index.js';
+export * from './components/custom/audio-player/index.js';
 export {
   DatePicker,
   DatePickerRange,
@@ -19,7 +21,8 @@ export {
   CopyButton,
   LightSwitch,
   LoaderButton,
-  Loader
+  Loader,
+  type DateRange
 };
 
 // shadcn-svelte

@@ -10,6 +10,7 @@ import LoaderButton from './components/custom/loader-button/loader-button.svelte
 import Loader from './components/custom/loader/loader.svelte';
 export * from './components/custom/advanced-table/index.js';
 export * from './components/custom/month-picker/index.js';
+export * from './components/custom/audio-player/index.js';
 export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange, SortableList, CopyButton, LightSwitch, LoaderButton, Loader };
 // shadcn-svelte
 export * as Accordion from './components/ui/accordion/index.js';

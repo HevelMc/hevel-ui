@@ -1,5 +1,6 @@
 <script lang="ts">
   import AdvancedTable from '$lib/components/custom/advanced-table/AdvancedTable.svelte';
+  import AudioPlayer from '$lib/components/custom/audio-player/audio-player.svelte';
   import {
     Button,
     Card,
@@ -14,8 +15,11 @@
     CopyButton,
     LightSwitch,
     LoaderButton,
-    type getDataFunction
+    type getDataFunction,
+    audioPlayer
   } from '$lib/index.js';
+  import Play from 'lucide-svelte/icons/play';
+  import Pause from 'lucide-svelte/icons/pause';
   import { resetMode, setMode } from 'mode-watcher';
 
   let sortableList = [
@@ -34,6 +38,18 @@
       total: 2
     };
   };
+
+  function toggleAudio() {
+    if ($audioPlayer?.track_id == null) {
+      audioPlayer.start('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'test-audio', 'Audio test');
+      return;
+    }
+    if ($audioPlayer.paused) {
+      audioPlayer.play();
+    } else {
+      audioPlayer.pause();
+    }
+  }
 </script>
 
 <div class="container flex flex-col gap-4 p-4">
@@ -94,9 +110,20 @@
     >
       Test
     </LoaderButton>
+    <Button variant="outline" on:click={toggleAudio}>
+      {#if $audioPlayer.paused}
+        <Play class="h-4 w-4" />
+      {:else}
+        <Pause class="h-4 w-4" />
+      {/if}
+    </Button>
   </div>
 
-  <div class="grid grid-cols-4 gap-2">
+  {#if $audioPlayer?.track_id != null}
+    <AudioPlayer />
+  {/if}
+
+  <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
     <DatePicker />
     <DatePickerRange />
     <MonthPicker />

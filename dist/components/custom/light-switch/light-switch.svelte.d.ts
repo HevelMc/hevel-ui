@@ -3,7 +3,8 @@ import { Button as ButtonPrimitive } from 'bits-ui';
 import { type Props } from '../../ui/button/index.js';
 declare const __propDef: {
     props: Props & {
-        value: string;
+        setMode: (mode: 'dark' | 'light' | 'system') => void;
+        resetMode: () => void;
         lightText?: string | undefined;
         darkText?: string | undefined;
         systemText?: string | undefined;

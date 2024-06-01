@@ -4,16 +4,25 @@
   import { DropdownMenu } from '$lib/index.js';
   import { cn } from '$lib/utils.js';
   import { Sun, Moon } from 'lucide-svelte';
-  import { setMode, resetMode } from 'mode-watcher';
 
-  type $$Props = Props & { value: string; lightText?: string; darkText?: string; systemText?: string };
+  type $$Props = Props & {
+    setMode: (mode: 'dark' | 'light' | 'system') => void;
+    resetMode: () => void;
+    lightText?: string;
+    darkText?: string;
+    systemText?: string;
+  };
   type $$Events = Events;
 
   let className: $$Props['class'] = undefined;
+  export { className as class };
 
   export let variant: $$Props['variant'] = 'outline';
   export let size: $$Props['size'] = 'default';
   export let builders: $$Props['builders'] = [];
+
+  export let setMode: $$Props['setMode'];
+  export let resetMode: $$Props['resetMode'];
 
   export let lightText = 'Light';
   export let darkText = 'Dark';

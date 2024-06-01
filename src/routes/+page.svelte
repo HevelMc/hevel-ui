@@ -13,6 +13,7 @@
     CopyButton,
     LightSwitch
   } from '$lib/index.js';
+  import { resetMode, setMode } from 'mode-watcher';
 
   let sortableList = [
     { id: '1', name: 'Item A' },
@@ -69,7 +70,8 @@
 
   <div class="flex items-center justify-center gap-8">
     <CopyButton value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
-    <LightSwitch />
+    <LightSwitch {setMode} {resetMode} />
+    <Button variant="outline">Test</Button>
   </div>
 
   <div class="grid grid-cols-4 gap-2">

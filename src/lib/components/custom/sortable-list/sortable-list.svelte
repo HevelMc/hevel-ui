@@ -80,6 +80,6 @@
 
 <style lang="postcss">
   .over {
-    @apply scale-105 border-gray-400;
+    @apply scale-105 border-foreground;
   }
 </style>

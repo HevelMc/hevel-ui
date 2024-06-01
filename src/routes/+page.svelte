@@ -10,7 +10,8 @@
     MonthPickerRange,
     Popover,
     SortableList,
-    CopyButton
+    CopyButton,
+    LightSwitch
   } from '$lib/index.js';
 
   let sortableList = [
@@ -66,7 +67,10 @@
     </Popover.Content>
   </Popover.Root>
 
-  <CopyButton value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
+  <div class="flex items-center justify-center gap-8">
+    <CopyButton value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
+    <LightSwitch />
+  </div>
 
   <div class="grid grid-cols-4 gap-2">
     <DatePicker />
@@ -76,6 +80,6 @@
   </div>
 
   <SortableList list={sortableList} let:item let:index on:sort={(event) => (sortableList = event.detail)}>
-    <div class="rounded-md border border-gray-200 p-4">{index + 1}. {item.name}</div>
+    <div class="rounded-md border border-border p-4">{index + 1}. {item.name}</div>
   </SortableList>
 </div>

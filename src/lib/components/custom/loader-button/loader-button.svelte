@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button as ButtonPrimitive } from 'bits-ui';
   import { cn } from '$lib/utils.js';
-  import { Loader2 } from 'lucide-svelte';
+  import LoaderCircle from 'lucide-svelte/icons/loader-circle';
   import { type Props, type Events, buttonVariants } from '$lib/components/ui/button/index.js';
 
   type $$Props = Props & { onClick: () => Promise<void> | void };
@@ -35,7 +35,7 @@
   }}
 >
   {#if loading}
-    <Loader2 class="h-6 w-6 animate-spin" />
+    <LoaderCircle class="h-6 w-6 animate-spin" />
   {:else}
     <slot />
   {/if}

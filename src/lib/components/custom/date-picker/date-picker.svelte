@@ -3,7 +3,7 @@
   import { cn } from '$lib/utils.js';
   import { Button } from '$lib/index.js';
   import { Popover } from '$lib/index.js';
-  import { CalendarIcon } from 'lucide-svelte';
+  import CalendarIcon from 'lucide-svelte/icons/calendar';
   import { Calendar } from '$lib/index.js';
 
   export let onValueChange: (value: DateValue | undefined) => void = () => {};

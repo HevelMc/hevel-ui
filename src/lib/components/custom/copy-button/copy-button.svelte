@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Button as ButtonPrimitive } from 'bits-ui';
   import { cn } from '$lib/utils.js';
-  import { Check, Copy } from 'lucide-svelte';
+  import Copy from 'lucide-svelte/icons/copy';
+  import Check from 'lucide-svelte/icons/check';
   import { type Props, type Events, buttonVariants } from '$lib/components/ui/button/index.js';
   import { Tooltip } from '$lib/index.js';
 

@@ -2,7 +2,8 @@
 import { buttonVariants } from "../../ui/button/index.js";
 import { DropdownMenu } from "../../../index.js";
 import { cn } from "../../../utils.js";
-import { Sun, Moon } from "lucide-svelte";
+import Sun from "lucide-svelte/icons/sun";
+import Moon from "lucide-svelte/icons/moon";
 let className = void 0;
 export { className as class };
 export let variant = "outline";

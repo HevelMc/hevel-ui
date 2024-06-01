@@ -1,6 +1,6 @@
 <script>import {} from "@internationalized/date";
 import { cn } from "../../../utils.js";
-import { CalendarIcon } from "lucide-svelte";
+import CalendarIcon from "lucide-svelte/icons/calendar";
 import { Button, Popover, RangeCalendar } from "../../../index.js";
 export let onValueChange = () => {
 };

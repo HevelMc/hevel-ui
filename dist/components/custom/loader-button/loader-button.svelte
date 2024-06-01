@@ -1,6 +1,6 @@
 <script>import { Button as ButtonPrimitive } from "bits-ui";
 import { cn } from "../../../utils.js";
-import { Loader2 } from "lucide-svelte";
+import LoaderCircle from "lucide-svelte/icons/loader-circle";
 import { buttonVariants } from "../../ui/button/index.js";
 let className = void 0;
 export let variant = "default";
@@ -27,7 +27,7 @@ export { className as class };
   }}
 >
   {#if loading}
-    <Loader2 class="h-6 w-6 animate-spin" />
+    <LoaderCircle class="h-6 w-6 animate-spin" />
   {:else}
     <slot />
   {/if}

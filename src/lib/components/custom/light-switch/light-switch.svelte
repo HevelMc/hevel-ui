@@ -3,7 +3,8 @@
   import { type Props, type Events, buttonVariants } from '$lib/components/ui/button/index.js';
   import { DropdownMenu } from '$lib/index.js';
   import { cn } from '$lib/utils.js';
-  import { Sun, Moon } from 'lucide-svelte';
+  import Sun from 'lucide-svelte/icons/sun';
+  import Moon from 'lucide-svelte/icons/moon';
 
   type $$Props = Props & {
     setMode: (mode: 'dark' | 'light' | 'system') => void;

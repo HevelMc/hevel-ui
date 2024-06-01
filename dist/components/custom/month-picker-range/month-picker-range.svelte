@@ -1,5 +1,7 @@
 <script>import { cn } from "../../../utils.js";
-import { CalendarIcon, ChevronLeft, ChevronRight } from "lucide-svelte";
+import CalendarIcon from "lucide-svelte/icons/calendar";
+import ChevronLeft from "lucide-svelte/icons/chevron-left";
+import ChevronRight from "lucide-svelte/icons/chevron-right";
 import {
   getMonthName,
   getMonthYearName,

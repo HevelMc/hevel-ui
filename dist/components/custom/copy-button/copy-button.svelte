@@ -1,6 +1,7 @@
 <script>import { Button as ButtonPrimitive } from "bits-ui";
 import { cn } from "../../../utils.js";
-import { Check, Copy } from "lucide-svelte";
+import Copy from "lucide-svelte/icons/copy";
+import Check from "lucide-svelte/icons/check";
 import { buttonVariants } from "../../ui/button/index.js";
 import { Tooltip } from "../../../index.js";
 let className = void 0;

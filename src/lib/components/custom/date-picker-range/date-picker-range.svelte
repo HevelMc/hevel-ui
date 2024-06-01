@@ -2,7 +2,7 @@
   import type { DateRange } from 'bits-ui';
   import { type DateValue } from '@internationalized/date';
   import { cn } from '$lib/utils.js';
-  import { CalendarIcon } from 'lucide-svelte';
+  import CalendarIcon from 'lucide-svelte/icons/calendar';
   import { Button, Popover, RangeCalendar } from '$lib/index.js';
 
   export let onValueChange: (value: DateRange | undefined) => void = () => {};

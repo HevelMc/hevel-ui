@@ -2,7 +2,7 @@
 import { cn } from "../../../utils.js";
 import { Button } from "../../../index.js";
 import { Popover } from "../../../index.js";
-import { CalendarIcon } from "lucide-svelte";
+import CalendarIcon from "lucide-svelte/icons/calendar";
 import { Calendar } from "../../../index.js";
 export let onValueChange = () => {
 };

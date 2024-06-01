@@ -3,7 +3,9 @@ import DatePicker from './components/custom/date-picker/date-picker.svelte';
 import DatePickerRange from './components/custom/date-picker-range/date-picker-range.svelte';
 import MonthPicker from './components/custom/month-picker/month-picker.svelte';
 import MonthPickerRange from './components/custom/month-picker-range/month-picker-range.svelte';
-export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange };
+import SortableList from './components/custom/sortable-list/sortable-list.svelte';
+import CopyButton from './components/custom/copy-button/copy-button.svelte';
+export { DatePicker, DatePickerRange, MonthPicker, MonthPickerRange, SortableList, CopyButton };
 // shadcn-svelte
 export * as Accordion from './components/ui/accordion/index.js';
 export * as Alert from './components/ui/alert/index.js';

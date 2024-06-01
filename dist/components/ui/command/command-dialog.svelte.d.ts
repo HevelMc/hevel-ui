@@ -1,11 +1,11 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        preventScroll?: boolean | undefined;
         closeOnEscape?: boolean | undefined;
+        portal?: string | HTMLElement | null | undefined;
+        preventScroll?: boolean | undefined;
         closeOnOutsideClick?: boolean | undefined;
         onOutsideClick?: ((event: MouseEvent | TouchEvent | PointerEvent) => void) | undefined;
-        portal?: string | HTMLElement | null | undefined;
         open?: boolean | undefined;
         onOpenChange?: import("bits-ui/dist/internal").OnChangeFn<boolean> | undefined;
         openFocus?: import("bits-ui").FocusProp | undefined;

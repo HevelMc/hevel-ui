@@ -4,7 +4,7 @@ import { Check, Copy } from "lucide-svelte";
 import { buttonVariants } from "../../ui/button/index.js";
 import { Tooltip } from "../../../index.js";
 let className = void 0;
-export let variant = "link";
+export let variant = "outline";
 export let size = "default";
 export let builders = [];
 export let tooltipCopy = "Copy";

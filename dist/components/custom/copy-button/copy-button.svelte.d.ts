@@ -4,8 +4,8 @@ import { type Props } from '../../ui/button/index.js';
 declare const __propDef: {
     props: Props & {
         value: string;
-        tooltipCopy: string;
-        tooltipCopied: string;
+        tooltipCopy?: string | undefined;
+        tooltipCopied?: string | undefined;
     };
     slots: {};
     events: ButtonPrimitive.Events;

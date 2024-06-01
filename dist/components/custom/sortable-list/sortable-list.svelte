@@ -73,6 +73,6 @@ const reorder = ({ from, to }) => {
     --tw-scale-y: 1.05;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     --tw-border-opacity: 1;
-    border-color: rgb(156 163 175 / var(--tw-border-opacity))
+    border-color: hsl(var(--foreground) / var(--tw-border-opacity))
 }
 </style>

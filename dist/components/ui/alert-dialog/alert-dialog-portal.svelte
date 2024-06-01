@@ -2,5 +2,5 @@
 </script>
 
 <AlertDialogPrimitive.Portal {...$$restProps}>
-  <slot />
+	<slot />
 </AlertDialogPrimitive.Portal>

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { RangeCalendar as RangeCalendarPrimitive } from 'bits-ui';
+import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
 declare const __propDef: {
     props: RangeCalendarPrimitive.GridProps;
     events: {

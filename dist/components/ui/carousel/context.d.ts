@@ -1,21 +1,21 @@
 /// <reference types="svelte" />
-import type { EmblaCarouselSvelteType } from 'embla-carousel-svelte';
-import type emblaCarouselSvelte from 'embla-carousel-svelte';
-import type { HTMLAttributes } from 'svelte/elements';
-import type { Readable, Writable } from 'svelte/store';
-export type CarouselAPI = NonNullable<NonNullable<EmblaCarouselSvelteType['$$_attributes']>['on:emblaInit']> extends (evt: CustomEvent<infer CarouselAPI>) => void ? CarouselAPI : never;
+import type { EmblaCarouselSvelteType } from "embla-carousel-svelte";
+import type emblaCarouselSvelte from "embla-carousel-svelte";
+import type { HTMLAttributes } from "svelte/elements";
+import type { Readable, Writable } from "svelte/store";
+export type CarouselAPI = NonNullable<NonNullable<EmblaCarouselSvelteType["$$_attributes"]>["on:emblaInit"]> extends (evt: CustomEvent<infer CarouselAPI>) => void ? CarouselAPI : never;
 type EmblaCarouselConfig = NonNullable<Parameters<typeof emblaCarouselSvelte>[1]>;
-export type CarouselOptions = EmblaCarouselConfig['options'];
-export type CarouselPlugins = EmblaCarouselConfig['plugins'];
+export type CarouselOptions = EmblaCarouselConfig["options"];
+export type CarouselPlugins = EmblaCarouselConfig["plugins"];
 export type CarouselProps = {
     opts?: CarouselOptions;
     plugins?: CarouselPlugins;
     api?: CarouselAPI;
-    orientation?: 'horizontal' | 'vertical';
+    orientation?: "horizontal" | "vertical";
 } & HTMLAttributes<HTMLDivElement>;
 type EmblaContext = {
     api: Writable<CarouselAPI | undefined>;
-    orientation: Writable<'horizontal' | 'vertical'>;
+    orientation: Writable<"horizontal" | "vertical">;
     scrollNext: () => void;
     scrollPrev: () => void;
     canScrollNext: Readable<boolean>;

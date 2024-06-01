@@ -1,7 +1,7 @@
-import { type VariantProps } from 'tailwind-variants';
-import Root from './alert.svelte';
-import Description from './alert-description.svelte';
-import Title from './alert-title.svelte';
+import { type VariantProps } from "tailwind-variants";
+import Root from "./alert.svelte";
+import Description from "./alert-description.svelte";
+import Title from "./alert-title.svelte";
 export declare const alertVariants: import("tailwind-variants").TVReturnType<{
     variant: {
         default: string;
@@ -38,6 +38,6 @@ export declare const alertVariants: import("tailwind-variants").TVReturnType<{
         destructive: string;
     };
 }>, unknown, unknown, undefined>>;
-export type Variant = VariantProps<typeof alertVariants>['variant'];
-export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-export { Root, Description, Title, Root as Alert, Description as AlertDescription, Title as AlertTitle };
+export type Variant = VariantProps<typeof alertVariants>["variant"];
+export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export { Root, Description, Title, Root as Alert, Description as AlertDescription, Title as AlertTitle, };

@@ -1,6 +1,6 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLTextareaAttributes } from 'svelte/elements';
-import type { TextareaEvents } from './index.js';
+import type { HTMLTextareaAttributes } from "svelte/elements";
+import type { TextareaEvents } from "./index.js";
 declare const __propDef: {
     props: HTMLTextareaAttributes;
     slots: {};

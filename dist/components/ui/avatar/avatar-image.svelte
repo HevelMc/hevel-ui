@@ -6,4 +6,9 @@ export let alt = void 0;
 export { className as class };
 </script>
 
-<AvatarPrimitive.Image {src} {alt} class={cn('aspect-square h-full w-full', className)} {...$$restProps} />
+<AvatarPrimitive.Image
+	{src}
+	{alt}
+	class={cn("aspect-square h-full w-full", className)}
+	{...$$restProps}
+/>

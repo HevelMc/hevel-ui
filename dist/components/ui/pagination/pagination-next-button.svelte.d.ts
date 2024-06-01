@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Pagination as PaginationPrimitive } from 'bits-ui';
+import { Pagination as PaginationPrimitive } from "bits-ui";
 declare const __propDef: {
     props: PaginationPrimitive.NextButtonProps;
     slots: {

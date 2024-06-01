@@ -4,6 +4,9 @@ let className = void 0;
 export { className as class };
 </script>
 
-<RangeCalendarPrimitive.Header class={cn('relative flex w-full items-center justify-between pt-1', className)} {...$$restProps}>
-  <slot />
+<RangeCalendarPrimitive.Header
+	class={cn("relative flex w-full items-center justify-between pt-1", className)}
+	{...$$restProps}
+>
+	<slot />
 </RangeCalendarPrimitive.Header>

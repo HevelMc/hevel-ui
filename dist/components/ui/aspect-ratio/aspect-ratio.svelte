@@ -3,5 +3,5 @@ export let ratio = 4 / 3;
 </script>
 
 <AspectRatioPrimitive.Root {ratio} {...$$restProps}>
-  <slot />
+	<slot />
 </AspectRatioPrimitive.Root>

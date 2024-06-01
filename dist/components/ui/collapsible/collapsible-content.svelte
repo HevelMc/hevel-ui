@@ -7,5 +7,5 @@ export let transitionConfig = {
 </script>
 
 <CollapsiblePrimitive.Content {transition} {transitionConfig} {...$$restProps}>
-  <slot />
+	<slot />
 </CollapsiblePrimitive.Content>

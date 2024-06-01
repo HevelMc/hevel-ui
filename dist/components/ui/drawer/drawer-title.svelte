@@ -5,6 +5,10 @@ let className = void 0;
 export { className as class };
 </script>
 
-<DrawerPrimitive.Title bind:el class={cn('text-lg font-semibold leading-none tracking-tight', className)} {...$$restProps}>
-  <slot />
+<DrawerPrimitive.Title
+	bind:el
+	class={cn("text-lg font-semibold leading-none tracking-tight", className)}
+	{...$$restProps}
+>
+	<slot />
 </DrawerPrimitive.Title>

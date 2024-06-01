@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLAttributes } from 'svelte/elements';
+import type { HTMLAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLAttributes<HTMLDivElement> & {
         el?: HTMLDivElement | undefined;

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import * as ResizablePrimitive from 'paneforge';
+import * as ResizablePrimitive from "paneforge";
 declare const __propDef: {
     props: ResizablePrimitive.PaneGroupProps;
     events: {

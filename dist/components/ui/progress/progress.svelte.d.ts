@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Progress as ProgressPrimitive } from 'bits-ui';
+import { Progress as ProgressPrimitive } from "bits-ui";
 declare const __propDef: {
     props: ProgressPrimitive.Props;
     events: {

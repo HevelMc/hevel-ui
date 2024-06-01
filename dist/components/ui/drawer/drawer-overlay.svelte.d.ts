@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Drawer as DrawerPrimitive } from 'vaul-svelte';
+import { Drawer as DrawerPrimitive } from "vaul-svelte";
 declare const __propDef: {
     props: DrawerPrimitive.OverlayProps;
     events: {

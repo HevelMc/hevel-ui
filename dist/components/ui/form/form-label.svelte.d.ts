@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { Label as LabelPrimitive } from 'bits-ui';
+import type { Label as LabelPrimitive } from "bits-ui";
 declare const __propDef: {
     props: LabelPrimitive.Props;
     events: {

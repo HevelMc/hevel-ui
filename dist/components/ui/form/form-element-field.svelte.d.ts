@@ -1,7 +1,7 @@
 import { SvelteComponent } from "svelte";
-import type { FormPathLeaves } from 'sveltekit-superforms';
-import type { HTMLAttributes } from 'svelte/elements';
-import * as FormPrimitive from 'formsnap';
+import type { FormPathLeaves } from "sveltekit-superforms";
+import type { HTMLAttributes } from "svelte/elements";
+import * as FormPrimitive from "formsnap";
 declare class __sveltets_Render<T extends Record<string, unknown>, U extends FormPathLeaves<T>> {
     props(): FormPrimitive.ElementFieldProps<T, U> & HTMLAttributes<HTMLElement>;
     events(): {} & {

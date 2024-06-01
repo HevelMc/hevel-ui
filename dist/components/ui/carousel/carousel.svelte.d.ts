@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { type CarouselProps } from './context.js';
+import { type CarouselProps } from "./context.js";
 declare const __propDef: {
     props: CarouselProps;
     events: {

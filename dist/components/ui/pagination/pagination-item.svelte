@@ -3,6 +3,6 @@ let className = void 0;
 export { className as class };
 </script>
 
-<li class={cn('', className)} {...$$restProps}>
-  <slot />
+<li class={cn("", className)} {...$$restProps}>
+	<slot />
 </li>

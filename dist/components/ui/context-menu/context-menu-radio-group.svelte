@@ -3,5 +3,5 @@ export let value = void 0;
 </script>
 
 <ContextMenuPrimitive.RadioGroup {...$$restProps} bind:value>
-  <slot />
+	<slot />
 </ContextMenuPrimitive.RadioGroup>

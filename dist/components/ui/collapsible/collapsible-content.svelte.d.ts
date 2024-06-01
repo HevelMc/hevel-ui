@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Collapsible as CollapsiblePrimitive } from 'bits-ui';
+import { Collapsible as CollapsiblePrimitive } from "bits-ui";
 declare const __propDef: {
     props: CollapsiblePrimitive.ContentProps;
     events: {

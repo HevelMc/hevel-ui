@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Tabs as TabsPrimitive } from 'bits-ui';
+import { Tabs as TabsPrimitive } from "bits-ui";
 declare const __propDef: {
     props: TabsPrimitive.TriggerProps;
     slots: {

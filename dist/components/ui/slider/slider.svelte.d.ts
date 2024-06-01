@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Slider as SliderPrimitive } from 'bits-ui';
+import { Slider as SliderPrimitive } from "bits-ui";
 declare const __propDef: {
     props: SliderPrimitive.Props;
     events: {

@@ -9,7 +9,7 @@ export { className as class };
 </script>
 
 <FormPrimitive.ElementField {form} {name} let:constraints let:errors let:tainted let:value>
-  <div class={cn('space-y-2', className)}>
-    <slot {constraints} {errors} {tainted} {value} />
-  </div>
+	<div class={cn("space-y-2", className)}>
+		<slot {constraints} {errors} {tainted} {value} />
+	</div>
 </FormPrimitive.ElementField>

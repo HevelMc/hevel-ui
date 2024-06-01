@@ -8,11 +8,11 @@ export { className as class };
 </script>
 
 <ResizablePrimitive.PaneGroup
-  bind:el
-  bind:paneGroup
-  {direction}
-  class={cn('flex h-full w-full data-[direction=vertical]:flex-col', className)}
-  {...$$restProps}
+	bind:el
+	bind:paneGroup
+	{direction}
+	class={cn("flex h-full w-full data-[direction=vertical]:flex-col", className)}
+	{...$$restProps}
 >
-  <slot />
+	<slot />
 </ResizablePrimitive.PaneGroup>

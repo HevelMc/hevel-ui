@@ -6,5 +6,5 @@ export { className as class };
 </script>
 
 <div class={cn(alertVariants({ variant }), className)} {...$$restProps} role="alert">
-  <slot />
+	<slot />
 </div>

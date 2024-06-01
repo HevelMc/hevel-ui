@@ -4,6 +4,9 @@ let className = void 0;
 export { className as class };
 </script>
 
-<DialogPrimitive.Description class={cn('text-sm text-muted-foreground', className)} {...$$restProps}>
-  <slot />
+<DialogPrimitive.Description
+	class={cn("text-sm text-muted-foreground", className)}
+	{...$$restProps}
+>
+	<slot />
 </DialogPrimitive.Description>

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { RadioGroup as RadioGroupPrimitive } from 'bits-ui';
+import { RadioGroup as RadioGroupPrimitive } from "bits-ui";
 declare const __propDef: {
     props: RadioGroupPrimitive.Props;
     events: {

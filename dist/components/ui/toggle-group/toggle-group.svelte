@@ -13,10 +13,10 @@ setToggleGroupCtx({
 </script>
 
 <ToggleGroupPrimitive.Root
-  class={cn('flex items-center justify-center gap-1', className)}
-  bind:value
-  {...$$restProps}
-  let:builder
+	class={cn("flex items-center justify-center gap-1", className)}
+	bind:value
+	{...$$restProps}
+	let:builder
 >
-  <slot {builder} />
+	<slot {builder} />
 </ToggleGroupPrimitive.Root>

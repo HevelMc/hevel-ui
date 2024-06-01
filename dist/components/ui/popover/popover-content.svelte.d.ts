@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Popover as PopoverPrimitive } from 'bits-ui';
+import { Popover as PopoverPrimitive } from "bits-ui";
 declare const __propDef: {
     props: PopoverPrimitive.ContentProps;
     events: {

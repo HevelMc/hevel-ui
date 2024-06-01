@@ -7,23 +7,23 @@ const { orientation, options, plugins, onInit } = getEmblaContext("<Carousel.Con
 </script>
 
 <div
-  class="overflow-hidden"
-  use:emblaCarouselSvelte={{
-    options: {
-      container: '[data-embla-container]',
-      slides: '[data-embla-slide]',
-      ...$options,
-      axis: $orientation === 'horizontal' ? 'x' : 'y'
-    },
-    plugins: $plugins
-  }}
-  on:emblaInit={onInit}
+	class="overflow-hidden"
+	use:emblaCarouselSvelte={{
+		options: {
+			container: "[data-embla-container]",
+			slides: "[data-embla-slide]",
+			...$options,
+			axis: $orientation === "horizontal" ? "x" : "y",
+		},
+		plugins: $plugins,
+	}}
+	on:emblaInit={onInit}
 >
-  <div
-    class={cn('flex', $orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
-    data-embla-container=""
-    {...$$restProps}
-  >
-    <slot />
-  </div>
+	<div
+		class={cn("flex", $orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", className)}
+		data-embla-container=""
+		{...$$restProps}
+	>
+		<slot />
+	</div>
 </div>

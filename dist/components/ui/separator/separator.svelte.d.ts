@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Separator as SeparatorPrimitive } from 'bits-ui';
+import { Separator as SeparatorPrimitive } from "bits-ui";
 declare const __propDef: {
     props: SeparatorPrimitive.Props;
     events: {

@@ -14,9 +14,9 @@ $:
 </script>
 
 {#if asChild}
-  <slot {attrs} />
+	<slot {attrs} />
 {:else}
-  <a bind:this={el} {...attrs} {href}>
-    <slot {attrs} />
-  </a>
+	<a bind:this={el} {...attrs} {href}>
+		<slot {attrs} />
+	</a>
 {/if}

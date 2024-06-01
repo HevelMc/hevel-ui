@@ -1,6 +1,6 @@
 import { SvelteComponent } from "svelte";
-import { Button as ButtonPrimitive } from 'bits-ui';
-import { type Props } from './index.js';
+import { Button as ButtonPrimitive } from "bits-ui";
+import { type Props } from "./index.js";
 declare const __propDef: {
     props: Props;
     slots: {

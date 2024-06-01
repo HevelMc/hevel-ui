@@ -1,5 +1,5 @@
-import { type VariantProps } from 'tailwind-variants';
-export { default as Badge } from './badge.svelte';
+import { type VariantProps } from "tailwind-variants";
+export { default as Badge } from "./badge.svelte";
 export declare const badgeVariants: import("tailwind-variants").TVReturnType<{
     variant: {
         default: string;
@@ -50,4 +50,4 @@ export declare const badgeVariants: import("tailwind-variants").TVReturnType<{
         outline: string;
     };
 }>, unknown, unknown, undefined>>;
-export type Variant = VariantProps<typeof badgeVariants>['variant'];
+export type Variant = VariantProps<typeof badgeVariants>["variant"];

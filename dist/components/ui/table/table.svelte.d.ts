@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLTableAttributes } from 'svelte/elements';
+import type { HTMLTableAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLTableAttributes;
     events: {

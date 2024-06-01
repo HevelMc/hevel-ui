@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui';
+import { DropdownMenu as DropdownMenuPrimitive } from "bits-ui";
 declare const __propDef: {
     props: DropdownMenuPrimitive.SeparatorProps;
     events: {

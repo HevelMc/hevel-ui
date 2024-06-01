@@ -4,5 +4,5 @@ export { className as class };
 </script>
 
 <nav class={className} bind:this={el} aria-label="breadcrumb" {...$$restProps}>
-  <slot />
+	<slot />
 </nav>

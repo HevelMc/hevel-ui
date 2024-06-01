@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Switch as SwitchPrimitive } from 'bits-ui';
+import { Switch as SwitchPrimitive } from "bits-ui";
 declare const __propDef: {
     props: SwitchPrimitive.Props;
     slots: {};

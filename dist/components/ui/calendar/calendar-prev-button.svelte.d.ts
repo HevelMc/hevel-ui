@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Calendar as CalendarPrimitive } from 'bits-ui';
+import { Calendar as CalendarPrimitive } from "bits-ui";
 declare const __propDef: {
     props: CalendarPrimitive.PrevButtonProps;
     slots: {

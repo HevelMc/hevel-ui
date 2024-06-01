@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Tooltip as TooltipPrimitive } from 'bits-ui';
+import { Tooltip as TooltipPrimitive } from "bits-ui";
 declare const __propDef: {
     props: TooltipPrimitive.ContentProps;
     events: {

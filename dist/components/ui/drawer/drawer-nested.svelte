@@ -5,5 +5,5 @@ export let activeSnapPoint = void 0;
 </script>
 
 <DrawerPrimitive.NestedRoot {shouldScaleBackground} bind:open bind:activeSnapPoint {...$$restProps}>
-  <slot />
+	<slot />
 </DrawerPrimitive.NestedRoot>

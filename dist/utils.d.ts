@@ -9,4 +9,9 @@ type FlyAndScaleParams = {
     duration?: number;
 };
 export declare const flyAndScale: (node: Element, params?: FlyAndScaleParams) => TransitionConfig;
+declare global {
+    interface String {
+        capitalize(): string;
+    }
+}
 export {};

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLOlAttributes } from 'svelte/elements';
+import type { HTMLOlAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLOlAttributes & {
         el?: HTMLOListElement | undefined;

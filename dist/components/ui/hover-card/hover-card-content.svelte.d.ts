@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { LinkPreview as HoverCardPrimitive } from 'bits-ui';
+import { LinkPreview as HoverCardPrimitive } from "bits-ui";
 declare const __propDef: {
     props: HoverCardPrimitive.ContentProps;
     events: {

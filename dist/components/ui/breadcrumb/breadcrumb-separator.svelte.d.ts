@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLLiAttributes } from 'svelte/elements';
+import type { HTMLLiAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLLiAttributes & {
         el?: HTMLLIElement | undefined;

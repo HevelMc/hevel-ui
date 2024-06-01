@@ -9,16 +9,16 @@ export { className as class };
 </script>
 
 <PaginationPrimitive.Page
-  bind:page
-  class={cn(
-    buttonVariants({
-      variant: isActive ? 'outline' : 'ghost',
-      size
-    }),
-    className
-  )}
-  {...$$restProps}
-  on:click
+	bind:page
+	class={cn(
+		buttonVariants({
+			variant: isActive ? "outline" : "ghost",
+			size,
+		}),
+		className
+	)}
+	{...$$restProps}
+	on:click
 >
-  <slot>{page.value}</slot>
+	<slot>{page.value}</slot>
 </PaginationPrimitive.Page>

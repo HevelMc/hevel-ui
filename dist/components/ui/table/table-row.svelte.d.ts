@@ -1,8 +1,8 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLAttributes } from 'svelte/elements';
+import type { HTMLAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLAttributes<HTMLTableRowElement> & {
-        'data-state'?: unknown;
+        "data-state"?: unknown;
     };
     events: {
         click: MouseEvent;

@@ -1,9 +1,9 @@
 import { SvelteComponent } from "svelte";
-import type { VariantProps } from 'tailwind-variants';
-declare class __sveltets_Render<T extends 'single' | 'multiple'> {
+import type { VariantProps } from "tailwind-variants";
+declare class __sveltets_Render<T extends "single" | "multiple"> {
     props(): {
-        disabled?: boolean | undefined;
         type?: T | undefined;
+        disabled?: boolean | undefined;
         orientation?: import("@melt-ui/svelte/internal/types").Orientation | undefined;
         loop?: boolean | undefined;
         rovingFocus?: boolean | undefined;
@@ -98,9 +98,9 @@ declare class __sveltets_Render<T extends 'single' | 'multiple'> {
         };
     };
 }
-export type ToggleGroupProps<T extends 'single' | 'multiple'> = ReturnType<__sveltets_Render<T>['props']>;
-export type ToggleGroupEvents<T extends 'single' | 'multiple'> = ReturnType<__sveltets_Render<T>['events']>;
-export type ToggleGroupSlots<T extends 'single' | 'multiple'> = ReturnType<__sveltets_Render<T>['slots']>;
-export default class ToggleGroup<T extends 'single' | 'multiple'> extends SvelteComponent<ToggleGroupProps<T>, ToggleGroupEvents<T>, ToggleGroupSlots<T>> {
+export type ToggleGroupProps<T extends "single" | "multiple"> = ReturnType<__sveltets_Render<T>['props']>;
+export type ToggleGroupEvents<T extends "single" | "multiple"> = ReturnType<__sveltets_Render<T>['events']>;
+export type ToggleGroupSlots<T extends "single" | "multiple"> = ReturnType<__sveltets_Render<T>['slots']>;
+export default class ToggleGroup<T extends "single" | "multiple"> extends SvelteComponent<ToggleGroupProps<T>, ToggleGroupEvents<T>, ToggleGroupSlots<T>> {
 }
 export {};

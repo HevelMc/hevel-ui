@@ -2,5 +2,5 @@
 </script>
 
 <DialogPrimitive.Portal {...$$restProps}>
-  <slot />
+	<slot />
 </DialogPrimitive.Portal>

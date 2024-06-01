@@ -5,5 +5,5 @@ export { className as class };
 </script>
 
 <CalendarPrimitive.GridBody class={cn(className)} {...$$restProps}>
-  <slot />
+	<slot />
 </CalendarPrimitive.GridBody>

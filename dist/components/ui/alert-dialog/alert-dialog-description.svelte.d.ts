@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
+import { AlertDialog as AlertDialogPrimitive } from "bits-ui";
 declare const __propDef: {
     props: AlertDialogPrimitive.DescriptionProps;
     events: {

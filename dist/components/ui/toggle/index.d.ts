@@ -1,5 +1,5 @@
-import { type VariantProps } from 'tailwind-variants';
-import Root from './toggle.svelte';
+import { type VariantProps } from "tailwind-variants";
+import Root from "./toggle.svelte";
 export declare const toggleVariants: import("tailwind-variants").TVReturnType<{
     variant: {
         default: string;
@@ -71,6 +71,6 @@ export declare const toggleVariants: import("tailwind-variants").TVReturnType<{
         lg: string;
     };
 }>, unknown, unknown, undefined>>;
-export type Variant = VariantProps<typeof toggleVariants>['variant'];
-export type Size = VariantProps<typeof toggleVariants>['size'];
-export { Root, Root as Toggle };
+export type Variant = VariantProps<typeof toggleVariants>["variant"];
+export type Size = VariantProps<typeof toggleVariants>["size"];
+export { Root, Root as Toggle, };

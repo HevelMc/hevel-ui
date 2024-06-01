@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { type ToasterProps as SonnerProps } from 'svelte-sonner';
+import { type ToasterProps as SonnerProps } from "svelte-sonner";
 declare const __propDef: {
     props: SonnerProps;
     events: {

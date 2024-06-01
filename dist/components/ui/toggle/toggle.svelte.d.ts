@@ -1,6 +1,6 @@
 import { SvelteComponent } from "svelte";
-import { Toggle as TogglePrimitive } from 'bits-ui';
-import { type Size, type Variant } from './index.js';
+import { Toggle as TogglePrimitive } from "bits-ui";
+import { type Size, type Variant } from "./index.js";
 declare const __propDef: {
     props: {
         disabled?: boolean | undefined;

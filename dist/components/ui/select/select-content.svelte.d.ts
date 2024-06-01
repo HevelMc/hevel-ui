@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Select as SelectPrimitive } from 'bits-ui';
+import { Select as SelectPrimitive } from "bits-ui";
 declare const __propDef: {
     props: SelectPrimitive.ContentProps;
     slots: {

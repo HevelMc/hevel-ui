@@ -4,6 +4,6 @@ let className = void 0;
 export { className as class };
 </script>
 
-<CalendarPrimitive.GridRow class={cn('flex', className)} {...$$restProps}>
-  <slot />
+<CalendarPrimitive.GridRow class={cn("flex", className)} {...$$restProps}>
+	<slot />
 </CalendarPrimitive.GridRow>

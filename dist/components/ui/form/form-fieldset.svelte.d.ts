@@ -1,6 +1,6 @@
 import { SvelteComponent } from "svelte";
-import type { FormPath } from 'sveltekit-superforms';
-import * as FormPrimitive from 'formsnap';
+import type { FormPath } from "sveltekit-superforms";
+import * as FormPrimitive from "formsnap";
 declare class __sveltets_Render<T extends Record<string, unknown>, U extends FormPath<T>> {
     props(): FormPrimitive.FieldsetProps<T, U>;
     events(): {} & {

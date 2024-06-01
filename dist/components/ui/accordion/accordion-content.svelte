@@ -10,12 +10,12 @@ export { className as class };
 </script>
 
 <AccordionPrimitive.Content
-  class={cn('overflow-hidden text-sm transition-all', className)}
-  {transition}
-  {transitionConfig}
-  {...$$restProps}
+	class={cn("overflow-hidden text-sm transition-all", className)}
+	{transition}
+	{transitionConfig}
+	{...$$restProps}
 >
-  <div class="pb-4 pt-0">
-    <slot />
-  </div>
+	<div class="pb-4 pt-0">
+		<slot />
+	</div>
 </AccordionPrimitive.Content>

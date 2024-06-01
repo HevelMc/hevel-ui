@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Avatar as AvatarPrimitive } from 'bits-ui';
+import { Avatar as AvatarPrimitive } from "bits-ui";
 declare const __propDef: {
     props: AvatarPrimitive.FallbackProps;
     events: {

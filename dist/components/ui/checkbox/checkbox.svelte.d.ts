@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Checkbox as CheckboxPrimitive } from 'bits-ui';
+import { Checkbox as CheckboxPrimitive } from "bits-ui";
 declare const __propDef: {
     props: CheckboxPrimitive.Props;
     slots: {};

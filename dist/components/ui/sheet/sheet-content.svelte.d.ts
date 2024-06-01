@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { type Side } from './index.js';
+import { type Side } from "./index.js";
 declare const __propDef: {
     props: {
         transition?: import("bits-ui/dist/internal/types.js").Transition | undefined;

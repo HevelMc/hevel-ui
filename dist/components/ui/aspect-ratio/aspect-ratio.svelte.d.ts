@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { AspectRatio as AspectRatioPrimitive } from 'bits-ui';
+import { AspectRatio as AspectRatioPrimitive } from "bits-ui";
 declare const __propDef: {
     props: AspectRatioPrimitive.Props;
     events: {

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLAnchorAttributes } from 'svelte/elements';
+import type { HTMLAnchorAttributes } from "svelte/elements";
 declare const __propDef: {
     props: HTMLAnchorAttributes & {
         el?: HTMLAnchorElement | undefined;

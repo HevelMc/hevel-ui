@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { type Variant } from './index.js';
+import { type Variant } from "./index.js";
 declare const __propDef: {
     props: {
         [x: string]: any;

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Command as CommandPrimitive } from 'cmdk-sv';
+import { Command as CommandPrimitive } from "cmdk-sv";
 declare const __propDef: {
     props: CommandPrimitive.GroupProps;
     events: {

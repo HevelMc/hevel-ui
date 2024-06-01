@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Menubar as MenubarPrimitive } from 'bits-ui';
+import { Menubar as MenubarPrimitive } from "bits-ui";
 declare const __propDef: {
     props: MenubarPrimitive.CheckboxItemProps;
     slots: {

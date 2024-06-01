@@ -4,6 +4,9 @@ let className = void 0;
 export { className as class };
 </script>
 
-<RangeCalendarPrimitive.Grid class={cn('w-full border-collapse space-y-1', className)} {...$$restProps}>
-  <slot />
+<RangeCalendarPrimitive.Grid
+	class={cn("w-full border-collapse space-y-1", className)}
+	{...$$restProps}
+>
+	<slot />
 </RangeCalendarPrimitive.Grid>

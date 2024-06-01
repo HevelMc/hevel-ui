@@ -6,8 +6,8 @@ export { className as class };
 </script>
 
 <ContextMenuPrimitive.Label
-  class={cn('px-2 py-1.5 text-sm font-semibold text-foreground', inset && 'pl-8', className)}
-  {...$$restProps}
+	class={cn("px-2 py-1.5 text-sm font-semibold text-foreground", inset && "pl-8", className)}
+	{...$$restProps}
 >
-  <slot />
+	<slot />
 </ContextMenuPrimitive.Label>

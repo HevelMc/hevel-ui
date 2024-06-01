@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Dialog as SheetPrimitive } from 'bits-ui';
+import { Dialog as SheetPrimitive } from "bits-ui";
 declare const __propDef: {
     props: SheetPrimitive.DescriptionProps;
     events: {

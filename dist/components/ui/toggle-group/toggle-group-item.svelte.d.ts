@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { type ToggleVariants } from './index.js';
+import { type ToggleVariants } from "./index.js";
 declare const __propDef: {
     props: {
         value: string;

@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import { Accordion as AccordionPrimitive } from 'bits-ui';
+import { Accordion as AccordionPrimitive } from "bits-ui";
 declare const __propDef: {
     props: AccordionPrimitive.ItemProps;
     events: {

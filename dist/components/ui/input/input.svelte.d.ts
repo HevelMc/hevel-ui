@@ -1,6 +1,6 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLInputAttributes } from 'svelte/elements';
-import type { InputEvents } from './index.js';
+import type { HTMLInputAttributes } from "svelte/elements";
+import type { InputEvents } from "./index.js";
 declare const __propDef: {
     props: HTMLInputAttributes;
     slots: {};

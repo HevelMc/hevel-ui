@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import * as FormPrimitive from 'formsnap';
+import * as FormPrimitive from "formsnap";
 declare const __propDef: {
     props: FormPrimitive.LegendProps;
     events: {

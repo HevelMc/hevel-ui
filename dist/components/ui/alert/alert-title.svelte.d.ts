@@ -1,6 +1,6 @@
 import { SvelteComponent } from "svelte";
-import type { HTMLAttributes } from 'svelte/elements';
-import type { HeadingLevel } from './index.js';
+import type { HTMLAttributes } from "svelte/elements";
+import type { HeadingLevel } from "./index.js";
 declare const __propDef: {
     props: HTMLAttributes<HTMLHeadingElement> & {
         level?: HeadingLevel | undefined;

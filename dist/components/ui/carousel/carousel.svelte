@@ -78,12 +78,12 @@ onDestroy(() => {
 </script>
 
 <div
-  class={cn('relative', className)}
-  on:mouseenter
-  on:mouseleave
-  role="region"
-  aria-roledescription="carousel"
-  {...$$restProps}
+	class={cn("relative", className)}
+	on:mouseenter
+	on:mouseleave
+	role="region"
+	aria-roledescription="carousel"
+	{...$$restProps}
 >
-  <slot />
+	<slot />
 </div>

@@ -2,5 +2,5 @@
 </script>
 
 <Button.Root type="submit" on:click on:keydown {...$$restProps}>
-  <slot />
+	<slot />
 </Button.Root>

@@ -1,7 +1,19 @@
 <script lang="ts">
-  import { Button, DropdownMenu } from '$lib/index.js';
+  import { Button as ButtonPrimitive } from 'bits-ui';
+  import { type Props, type Events, buttonVariants } from '$lib/components/ui/button/index.js';
+  import { DropdownMenu } from '$lib/index.js';
+  import { cn } from '$lib/utils.js';
   import { Sun, Moon } from 'lucide-svelte';
   import { setMode, resetMode } from 'mode-watcher';
+
+  type $$Props = Props & { value: string; lightText?: string; darkText?: string; systemText?: string };
+  type $$Events = Events;
+
+  let className: $$Props['class'] = undefined;
+
+  export let variant: $$Props['variant'] = 'outline';
+  export let size: $$Props['size'] = 'default';
+  export let builders: $$Props['builders'] = [];
 
   export let lightText = 'Light';
   export let darkText = 'Dark';
@@ -10,11 +22,16 @@
 
 <DropdownMenu.Root>
   <DropdownMenu.Trigger asChild let:builder>
-    <Button builders={[builder]} variant="outline" class="h-full">
-      <Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+    <ButtonPrimitive.Root
+      builders={[...(builders ?? []), builder]}
+      class={cn(buttonVariants({ variant, size, className }))}
+      type="button"
+      {...$$restProps}
+    >
+      <Sun class="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon class="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       <span class="sr-only">Change theme</span>
-    </Button>
+    </ButtonPrimitive.Root>
   </DropdownMenu.Trigger>
   <DropdownMenu.Content align="end">
     <DropdownMenu.Item on:click={() => setMode('light')}>{lightText}</DropdownMenu.Item>

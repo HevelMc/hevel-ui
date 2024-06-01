@@ -10,7 +10,7 @@
 
   let className: $$Props['class'] = undefined;
 
-  export let variant: $$Props['variant'] = 'link';
+  export let variant: $$Props['variant'] = 'outline';
   export let size: $$Props['size'] = 'default';
   export let builders: $$Props['builders'] = [];
 

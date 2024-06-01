@@ -8,8 +8,16 @@
     DatePickerRange,
     MonthPicker,
     MonthPickerRange,
-    Popover
+    Popover,
+    SortableList,
+    CopyButton
   } from '$lib/index.js';
+
+  let sortableList = [
+    { id: '1', name: 'Item A' },
+    { id: '2', name: 'Item B' },
+    { id: '3', name: 'Item C' }
+  ];
 </script>
 
 <div class="container flex flex-col gap-4 p-4">
@@ -58,7 +66,7 @@
     </Popover.Content>
   </Popover.Root>
 
-  <Button>Test Button</Button>
+  <CopyButton value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
 
   <div class="grid grid-cols-4 gap-2">
     <DatePicker />
@@ -66,4 +74,8 @@
     <MonthPicker />
     <MonthPickerRange />
   </div>
+
+  <SortableList list={sortableList} let:item let:index on:sort={(event) => (sortableList = event.detail)}>
+    <div class="rounded-md border border-gray-200 p-4">{index + 1}. {item.name}</div>
+  </SortableList>
 </div>

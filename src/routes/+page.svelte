@@ -1,23 +1,7 @@
 <script lang="ts">
-  import AdvancedTable from '$lib/components/custom/advanced-table/AdvancedTable.svelte';
-  import AudioPlayer from '$lib/components/custom/audio-player/audio-player.svelte';
-  import {
-    Button,
-    Card,
-    DatePicker,
-    Input,
-    Label,
-    DatePickerRange,
-    MonthPicker,
-    MonthPickerRange,
-    Popover,
-    SortableList,
-    CopyButton,
-    LightSwitch,
-    LoaderButton,
-    type getDataFunction,
-    audioPlayer
-  } from '$lib/index.js';
+  import { Button, Card, DatePicker, Input, Label, DatePickerRange, MonthPicker } from '$lib/index.js';
+  import { MonthPickerRange, Popover, SortableList, CopyButton, LightSwitch, LoaderButton } from '$lib/index.js';
+  import { AdvancedTable, AudioPlayer, type getDataFunction, audioPlayer } from '$lib/index.js';
   import Play from 'lucide-svelte/icons/play';
   import Pause from 'lucide-svelte/icons/pause';
   import { resetMode, setMode } from 'mode-watcher';
@@ -44,11 +28,7 @@
       audioPlayer.start('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'test-audio', 'Audio test');
       return;
     }
-    if ($audioPlayer.paused) {
-      audioPlayer.play();
-    } else {
-      audioPlayer.pause();
-    }
+    $audioPlayer.paused ? audioPlayer.play() : audioPlayer.pause();
   }
 </script>
 

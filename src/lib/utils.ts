@@ -3,8 +3,9 @@ import { twMerge } from 'tailwind-merge';
 import { cubicOut } from 'svelte/easing';
 import type { TransitionConfig } from 'svelte/transition';
 import type { DateRange } from 'bits-ui';
+import { today, parseDate, type DateValue } from '@internationalized/date';
 
-export { type DateRange };
+export { type DateRange, type DateValue, today, parseDate };
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

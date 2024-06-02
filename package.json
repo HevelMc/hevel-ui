@@ -6,8 +6,11 @@
   },
   "description": "Hevel UI is a collection of Svelte components for building web applications.",
   "license": "MIT",
-  "private": true,
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HevelMc/hevel-ui.git"
+  },
   "scripts": {
     "dev": "vite dev --port 5189",
     "build": "vite build && npm run package",

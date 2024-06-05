@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, Card, DatePicker, Input, Label, DatePickerRange, MonthPicker } from '$lib/index.js';
+  import { Button, Card, DatePicker, Input, Label, DatePickerRange, MonthPicker, createRender, ButtonActionTable } from '$lib/index.js';
   import { MonthPickerRange, Popover, SortableList, CopyButton, LightSwitch, LoaderButton } from '$lib/index.js';
   import { AdvancedTable, AudioPlayer, type getDataFunction, audioPlayer } from '$lib/index.js';
   import Play from 'lucide-svelte/icons/play';
@@ -121,7 +121,8 @@
     columns={[
       { id: 'a', accessor: 'a', cell: (row) => row.value, header: () => 'A', alignment: 'text-center' },
       { id: 'b', accessor: 'b', cell: (row) => row.value, header: () => 'B', alignment: 'text-center' },
-      { id: 'c', accessor: 'c', cell: (row) => row.value, header: () => 'C', alignment: 'text-center' }
+      { id: 'c', accessor: 'c', cell: (row) => row.value, header: () => 'C', alignment: 'text-center' },
+      { id: 'actions', accessor: 'actions', cell: (row) => createRender(ButtonActionTable, { content: 'Action', onClick: () => console.log('Action clicked') }), header: () => 'Actions', alignment: 'text-center' }
     ]}
     getData={getTableData}
   />

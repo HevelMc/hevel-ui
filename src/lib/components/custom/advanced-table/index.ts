@@ -6,6 +6,7 @@ import SelectedCountTable from './SelectedCountTable.svelte';
 import StatusBadge from './StatusBadge.svelte';
 import PaginationTable from './PaginationTable.svelte';
 import CellContainer from './CellContainer.svelte';
+import ButtonActionTable from './ButtonActionTable.svelte';
 
 export {
   CheckBoxTable,
@@ -15,6 +16,7 @@ export {
   StatusBadge,
   PaginationTable,
   CellContainer,
+  ButtonActionTable,
   createRender
 };
 

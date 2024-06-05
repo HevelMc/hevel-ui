@@ -122,7 +122,7 @@
       { id: 'a', accessor: 'a', cell: (row) => row.value, header: () => 'A', alignment: 'text-center' },
       { id: 'b', accessor: 'b', cell: (row) => row.value, header: () => 'B', alignment: 'text-center' },
       { id: 'c', accessor: 'c', cell: (row) => row.value, header: () => 'C', alignment: 'text-center' },
-      { id: 'actions', accessor: 'actions', cell: (row) => createRender(ButtonActionTable, { content: 'Action', onClick: () => console.log('Action clicked') }), header: () => 'Actions', alignment: 'text-center' }
+      { id: 'actions', accessor: 'actions', cell: (row) => createRender(ButtonActionTable, { disabled: true, content: 'Action', onClick: () => console.log('Action clicked') }), header: () => 'Actions', alignment: 'text-center' }
     ]}
     getData={getTableData}
   />

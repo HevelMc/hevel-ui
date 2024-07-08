@@ -31,6 +31,7 @@
   export let dropdownList: { value: string; label: string }[] = [];
   export let initialSortKeys: { id: string; order: 'asc' | 'desc' }[] = [];
   export let onDialogChange: (value: boolean) => void = () => {};
+  export let selectedRowsActions: { label: string; action: (data: any) => void }[] = [];
 
   let pageIndex: Writable<number> = writable(0);
   let pageSize: Writable<number> = writable(initialPageSize);
@@ -192,7 +193,7 @@
     <div class="mt-4 flex items-center justify-between px-2">
       <div class="w-auto">
         {#if selectable}
-          <SelectedCountTable {tableModel} />
+          <SelectedCountTable {tableModel} {selectedRowsActions} />
         {/if}
       </div>
       <div class="w-auto">

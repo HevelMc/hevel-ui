@@ -6,6 +6,7 @@
   import { Button, Popover, RangeCalendar } from '$lib/index.js';
 
   export let onValueChange: (value: DateRange | undefined) => void = () => {};
+  export let minValue: DateValue | undefined = undefined;
   export let maxValue: DateValue | undefined = undefined;
   export let placeholder: string = 'Select a period';
   export let formatDate: (date: Date) => string = (date) => date.toLocaleDateString();
@@ -40,6 +41,7 @@
       <RangeCalendar
         bind:value
         bind:startValue
+        bind:minValue
         bind:maxValue
         {onValueChange}
         placeholder={value?.start}

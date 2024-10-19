@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button, Card, DatePicker, Input, Label, DatePickerRange, MonthPicker, createRender } from '$lib/index.js';
+  import { Button, Card, DatePicker, Input, Label, DatePickerRange, MonthPicker, buttonVariants } from '$lib/index.js';
   import { MonthPickerRange, Popover, SortableList, CopyButton, LightSwitch, LoaderButton } from '$lib/index.js';
-  import { AdvancedTable, AudioPlayer, type getDataFunction, audioPlayer, ButtonActionTable } from '$lib/index.js';
+  import { AudioPlayer, audioPlayer } from '$lib/index.js';
   import Play from 'lucide-svelte/icons/play';
   import Pause from 'lucide-svelte/icons/pause';
   import { resetMode, setMode } from 'mode-watcher';
@@ -12,16 +12,16 @@
     { id: '3', name: 'Item C' }
   ];
 
-  let getTableData: getDataFunction = async ({ pageIndex, pageSize, sortBy, searchQuery }) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    return {
-      data: [
-        { a: 'a.1', b: 'b.1', c: 'c.1' },
-        { a: 'a.2', b: 'b.2', c: 'c.2' }
-      ],
-      total: 2
-    };
-  };
+  // let getTableData: getDataFunction = async ({ pageIndex, pageSize, sortBy, searchQuery }) => {
+  //   await new Promise((resolve) => setTimeout(resolve, 2000));
+  //   return {
+  //     data: [
+  //       { a: 'a.1', b: 'b.1', c: 'c.1' },
+  //       { a: 'a.2', b: 'b.2', c: 'c.2' }
+  //     ],
+  //     total: 2
+  //   };
+  // };
 
   function toggleAudio() {
     if ($audioPlayer?.track_id == null) {
@@ -46,10 +46,8 @@
     </Card.Footer>
   </Card.Root>
 
-  <Popover.Root portal={null}>
-    <Popover.Trigger asChild let:builder>
-      <Button builders={[builder]} variant="outline">Open</Button>
-    </Popover.Trigger>
+  <Popover.Root>
+    <Popover.Trigger class={buttonVariants({ variant: 'outline' })}>Open</Popover.Trigger>
     <Popover.Content class="w-80">
       <div class="grid gap-4">
         <div class="space-y-2">
@@ -79,18 +77,18 @@
   </Popover.Root>
 
   <div class="flex items-center justify-center gap-8">
-    <CopyButton value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
-    <LightSwitch {setMode} {resetMode} />
+    <CopyButton variant="outline" value={'Hello world!'} tooltipCopy="Copier hello world" tooltipCopied="Hello world copié" />
+    <LightSwitch variant="outline" {setMode} {resetMode} />
     <LoaderButton
       variant="outline"
-      onClick={async () => {
+      onclick={async () => {
         await new Promise((resolve) => setTimeout(resolve, 2000));
         console.log('2 seconds later...');
       }}
     >
       Test
     </LoaderButton>
-    <Button variant="outline" on:click={toggleAudio}>
+    <Button variant="outline" onclick={toggleAudio}>
       {#if $audioPlayer.paused}
         <Play class="h-4 w-4" />
       {:else}
@@ -104,17 +102,19 @@
   {/if}
 
   <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-    <DatePicker />
-    <DatePickerRange />
-    <MonthPicker />
+    <DatePicker locale={'fr-FR'} />
+    <DatePickerRange locale={'fr-FR'} />
+    <MonthPicker locale={'fr-FR'} />
     <MonthPickerRange />
   </div>
 
-  <SortableList list={sortableList} let:item let:index on:sort={(event) => (sortableList = event.detail)}>
-    <div class="rounded-md border border-border p-4">{index + 1}. {item.name}</div>
+  <SortableList list={sortableList} on:sort={(event) => (sortableList = event.detail)}>
+    {#snippet child({ item, index }: { item: any; index: number })}
+      <div class="rounded-md border border-border p-4">{index + 1}. {item.name}</div>
+    {/snippet}
   </SortableList>
 
-  <AdvancedTable
+  <!-- <AdvancedTable
     sortable
     pagination
     selectable
@@ -136,5 +136,5 @@
       }
     ]}
     getData={getTableData}
-  />
+  /> -->
 </div>

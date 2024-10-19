@@ -1,34 +1,44 @@
 <script lang="ts">
-  import { type DateValue } from '@internationalized/date';
+  import { DateFormatter, getLocalTimeZone } from '@internationalized/date';
   import { cn } from '$lib/utils.js';
-  import { Button } from '$lib/index.js';
-  import { Popover } from '$lib/index.js';
+  import { buttonVariants } from '$lib/components/ui/button/index.js';
+  import * as Popover from '$lib/components/ui/popover/index.js';
   import CalendarIcon from 'lucide-svelte/icons/calendar';
-  import { Calendar } from '$lib/index.js';
+  import { Calendar } from '$lib/components/ui/calendar/index.js';
+  import type { CalendarSingleRootProps, WithoutChildrenOrChild } from 'bits-ui';
 
-  export let onValueChange: (value: DateValue | undefined) => void = () => {};
-  export let value: DateValue | undefined = undefined;
-  export let maxValue: DateValue | undefined = undefined;
-  export let minValue: DateValue | undefined = undefined;
-  export let disabled: boolean = false;
-  export let placeholder: string = 'Select a date';
-  export let formatDate: (date: Date) => string = (date) => date.toLocaleDateString();
+  type Props = WithoutChildrenOrChild<Omit<CalendarSingleRootProps, 'type'>> & {
+    inputPlaceholder?: string;
+    inputClass?: string;
+    locale?: Intl.LocalesArgument;
+  };
+
+  let {
+    inputPlaceholder = 'Select a date',
+    inputClass = '',
+    locale,
+    value = $bindable(undefined),
+    ...restProps
+  }: Props = $props();
+
+  const df = new DateFormatter(locale ?? 'fr-FR', { dateStyle: 'long' });
 </script>
 
-<div class="grid gap-2">
-  <Popover.Root openFocus>
-    <Popover.Trigger asChild let:builder>
-      <Button
-        variant="outline"
-        class={cn('justify-start text-left font-normal', !value && 'text-muted-foreground')}
-        builders={[builder]}
-      >
-        <CalendarIcon class="mr-2 h-4 w-4" />
-        {value ? formatDate(value.toDate('UTC')) : placeholder}
-      </Button>
-    </Popover.Trigger>
-    <Popover.Content class="w-auto p-0">
-      <Calendar bind:value {onValueChange} bind:maxValue bind:minValue bind:disabled />
-    </Popover.Content>
-  </Popover.Root>
-</div>
+<Popover.Root>
+  <Popover.Trigger
+    class={cn(
+      buttonVariants({
+        variant: 'outline',
+        class: 'justify-start text-left font-normal'
+      }),
+      !value && 'text-muted-foreground',
+      inputClass
+    )}
+  >
+    <CalendarIcon class="mr-2 size-4" />
+    {value ? df.format(value.toDate(getLocalTimeZone())) : inputPlaceholder}
+  </Popover.Trigger>
+  <Popover.Content class="w-auto p-0">
+    <Calendar type="single" bind:value {...restProps as any} />
+  </Popover.Content>
+</Popover.Root>

@@ -1,10 +1,15 @@
 <script lang="ts">
   import { cn } from '$lib/utils.js';
   import LoaderCircle from 'lucide-svelte/icons/loader-circle';
+  import type { Snippet } from 'svelte';
 
-  export let loading: boolean = false;
-  export let className: string = '';
-  export { className as class };
+  interface Props {
+    loading: boolean;
+    class: string;
+    children: Snippet;
+  }
+
+  let { loading, class: className, children }: Props = $props();
 </script>
 
 {#if loading}
@@ -15,5 +20,5 @@
     </div>
   </div>
 {:else}
-  <slot />
+  {@render children()}
 {/if}

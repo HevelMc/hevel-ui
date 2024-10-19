@@ -13,18 +13,32 @@
     sortMonths,
     type Month
   } from '../month-picker/index.js';
-  import { Button, Popover } from '$lib/index.js';
+  import { Button, buttonVariants, Popover } from '$lib/index.js';
 
-  export let onValueChange: (value: Month[] | undefined) => void = () => {};
-  export let value: Month[] | undefined = undefined;
-  export let maxValue: Month | undefined = undefined;
-  export let minValue: Month | undefined = undefined;
-  export let disabled: boolean = false;
-  export let placeholder: string = 'Select a period';
-  export let locale: Intl.LocalesArgument | undefined = undefined;
+  interface Props {
+    onValueChange?: (value: Month[] | undefined) => void;
+    value?: Month[] | undefined;
+    maxValue?: Month | undefined;
+    minValue?: Month | undefined;
+    disabled?: boolean;
+    placeholder?: string;
+    locale?: Intl.LocalesArgument | undefined;
+    inputClass?: string;
+  }
 
-  let year = value?.[0].year ?? new Date().getFullYear();
-  let open = false;
+  let {
+    onValueChange = () => {},
+    value = $bindable(undefined),
+    maxValue = undefined,
+    minValue = undefined,
+    disabled = false,
+    placeholder = 'Select a period',
+    locale = undefined,
+    inputClass = ''
+  }: Props = $props();
+
+  let year = $state(value?.[0].year ?? new Date().getFullYear());
+  let open = $state(false);
 
   function changeValue(month: Month) {
     if (value?.length != 1) {
@@ -54,30 +68,33 @@
 </script>
 
 <div class="grid gap-2">
-  <Popover.Root openFocus bind:open>
-    <Popover.Trigger asChild let:builder>
-      <Button
-        variant="outline"
-        class={cn('justify-start text-left font-normal', !value && 'text-muted-foreground')}
-        builders={[builder]}
-      >
-        <CalendarIcon class="mr-2 h-4 w-4" />
-        {#if !value || value.length == 0}
-          {placeholder}
-        {:else if value.length > 1}
-          {getMonthYearName(value[0], locale)} - {getMonthYearName(value[1], locale)}
-        {:else}
-          {getMonthYearName(value[0], locale)}
-        {/if}
-      </Button>
+  <Popover.Root bind:open>
+    <Popover.Trigger
+      class={cn(
+        buttonVariants({
+          variant: 'outline',
+          class: 'justify-start text-left font-normal'
+        }),
+        !value && 'text-muted-foreground',
+        inputClass
+      )}
+    >
+      <CalendarIcon class="mr-2 h-4 w-4" />
+      {#if !value || value.length == 0}
+        {placeholder}
+      {:else if value.length > 1}
+        {getMonthYearName(value[0], locale)} - {getMonthYearName(value[1], locale)}
+      {:else}
+        {getMonthYearName(value[0], locale)}
+      {/if}
     </Popover.Trigger>
     <Popover.Content class="w-sm flex flex-col gap-2 p-2">
       <div class="flex items-center gap-2">
-        <Button variant="outline" on:click={() => (year -= 1)}>
+        <Button variant="outline" onclick={() => (year -= 1)}>
           <ChevronLeft class="h-4 w-4" />
         </Button>
         <span class="flex-1 text-center">{year}</span>
-        <Button variant="outline" on:click={() => (year += 1)}>
+        <Button variant="outline" onclick={() => (year += 1)}>
           <ChevronRight class="h-4 w-4" />
         </Button>
       </div>
@@ -91,7 +108,7 @@
                 getMonthCorner({ year, month })
               )}
               disabled={!isAllowed({ year, month }, minValue, maxValue) || disabled}
-              on:click={() => changeValue({ year, month })}
+              onclick={() => changeValue({ year, month })}
             >
               {getMonthName(month, locale)}
             </Button>

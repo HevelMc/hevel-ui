@@ -1,11 +1,16 @@
 <script lang="ts">
   import { flip } from 'svelte/animate';
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, type Snippet } from 'svelte';
 
-  export let list: any[];
-  export let disabled: boolean = false;
-  let isOver: string | boolean = false;
-  export let placeholder: string = 'No items found';
+  let isOver: string | boolean = $state(false);
+  interface Props {
+    list: any[];
+    disabled?: boolean;
+    placeholder?: string;
+    child?: Snippet<[{ item: any; index: number }]>;
+  }
+
+  let { list, disabled = false, child, placeholder = 'No items found' }: Props = $props();
 
   const dispatch = createEventDispatcher();
 
@@ -18,15 +23,14 @@
   }
 
   function onDragStart(e: DragEvent) {
-    // @ts-ignore
     if (disabled) return;
     const dragged = getDraggedParent(e.target);
     e.dataTransfer?.setData('source', dragged?.index.toString());
   }
 
   function onDragOver(e: DragEvent) {
-    // @ts-ignore
-    const id = e.target.dataset?.id;
+    e.preventDefault();
+    const id = (e.target as any)?.dataset?.id;
     const dragged = getDraggedParent(e.target);
     isOver = dragged?.id ?? false;
   }
@@ -37,6 +41,7 @@
   }
 
   function onDrop(e: DragEvent) {
+    e.preventDefault();
     isOver = false;
     const dragged = getDraggedParent(e.target);
     reorder({
@@ -62,19 +67,23 @@
         data-index={index}
         data-id={item.id}
         draggable={!disabled}
-        on:dragstart={onDragStart}
-        on:dragover|preventDefault={onDragOver}
-        on:dragleave={onDragLeave}
-        on:drop|preventDefault={onDrop}
+        ondragstart={onDragStart}
+        ondragover={onDragOver}
+        ondragleave={onDragLeave}
+        ondrop={onDrop}
         animate:flip={{ duration: 300 }}
       >
-        <slot {item} {index} />
+        {#if child}
+          {@render child({ item, index })}
+        {:else}
+          <p class="p-4 text-center">{item.name}</p>
+        {/if}
       </li>
     {/each}
   </ul>
 {:else}
   <p class="my-12 px-8 text-center text-lg font-bold">
-    <slot name="no-items-title">{placeholder}</slot>
+    {placeholder}
   </p>
 {/if}
 

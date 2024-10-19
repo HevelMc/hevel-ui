@@ -16,5 +16,5 @@ import LoaderButton from './loader-button/loader-button.svelte';
 import Loader from './loader/loader.svelte';
 export { LoaderButton, Loader };
 
-export * from './advanced-table/index.js';
+// export * from './advanced-table/index.js';
 export * from './audio-player/index.js';

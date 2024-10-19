@@ -1,53 +1,51 @@
 <script lang="ts">
-  import type { DateRange } from 'bits-ui';
-  import { type DateValue } from '@internationalized/date';
-  import { cn } from '$lib/utils.js';
+  import { DateFormatter } from '@internationalized/date';
   import CalendarIcon from 'lucide-svelte/icons/calendar';
-  import { Button, Popover, RangeCalendar } from '$lib/index.js';
+  import type { CalendarMultipleRootProps, WithoutChildrenOrChild } from 'bits-ui';
+  import { buttonVariants, Popover, RangeCalendar } from '$lib/components/ui/index.js';
+  import { cn, type DateRange } from '$lib/utils.js';
 
-  export let onValueChange: (value: DateRange | undefined) => void = () => {};
-  export let minValue: DateValue | undefined = undefined;
-  export let maxValue: DateValue | undefined = undefined;
-  export let placeholder: string = 'Select a period';
-  export let formatDate: (date: Date) => string = (date) => date.toLocaleDateString();
+  type Props = WithoutChildrenOrChild<Omit<Omit<CalendarMultipleRootProps, 'value'>, 'type'>> & {
+    inputPlaceholder?: string;
+    inputClass?: string;
+    locale?: Intl.LocalesArgument;
+    value?: DateRange;
+  };
 
-  export let value: DateRange | undefined = undefined;
-  let startValue: DateValue | undefined = undefined;
+  let {
+    inputPlaceholder = 'Select a period',
+    inputClass = '',
+    locale,
+    value = $bindable(undefined),
+    ...restProps
+  }: Props = $props();
+
+  const df = new DateFormatter(locale ?? 'fr-FR', { dateStyle: 'long' });
 </script>
 
-<div class="grid gap-2">
-  <Popover.Root openFocus>
-    <Popover.Trigger asChild let:builder>
-      <Button
-        variant="outline"
-        class={cn('justify-start text-left font-normal', !value && 'text-muted-foreground')}
-        builders={[builder]}
-      >
-        <CalendarIcon class="mr-2 h-4 w-4" />
-        {#if value && value.start}
-          {#if value.end}
-            {formatDate(value.start.toDate('UTC'))} - {formatDate(value.end.toDate('UTC'))}
-          {:else}
-            {formatDate(value.start.toDate('UTC'))}
-          {/if}
-        {:else if startValue}
-          {formatDate(startValue.toDate('UTC'))}
-        {:else}
-          {placeholder}
-        {/if}
-      </Button>
-    </Popover.Trigger>
-    <Popover.Content class="w-auto p-0" align="start">
-      <RangeCalendar
-        bind:value
-        bind:startValue
-        bind:minValue
-        bind:maxValue
-        {onValueChange}
-        placeholder={value?.start}
-        initialFocus
-        numberOfMonths={2}
-      />
-    </Popover.Content>
-  </Popover.Root>
-</div>
+<Popover.Root>
+  <Popover.Trigger
+    class={cn(
+      buttonVariants({
+        variant: 'outline',
+        class: 'justify-start text-left font-normal'
+      }),
+      !value && 'text-muted-foreground',
+      inputClass
+    )}
+  >
+    <CalendarIcon class="mr-2 size-4" />
+    {#if value && value.start}
+      {#if value.end}
+        {df.format(value.start.toDate('UTC'))} - {df.format(value.end.toDate('UTC'))}
+      {:else}
+        {df.format(value.start.toDate('UTC'))}
+      {/if}
+    {:else}
+      {inputPlaceholder}
+    {/if}
+  </Popover.Trigger>
+  <Popover.Content class="w-auto p-0">
+    <RangeCalendar type="multiple" bind:value numberOfMonths={2} {...restProps as any} />
+  </Popover.Content>
+</Popover.Root>

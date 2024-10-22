@@ -35,18 +35,19 @@
     "!dist/**/*.spec.*"
   ],
   "peerDependencies": {
-    "svelte": "5.0.0-next.264"
+    "svelte": "5.0.0"
   },
   "devDependencies": {
     "@internationalized/date": "^3.5.6",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "@tailwindcss/typography": "^0.5.14",
+    "@tanstack/table-core": "^8.20.5",
     "@types/eslint": "^9.6.1",
     "autoprefixer": "^10.4.20",
-    "bits-ui": "1.0.0-next.15",
+    "bits-ui": "1.0.0-next.22",
     "clsx": "^2.1.1",
     "d3-scale": "^4.0.2",
     "embla-carousel-autoplay": "8.1.6",
@@ -59,13 +60,13 @@
     "lucide-svelte": "^0.453.0",
     "mode-watcher": "^0.4.1",
     "nanoid": "^5.0.7",
-    "paneforge": "1.0.0-next.0",
+    "paneforge": "1.0.0-next.1",
     "prettier": "^3.1.1",
     "prettier-plugin-svelte": "^3.1.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "publint": "^0.2.0",
     "runed": "^0.15.2",
-    "svelte": "^5.0.0-next.1",
+    "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
     "svelte-local-storage-store": "^0.6.4",
     "svelte-persisted-store": "^0.11.0",

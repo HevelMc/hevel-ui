@@ -5,11 +5,11 @@
 
   interface Props {
     loading: boolean;
-    class: string;
+    class?: string;
     children: Snippet;
   }
 
-  let { loading, class: className, children }: Props = $props();
+  let { loading, class: className = '', children }: Props = $props();
 </script>
 
 {#if loading}

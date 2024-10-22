@@ -12,17 +12,6 @@
     { id: '3', name: 'Item C' }
   ];
 
-  // let getTableData: getDataFunction = async ({ pageIndex, pageSize, sortBy, searchQuery }) => {
-  //   await new Promise((resolve) => setTimeout(resolve, 2000));
-  //   return {
-  //     data: [
-  //       { a: 'a.1', b: 'b.1', c: 'c.1' },
-  //       { a: 'a.2', b: 'b.2', c: 'c.2' }
-  //     ],
-  //     total: 2
-  //   };
-  // };
-
   function toggleAudio() {
     if ($audioPlayer?.track_id == null) {
       audioPlayer.start('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', 'test-audio', 'Audio test');
@@ -95,6 +84,7 @@
         <Pause class="h-4 w-4" />
       {/if}
     </Button>
+    <Button href="/table" variant="outline">Table Page</Button>
   </div>
 
   {#if $audioPlayer?.track_id != null}
@@ -113,28 +103,4 @@
       <div class="rounded-md border border-border p-4">{index + 1}. {item.name}</div>
     {/snippet}
   </SortableList>
-
-  <!-- <AdvancedTable
-    sortable
-    pagination
-    selectable
-    selectedRowsActions={[
-      { label: 'Action 1', action: (data) => console.log('Action 1', data) },
-      { label: 'Action 2', action: (data) => console.log('Action 2', data) }
-    ]}
-    columns={[
-      { id: 'a', accessor: 'a', cell: (row) => row.value, header: () => 'A', alignment: 'text-center' },
-      { id: 'b', accessor: 'b', cell: (row) => row.value, header: () => 'B', alignment: 'text-center' },
-      { id: 'c', accessor: 'c', cell: (row) => row.value, header: () => 'C', alignment: 'text-center' },
-      {
-        id: 'actions',
-        accessor: 'actions',
-        cell: (row) =>
-          createRender(ButtonActionTable, { disabled: true, content: 'Action', onClick: () => console.log('Action clicked') }),
-        header: () => 'Actions',
-        alignment: 'text-center'
-      }
-    ]}
-    getData={getTableData}
-  /> -->
 </div>

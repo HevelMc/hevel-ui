@@ -56,7 +56,7 @@ npm publish
 - [shadcn/ui](https://ui.shadcn.com/) - the original shadcn library for React
 - [shadcn-svelte](https://www.shadcn-svelte.com/) - shadcn/ui ported to Svelte by [Huntabyte](https://github.com/huntabyte)
 - [Svelte](https://svelte.dev/) - the framework used to build this library
-- [svelte-headless-table](https://svelte-headless-table.bryanmylee.com/) - the library used to build the custom table component
+- [TanStack Table](https://tanstack.com/table/latest) - the library used to build the custom table component
 - [lucide-svelte](https://lucide.dev/icons/) - the icons used in the custom components
 
 ## Disclaimer

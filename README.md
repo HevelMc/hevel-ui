@@ -21,6 +21,20 @@ npm update hevel-ui
 There is no default theme for now, so you must add a theme to your `app.css`.\
 You can find the theme generator of shadcn-svelte [here](https://www.shadcn-svelte.com/themes)
 
+#### Tailwind Config
+
+Update the following line in `tailwind.config.js` (or similar) to
+add content from the library:
+
+```diff
+const config = {
+  ...
+-  content: ['./src/**/*.{html,js,svelte,ts}'],
++  content: ['./src/**/*.{html,js,svelte,ts}', 'node_modules/hevel-ui/**/*.{html,js,svelte,ts}'],
+  ...
+};
+```
+
 ## Usage/Examples
 
 All shadcn and custom components are exported from the root, so they can be imported like this :

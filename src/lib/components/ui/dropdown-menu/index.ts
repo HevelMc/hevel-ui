@@ -9,11 +9,11 @@ import SubContent from "./dropdown-menu-sub-content.svelte";
 import SubTrigger from "./dropdown-menu-sub-trigger.svelte";
 import CheckboxItem from "./dropdown-menu-checkbox-item.svelte";
 
-const Sub = DropdownMenuPrimitive.Sub;
-const Root = DropdownMenuPrimitive.Root;
-const Trigger = DropdownMenuPrimitive.Trigger;
-const Group = DropdownMenuPrimitive.Group;
-const RadioGroup = DropdownMenuPrimitive.RadioGroup;
+const Sub: typeof DropdownMenuPrimitive.Sub = DropdownMenuPrimitive.Sub;
+const Root: typeof DropdownMenuPrimitive.Root = DropdownMenuPrimitive.Root;
+const Trigger: typeof DropdownMenuPrimitive.Trigger = DropdownMenuPrimitive.Trigger;
+const Group: typeof DropdownMenuPrimitive.Group = DropdownMenuPrimitive.Group;
+const RadioGroup: typeof DropdownMenuPrimitive.RadioGroup = DropdownMenuPrimitive.RadioGroup;
 
 export {
 	Sub,

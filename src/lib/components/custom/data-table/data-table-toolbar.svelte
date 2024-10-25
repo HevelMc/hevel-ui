@@ -1,5 +1,5 @@
 <script lang="ts" generics="TData">
-  import Cross2 from 'svelte-radix/Cross2.svelte';
+  import XIcon from 'lucide-svelte/icons/x';
   import type { Table } from '@tanstack/table-core';
   import { DataTableFacetedFilter, DataTableViewOptions } from './index.js';
   import { Button, Input } from '$lib/index.js';
@@ -33,7 +33,7 @@
     {#if isFiltered}
       <Button variant="ghost" onclick={() => table.resetColumnFilters()} class="h-8 px-2 lg:px-3">
         Reset
-        <Cross2 class="ml-2 size-4" />
+        <XIcon class="ml-2 size-4" />
       </Button>
     {/if}
   </div>

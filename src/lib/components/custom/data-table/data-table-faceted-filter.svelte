@@ -1,6 +1,6 @@
 <script lang="ts" generics="TData, TValue">
-  import PlusCircled from 'svelte-radix/PlusCircled.svelte';
-  import Check from 'svelte-radix/Check.svelte';
+  import CirclePlus from 'lucide-svelte/icons/circle-plus';
+  import Check from 'lucide-svelte/icons/check';
   import type { Column } from '@tanstack/table-core';
   import { SvelteSet } from 'svelte/reactivity';
   import { cn } from '$lib/utils.js';
@@ -27,7 +27,7 @@
   <Popover.Trigger>
     {#snippet child({ props })}
       <Button {...props} variant="outline" size="sm" class="h-8 border-dashed">
-        <PlusCircled class="mr-2 h-4 w-4" />
+        <CirclePlus class="mr-2 h-4 w-4" />
         {title}
         {#if selectedValues.size > 0}
           <Separator orientation="vertical" class="mx-2 h-4" />

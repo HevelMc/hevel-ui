@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { Drawer as DrawerPrimitive } from 'vaul-svelte';
+  import { Drawer } from 'vaul-svelte';
   import DrawerOverlay from './drawer-overlay.svelte';
   import { cn } from '$lib/utils.js';
   import { Button } from '../button/index.js';
   import { XIcon } from 'lucide-svelte';
+
+  const DrawerPrimitive: typeof Drawer = Drawer;
 
   let {
     ref = $bindable(null),
@@ -11,7 +13,7 @@
     children,
     open = $bindable(false),
     ...restProps
-  }: DrawerPrimitive.ContentProps & { open?: boolean } = $props();
+  }: any = $props();
 </script>
 
 <DrawerPrimitive.Portal>

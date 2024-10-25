@@ -1,8 +1,8 @@
 <script lang="ts" generics="TData">
-  import ChevronRight from 'svelte-radix/ChevronRight.svelte';
-  import ChevronLeft from 'svelte-radix/ChevronLeft.svelte';
-  import DoubleArrowRight from 'svelte-radix/DoubleArrowRight.svelte';
-  import DoubleArrowLeft from 'svelte-radix/DoubleArrowLeft.svelte';
+  import ChevronRight from 'lucide-svelte/icons/chevron-right';
+  import ChevronLeft from 'lucide-svelte/icons/chevron-left';
+  import DoubleArrowRight from 'lucide-svelte/icons/chevrons-right';
+  import DoubleArrowLeft from 'lucide-svelte/icons/chevrons-left';
   import type { Table, Row } from '@tanstack/table-core';
   import { Select, Button, DropdownMenu } from '$lib/index.js';
   import { MoreVerticalIcon } from 'lucide-svelte';

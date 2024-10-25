@@ -5,11 +5,13 @@
     "checkJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "noUncheckedIndexedAccess": true,
     "strict": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext"
+    "module": "ES2022",
+    "moduleResolution": "Bundler"
   }
 }

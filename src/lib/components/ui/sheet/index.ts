@@ -8,10 +8,10 @@ import Footer from "./sheet-footer.svelte";
 import Title from "./sheet-title.svelte";
 import Description from "./sheet-description.svelte";
 
-const Root = SheetPrimitive.Root;
-const Close = SheetPrimitive.Close;
-const Trigger = SheetPrimitive.Trigger;
-const Portal = SheetPrimitive.Portal;
+const Root: typeof SheetPrimitive.Root = SheetPrimitive.Root;
+const Close: typeof SheetPrimitive.Close = SheetPrimitive.Close;
+const Trigger: typeof SheetPrimitive.Trigger = SheetPrimitive.Trigger;
+const Portal: typeof SheetPrimitive.Portal = SheetPrimitive.Portal;
 
 export {
 	Root,

@@ -16,5 +16,8 @@ import LoaderButton from './loader-button/loader-button.svelte';
 import Loader from './loader/loader.svelte';
 export { LoaderButton, Loader };
 
+import ComboBox from './combo-box/combo-box.svelte';
+export { ComboBox };
+
 export * from './data-table/index.js';
 export * from './audio-player/index.js';

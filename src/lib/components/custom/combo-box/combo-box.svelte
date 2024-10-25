@@ -14,6 +14,8 @@
     searchPlaceholder?: string;
     noResultsPlaceholder?: string;
     popupClasses?: string;
+    disabled?: boolean;
+    onselect?: (value: string) => void;
   }
 
   let {
@@ -22,7 +24,9 @@
     selectPlaceholder = 'Select an item...',
     searchPlaceholder = 'Search...',
     noResultsPlaceholder = 'No results found.',
-    popupClasses = ''
+    popupClasses = '',
+    disabled = false,
+    onselect
   }: Props = $props();
 
   let open = $state(false);
@@ -42,7 +46,7 @@
 <Popover.Root bind:open>
   <Popover.Trigger bind:ref={triggerRef}>
     {#snippet child({ props })}
-      <Button variant="outline" class="justify-between" {...props} role="combobox" aria-expanded={open}>
+      <Button variant="outline" class="justify-between" {...props} role="combobox" aria-expanded={open} {disabled}>
         {items.find((f) => f.value === value)?.label || selectPlaceholder}
         <ChevronsUpDown class="ml-2 size-4 shrink-0 opacity-50" />
       </Button>
@@ -56,10 +60,11 @@
         <Command.Group>
           {#each items as item (item.value)}
             <Command.Item
-              value={item.value}
+              value={item.label}
               onSelect={() => {
                 value = item.value;
                 closeAndFocusTrigger();
+                onselect?.(item.value);
               }}
             >
               <Check class={cn('mr-2 size-4', value !== item.value && 'text-transparent')} />

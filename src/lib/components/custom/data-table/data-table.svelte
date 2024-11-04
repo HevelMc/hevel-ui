@@ -130,7 +130,7 @@
 
 <div class="h-full w-full space-y-4">
   <DataTableToolbar {searchPlaceholder} bind:searchQuery {table} {filters} />
-  <div class="rounded-md border">
+  <div class="rounded-md border bg-background">
     <Table.Root>
       <Table.Header>
         {#each table.getHeaderGroups() as headerGroup (headerGroup.id)}

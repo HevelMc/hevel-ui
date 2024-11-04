@@ -24,13 +24,14 @@ You can find the theme generator of shadcn-svelte [here](https://www.shadcn-svel
 #### Tailwind Config
 
 Update the following line in `tailwind.config.js` (or similar) to
-add content from the library:
+add content from the library and the `tailwindcss-animate` plugin.
 
 ```diff
 const config = {
   ...
 -  content: ['./src/**/*.{html,js,svelte,ts}'],
 +  content: ['./src/**/*.{html,js,svelte,ts}', 'node_modules/hevel-ui/**/*.{html,js,svelte,ts}'],
++  plugins: [require('tailwindcss-animate')],
   ...
 };
 ```

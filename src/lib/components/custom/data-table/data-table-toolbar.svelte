@@ -26,7 +26,7 @@
     {#each Object.entries(filters) as [key, values]}
       {@const column = table.getColumn(key)}
       {#if column}
-        <DataTableFacetedFilter {column} title={key} options={values} />
+        <DataTableFacetedFilter {column} title={(column.columnDef.meta as any)?.name ?? column.id} options={values} />
       {/if}
     {/each}
 

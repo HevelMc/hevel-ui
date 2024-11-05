@@ -10,10 +10,8 @@
 
   export const columns: ColumnDef<any>[] = [
     {
+      meta: { name: 'Task' },
       accessorKey: 'id',
-      header: ({ column }) => {
-        return renderComponent(DataTableColumnHeader, { column, title: 'Task' });
-      },
       cell: ({ row }) => {
         return renderSnippet(taskSnippet as Snippet, { name: row.getValue('id') as string });
       },
@@ -21,26 +19,32 @@
       enableHiding: false
     },
     {
+      meta: { name: 'Title' },
       accessorKey: 'title',
-      header: ({ column }) => renderComponent(DataTableColumnHeader, { column, title: 'Title' }),
       cell: ({ row }) => {
         return renderSnippet(titleSnippet as Snippet, { labelValue: row.original.label, title: row.original.title });
       }
     },
     {
+      meta: { name: 'Status' },
       accessorKey: 'status',
-      header: ({ column }) => renderComponent(DataTableColumnHeader, { column, title: 'Status' }),
       cell: ({ row }) => {
         return renderSnippet(statusSnippet as Snippet, { value: row.original.status });
       }
     },
     {
+      meta: { name: 'Priority' },
       accessorKey: 'priority',
-      header: ({ column }) => {
-        return renderComponent(DataTableColumnHeader, { title: 'Priority', column });
-      },
       cell: ({ row }) => {
         return renderSnippet(prioritySnippet as Snippet, { value: row.original.priority });
+      }
+    },
+    {
+      meta: { name: 'Actions ' },
+      accessorKey: 'actions',
+      header: '',
+      cell: ({ row }) => {
+        return 'Actions';
       }
     }
   ];

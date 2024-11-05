@@ -6,7 +6,7 @@
   import DataTableToolbar from './data-table-toolbar.svelte';
   import DataTablePagination from './data-table-pagination.svelte';
   import { createSvelteTable, type getDataFunction } from './data-table.svelte.js';
-  import { Table } from '$lib/index.js';
+  import { DataTableColumnHeader, renderComponent, Table } from '$lib/index.js';
   import FlexRender from './flex-render.svelte';
   import { LoaderCircle, type Icon } from 'lucide-svelte';
   import { selectColumn } from './columns.js';
@@ -47,7 +47,19 @@
   let data: { data: TData[]; total: number } | undefined = $state(undefined);
   let queryState = $state('');
 
-  let columns = [...(selectedRowsActions !== undefined ? [selectColumn as ColumnDef<TData>] : []), ...userColumns];
+  let columns = [
+    ...(selectedRowsActions !== undefined ? [selectColumn as ColumnDef<TData>] : []),
+    ...userColumns.map((col) => {
+      if (col.header === undefined)
+        col.header = ({ column }) => {
+          return renderComponent(DataTableColumnHeader, {
+            title: (col.meta as any)?.name ?? column.id,
+            column
+          });
+        };
+      return col;
+    })
+  ];
 
   export const fetchData = () => (queryState = '');
 

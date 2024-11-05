@@ -26,9 +26,8 @@
           controlledChecked
           checked={column.getIsVisible()}
           onCheckedChange={(v) => column.toggleVisibility(!!v)}
-          class="capitalize"
         >
-          {column.id}
+          {(column.columnDef.meta as any)?.name ?? column.id}
         </DropdownMenu.CheckboxItem>
       {/each}
     </DropdownMenu.Group>

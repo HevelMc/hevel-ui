@@ -15,6 +15,8 @@
     noResultsPlaceholder?: string;
     popupClasses?: string;
     disabled?: boolean;
+    shouldFilter?: boolean;
+    oninput?: (value: string) => void;
     onselect?: (value: string) => void;
   }
 
@@ -26,6 +28,8 @@
     noResultsPlaceholder = 'No results found.',
     popupClasses = '',
     disabled = false,
+    shouldFilter = true,
+    oninput,
     onselect
   }: Props = $props();
 
@@ -47,14 +51,14 @@
   <Popover.Trigger bind:ref={triggerRef}>
     {#snippet child({ props })}
       <Button variant="outline" class="justify-between" {...props} role="combobox" aria-expanded={open} {disabled}>
-        {items.find((f) => f.value === value)?.label || selectPlaceholder}
+        <span>{items.find((f) => f.value === value)?.label || selectPlaceholder}</span>
         <ChevronsUpDown class="ml-2 size-4 shrink-0 opacity-50" />
       </Button>
     {/snippet}
   </Popover.Trigger>
   <Popover.Content class={cn('p-0', popupClasses)}>
-    <Command.Root>
-      <Command.Input placeholder={searchPlaceholder} />
+    <Command.Root {shouldFilter}>
+      <Command.Input placeholder={searchPlaceholder} oninput={(e) => oninput?.((e?.target as any)?.value)} />
       <Command.List>
         <Command.Empty>{noResultsPlaceholder}</Command.Empty>
         <Command.Group>

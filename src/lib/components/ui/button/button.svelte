@@ -20,6 +20,7 @@
 				sm: "h-9 rounded-md px-3",
 				lg: "h-11 rounded-md px-8",
 				icon: "size-10",
+        link: "p-0",
 			},
 		},
 		defaultVariants: {

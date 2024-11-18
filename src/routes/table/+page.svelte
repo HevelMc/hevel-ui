@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Badge, DataTable, DataTableColumnHeader, renderComponent, renderSnippet } from '$lib/index.js';
+  import { Badge, DataTable, renderComponent, renderSnippet } from '$lib/index.js';
+  import { GenericCell, GenericActions } from '$lib/index.js';
   import type { ColumnDef } from '@tanstack/table-core';
   import { ArrowDown, ArrowRight, ArrowUp, CircleCheck, Circle, XCircle, CircleHelp, Clock } from 'lucide-svelte';
   import { data as demoData } from './tasks.js';
@@ -13,7 +14,7 @@
       meta: { name: 'Task' },
       accessorKey: 'id',
       cell: ({ row }) => {
-        return renderSnippet(taskSnippet as Snippet, { name: row.getValue('id') as string });
+        return renderComponent(GenericCell, { value: row.getValue('id') as string, classes: 'w-[80px]' });
       },
       enableSorting: false,
       enableHiding: false
@@ -29,14 +30,14 @@
       meta: { name: 'Status' },
       accessorKey: 'status',
       cell: ({ row }) => {
-        return renderSnippet(statusSnippet as Snippet, { value: row.original.status });
+        return renderComponent(GenericCell, { value: row.original.status, options: statuses });
       }
     },
     {
       meta: { name: 'Priority' },
       accessorKey: 'priority',
       cell: ({ row }) => {
-        return renderSnippet(prioritySnippet as Snippet, { value: row.original.priority });
+        return renderComponent(GenericCell, { value: row.original.priority, options: priorities });
       }
     },
     {
@@ -44,7 +45,20 @@
       accessorKey: 'actions',
       header: '',
       cell: ({ row }) => {
-        return 'Actions';
+        return renderComponent(GenericActions, {
+          row,
+          actions: [
+            {
+              label: 'Delete',
+              icon: XCircle,
+              class: 'text-red-500 data-[highlighted]:text-red-400',
+              handler: (row) => {
+                data = data.filter((r) => r.id !== row.original.id);
+                table.fetchData();
+              }
+            }
+          ]
+        });
       }
     }
   ];
@@ -75,10 +89,6 @@
   };
 </script>
 
-{#snippet taskSnippet({ name }: { name: string })}
-  <div class="w-[80px]">{name}</div>
-{/snippet}
-
 {#snippet titleSnippet({ labelValue, title }: { labelValue: string; title?: string })}
   <div class="flex space-x-2">
     {#if labelValue}
@@ -88,24 +98,6 @@
     <span class="max-w-[500px] truncate font-medium">
       {title}
     </span>
-  </div>
-{/snippet}
-
-{#snippet statusSnippet({ value }: { value: string })}
-  {@const Icon = statuses.find((s) => s.value === value)?.icon}
-  {@const status = statuses.find((s) => s.value === value)?.label}
-  <div class="flex w-[100px] items-center">
-    <Icon class="mr-2 size-4 text-muted-foreground" />
-    <span>{status}</span>
-  </div>
-{/snippet}
-
-{#snippet prioritySnippet({ value }: { value: string })}
-  {@const Icon = priorities.find((p) => p.value === value)?.icon}
-  {@const priority = priorities.find((p) => p.value === value)?.label}
-  <div class="flex w-[100px] items-center">
-    <Icon class="mr-2 size-4 text-muted-foreground" />
-    <span>{priority}</span>
   </div>
 {/snippet}
 

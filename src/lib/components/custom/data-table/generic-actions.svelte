@@ -1,0 +1,34 @@
+<script lang="ts">
+  import { Button, DropdownMenu, cn } from '$lib/index';
+  import type { Row } from '@tanstack/table-core';
+  import { Ellipsis } from 'lucide-svelte';
+
+  interface Props {
+    actions: { label: string; icon?: any; class?: string; handler: (row: Row<any>) => void }[];
+    row: Row<any>;
+  }
+
+  let { row, actions }: Props = $props();
+</script>
+
+<div class="flex justify-end">
+  <DropdownMenu.Root>
+    <DropdownMenu.Trigger>
+      {#snippet child({ props })}
+        <Button {...props} variant="ghost" class="flex h-8 w-8 p-0 data-[state=open]:bg-muted">
+          <Ellipsis class="size-4" />
+        </Button>
+      {/snippet}
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Content class="w-[160px]" align="end">
+      {#each actions as action}
+        <DropdownMenu.Item class={cn('gap-2', action.class)} onclick={() => action.handler(row)}>
+          {#if action.icon}
+            <action.icon class="h-4 w-4" />
+          {/if}
+          <span>{action.label}</span>
+        </DropdownMenu.Item>
+      {/each}
+    </DropdownMenu.Content>
+  </DropdownMenu.Root>
+</div>

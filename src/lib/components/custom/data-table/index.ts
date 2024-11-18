@@ -8,3 +8,8 @@ export { default as DataTable } from './data-table.svelte';
 export { default as FlexRender } from './flex-render.svelte';
 export { renderComponent, renderSnippet } from './render-helpers.js';
 export { createSvelteTable } from './data-table.svelte.js';
+
+import GenericCell from './generic-cell.svelte';
+import GenericActions from './generic-actions.svelte';
+
+export { GenericCell, GenericActions };

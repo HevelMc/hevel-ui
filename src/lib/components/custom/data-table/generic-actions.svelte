@@ -6,9 +6,10 @@
   interface Props {
     actions: { label: string; icon?: any; class?: string; handler: (row: Row<any>) => void }[];
     row: Row<any>;
+    class?: string;
   }
 
-  let { row, actions }: Props = $props();
+  let { row, actions, class: className }: Props = $props();
 </script>
 
 <div class="flex justify-end">
@@ -20,7 +21,7 @@
         </Button>
       {/snippet}
     </DropdownMenu.Trigger>
-    <DropdownMenu.Content class="w-[160px]" align="end">
+    <DropdownMenu.Content class={cn('w-[240px]', className)} align="end">
       {#each actions as action}
         <DropdownMenu.Item class={cn('gap-2', action.class)} onclick={() => action.handler(row)}>
           {#if action.icon}

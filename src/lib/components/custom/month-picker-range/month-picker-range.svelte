@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
   import CalendarIcon from 'lucide-svelte/icons/calendar';
   import ChevronLeft from 'lucide-svelte/icons/chevron-left';
   import ChevronRight from 'lucide-svelte/icons/chevron-right';
@@ -13,7 +13,7 @@
     sortMonths,
     type Month
   } from '../month-picker/index.js';
-  import { Button, buttonVariants, Popover } from '$lib/index.js';
+  import { Button, buttonVariants, Popover } from '#lib/index.js';
 
   interface Props {
     onValueChange?: (value: Month[] | undefined) => void;

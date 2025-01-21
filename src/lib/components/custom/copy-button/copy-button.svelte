@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { ButtonProps } from '$lib/components/ui/button/index.js';
-  import Button from '$lib/components/ui/button/button.svelte';
-  import { Tooltip } from '$lib/index.js';
+  import type { ButtonProps } from '#lib/components/ui/button/index.js';
+  import Button from '#lib/components/ui/button/button.svelte';
+  import { Tooltip } from '#lib/index.js';
   import Copy from 'lucide-svelte/icons/copy';
   import Check from 'lucide-svelte/icons/check';
 

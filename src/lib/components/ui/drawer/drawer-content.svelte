@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Drawer } from 'vaul-svelte';
   import DrawerOverlay from './drawer-overlay.svelte';
-  import { cn } from '$lib/utils.js';
+  import { cn } from '#lib/utils.js';
   import { Button } from '../button/index.js';
   import { XIcon } from 'lucide-svelte';
 

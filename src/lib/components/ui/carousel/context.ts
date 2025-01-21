@@ -1,7 +1,7 @@
 import type { EmblaCarouselSvelteType } from 'embla-carousel-svelte';
 import type emblaCarouselSvelte from 'embla-carousel-svelte';
 import { getContext, hasContext, setContext } from 'svelte';
-import type { PrimitiveDivAttributes } from '$lib/utils.js';
+import type { PrimitiveDivAttributes } from '#lib/utils.js';
 
 export type CarouselAPI =
   NonNullable<NonNullable<EmblaCarouselSvelteType['$$_attributes']>['on:emblaInit']> extends (

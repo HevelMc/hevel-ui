@@ -27,7 +27,7 @@ export { Progress } from './progress/index.js';
 export * as RadioGroup from './radio-group/index.js';
 export { RangeCalendar } from './range-calendar/index.js';
 export * as Resizable from './resizable/index.js';
-export * as ScrollArea from './scroll-area/index.js';
+export { ScrollArea } from './scroll-area/index.js';
 export * as Select from './select/index.js';
 export { Separator } from './separator/index.js';
 export * as Sheet from './sheet/index.js';

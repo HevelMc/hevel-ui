@@ -11,10 +11,10 @@ import SubContent from "./menubar-sub-content.svelte";
 import SubTrigger from "./menubar-sub-trigger.svelte";
 import Trigger from "./menubar-trigger.svelte";
 
-const Menu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu;
-const Group: typeof MenubarPrimitive.Group = MenubarPrimitive.Group;
-const Sub: typeof MenubarPrimitive.Sub = MenubarPrimitive.Sub;
-const RadioGroup: typeof MenubarPrimitive.RadioGroup = MenubarPrimitive.RadioGroup;
+const Menu = MenubarPrimitive.Menu;
+const Group = MenubarPrimitive.Group;
+const Sub = MenubarPrimitive.Sub;
+const RadioGroup = MenubarPrimitive.RadioGroup;
 
 export {
 	Root,

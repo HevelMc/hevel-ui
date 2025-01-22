@@ -8,9 +8,9 @@ import Overlay from "./alert-dialog-overlay.svelte";
 import Content from "./alert-dialog-content.svelte";
 import Description from "./alert-dialog-description.svelte";
 
-const Root: typeof AlertDialogPrimitive.Root = AlertDialogPrimitive.Root;
-const Trigger: typeof AlertDialogPrimitive.Trigger = AlertDialogPrimitive.Trigger;
-const Portal: typeof AlertDialogPrimitive.Portal = AlertDialogPrimitive.Portal;
+const Root = AlertDialogPrimitive.Root;
+const Trigger = AlertDialogPrimitive.Trigger;
+const Portal = AlertDialogPrimitive.Portal;
 
 export {
 	Root,

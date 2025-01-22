@@ -46,6 +46,6 @@
     {/if}
   </Popover.Trigger>
   <Popover.Content class="w-auto p-0">
-    <RangeCalendar type="multiple" bind:value numberOfMonths={2} {...restProps as any} />
+    <RangeCalendar type="multiple" bind:value numberOfMonths={1} {...restProps as any} />
   </Popover.Content>
 </Popover.Root>

@@ -37,7 +37,7 @@
     inputClass = ''
   }: Props = $props();
 
-  let year = $state(value?.[0].year ?? new Date().getFullYear());
+  let year = $state(value?.[0]?.year ?? new Date().getFullYear());
   let open = $state(false);
 
   function changeValue(month: Month) {
@@ -45,7 +45,7 @@
       value = [month];
       open = true;
     } else {
-      value = [value[0], month];
+      value = [value[0]!, month];
       value = sortMonths(value);
       onValueChange(value);
       open = true;
@@ -54,7 +54,7 @@
 
   function getMonthVariant(month: Month) {
     if (includesMonth(value ?? [], month)) return 'default';
-    if (value?.length == 2 && isInRange(month, value[0], value[1])) return 'secondary';
+    if (value?.length == 2 && isInRange(month, value[0]!, value[1]!)) return 'secondary';
     return 'ghost';
   }
 
@@ -62,7 +62,7 @@
     if (isSameMonth(value?.[0], month) && isSameMonth(value?.[1], month)) return 'rounded-md';
     if (isSameMonth(value?.[0], month)) return 'rounded-l-md rounded-r-none';
     if (isSameMonth(value?.[1], month)) return 'rounded-r-md rounded-l-none';
-    if (value?.length == 2 && isInRange(month, value[0], value[1])) return 'rounded-none';
+    if (value?.length == 2 && isInRange(month, value[0]!, value[1]!)) return 'rounded-none';
     return '';
   }
 </script>
@@ -83,9 +83,9 @@
       {#if !value || value.length == 0}
         {placeholder}
       {:else if value.length > 1}
-        {getMonthYearName(value[0], locale)} - {getMonthYearName(value[1], locale)}
+        {getMonthYearName(value[0]!, locale)} - {getMonthYearName(value[1]!, locale)}
       {:else}
-        {getMonthYearName(value[0], locale)}
+        {getMonthYearName(value[0]!, locale)}
       {/if}
     </Popover.Trigger>
     <Popover.Content class="w-sm flex flex-col gap-2 p-2">

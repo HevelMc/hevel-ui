@@ -22,11 +22,7 @@
       <DropdownMenu.GroupHeading>Toggle columns</DropdownMenu.GroupHeading>
       <DropdownMenu.Separator />
       {#each table.getAllColumns().filter((col) => typeof col.accessorFn !== 'undefined' && col.getCanHide()) as column}
-        <DropdownMenu.CheckboxItem
-          controlledChecked
-          checked={column.getIsVisible()}
-          onCheckedChange={(v) => column.toggleVisibility(!!v)}
-        >
+        <DropdownMenu.CheckboxItem bind:checked={() => column.getIsVisible(), (v) => column.toggleVisibility(!!v)}>
           {(column.columnDef.meta as any)?.name ?? column.id}
         </DropdownMenu.CheckboxItem>
       {/each}

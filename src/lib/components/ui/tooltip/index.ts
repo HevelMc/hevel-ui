@@ -1,9 +1,9 @@
 import { Tooltip as TooltipPrimitive } from "bits-ui";
 import Content from "./tooltip-content.svelte";
 
-const Root: typeof TooltipPrimitive.Root = TooltipPrimitive.Root;
-const Trigger: typeof TooltipPrimitive.Trigger = TooltipPrimitive.Trigger;
-const Provider: typeof TooltipPrimitive.Provider = TooltipPrimitive.Provider;
+const Root = TooltipPrimitive.Root;
+const Trigger = TooltipPrimitive.Trigger;
+const Provider = TooltipPrimitive.Provider;
 
 export {
 	Root,

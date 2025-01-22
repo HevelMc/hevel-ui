@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import * as Dialog from '../dialog/index.js';
-  import * as Drawer from '../drawer/index.js';
+  import * as Dialog from '../../ui/dialog/index.js';
+  import * as Drawer from '../../ui/drawer/index.js';
   import { MediaQuery } from 'runed';
 
   const desktop = new MediaQuery('(min-width: 748px)');
@@ -43,7 +43,7 @@
     {#if trigger}
       <Drawer.Trigger child={trigger} />
     {/if}
-    <Drawer.Content class="flex flex-col gap-5 p-4" bind:open>
+    <Drawer.Content class="flex flex-col gap-5 p-4">
       {#if title}
         <span class="title-small">
           {@render title()}

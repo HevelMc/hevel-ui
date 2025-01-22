@@ -11,8 +11,8 @@ import HeadCell from "./range-calendar-head-cell.svelte";
 import NextButton from "./range-calendar-next-button.svelte";
 import PrevButton from "./range-calendar-prev-button.svelte";
 
-const GridHead: typeof RangeCalendarPrimitive.GridHead = RangeCalendarPrimitive.GridHead;
-const GridBody: typeof RangeCalendarPrimitive.GridBody = RangeCalendarPrimitive.GridBody;
+const GridHead = RangeCalendarPrimitive.GridHead;
+const GridBody = RangeCalendarPrimitive.GridBody;
 
 export {
 	Day,

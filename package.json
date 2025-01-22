@@ -69,6 +69,7 @@
     "@sveltejs/vite-plugin-svelte": "^4.0.4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/eslint": "^9.6.1",
+    "@types/glob": "^8.1.0",
     "autoprefixer": "^10.4.20",
     "bits-ui": "1.0.0-next.78",
     "embla-carousel-svelte": "^8.5.2",

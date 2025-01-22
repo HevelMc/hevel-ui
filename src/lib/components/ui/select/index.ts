@@ -8,8 +8,8 @@ import Separator from "./select-separator.svelte";
 import ScrollDownButton from "./select-scroll-down-button.svelte";
 import ScrollUpButton from "./select-scroll-up-button.svelte";
 
-const Root = SelectPrimitive.Root;
-const Group = SelectPrimitive.Group;
+const Root: typeof SelectPrimitive.Root = SelectPrimitive.Root;
+const Group: typeof SelectPrimitive.Group = SelectPrimitive.Group;
 
 export {
 	Root,

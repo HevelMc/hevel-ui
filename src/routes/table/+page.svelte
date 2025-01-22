@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Badge, DataTable, renderComponent, renderSnippet } from '#lib/index.js';
+  import { Badge, cn, DataTable, renderComponent, renderSnippet } from '#lib/index.js';
   import { GenericCell, GenericActions } from '#lib/index.js';
   import type { ColumnDef } from '@tanstack/table-core';
   import { ArrowDown, ArrowRight, ArrowUp, CircleCheck, Circle, XCircle, CircleHelp, Clock } from 'lucide-svelte';
@@ -69,12 +69,14 @@
     { value: 'documentation', label: 'Documentation' }
   ];
 
+  const pill = 'px-2 py-1 rounded-lg w-fit';
+
   export const statuses = [
-    { value: 'backlog', label: 'Backlog', icon: CircleHelp },
-    { value: 'todo', label: 'Todo', icon: Circle },
-    { value: 'in progress', label: 'In Progress', icon: Clock },
-    { value: 'done', label: 'Done', icon: CircleCheck },
-    { value: 'canceled', label: 'Canceled', icon: XCircle }
+    { value: 'backlog', label: 'Backlog', icon: CircleHelp, class: cn(pill, 'bg-gray-300/20 text-gray-300') },
+    { value: 'todo', label: 'Todo', icon: Circle, class: cn(pill, 'bg-blue-500/20 text-blue-400') },
+    { value: 'in progress', label: 'In Progress', icon: Clock, class: cn(pill, 'bg-yellow-500/20 text-yellow-500') },
+    { value: 'done', label: 'Done', icon: CircleCheck, class: cn(pill, 'bg-green-500/20 text-green-500') },
+    { value: 'canceled', label: 'Canceled', icon: XCircle, class: cn(pill, 'bg-red-500/20 text-red-500') }
   ];
 
   export const priorities = [

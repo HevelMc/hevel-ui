@@ -5,16 +5,17 @@
   interface Props {
     value: string;
     classes?: string;
-    options?: { value: string; label: string; icon: typeof Icon }[];
+    options?: { value: string; label: string; icon?: typeof Icon; class?: string }[];
     href?: string;
   }
 
   let { value, classes, options, href }: Props = $props();
+
+  let option = $derived(options?.find((o) => o.value === value));
 </script>
 
-<div class={cn('flex items-center gap-2 truncate', classes)}>
+<div class={cn('flex items-center gap-2 truncate', classes, option?.class)}>
   {#if options}
-    {@const option = options.find((o) => o.value === value)}
     {#if option?.icon}
       <option.icon class="h-4 w-4" />
     {/if}

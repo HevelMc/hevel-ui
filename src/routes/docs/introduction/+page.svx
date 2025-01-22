@@ -1,0 +1,53 @@
+<script>
+  import { Accordion } from '#lib/index';
+</script>
+
+## Purpose
+
+This is a [Svelte 5](https://svelte.dev) component library designed to streamline the process of building websites or applications by offering a collection of ready-to-use components.
+
+The library is built with three key goals:
+  - Package [shadcn-svelte](https://shadcn-svelte.com) components into an npm module for easy import and use across projects.
+  - Introduce additional components not included in shadcn-svelte.
+  - Provide a curated list of resources to help developers kickstart new projects.
+
+## Frequently Asked Questions
+
+<Accordion.Root multiple>
+
+<Accordion.Item value="faq-1">
+
+<Accordion.Trigger>
+
+Why **packaged** as a dependency?
+
+</Accordion.Trigger>
+
+<Accordion.Content class="[&>*]:space-y-2">
+
+The concept behind [shadcn-ui](https://shadcn-ui.com) and [shadcn-svelte](https://shadcn-svelte.com) emphasizes ownership and control over your codebase, allowing developers to determine how components are styled and constructed. While this approach offers great flexibility, it involves extra setup and maintenance efforts.
+
+This library simplifies that process by delivering pre-configured, ready-to-use components. You can customize them via the theme file or by overriding styles with TailwindCSS.
+
+If you prefer a more adaptable solution, consider using components directly from the [shadcn-svelte](https://shadcn-svelte.com) library.
+
+</Accordion.Content>
+</Accordion.Item>
+<Accordion.Item value="faq-2">
+<Accordion.Trigger>
+Which frameworks are supported?
+</Accordion.Trigger>
+<Accordion.Content>
+This port is built to be used with Svelte/SvelteKit.
+</Accordion.Content>
+</Accordion.Item>
+<Accordion.Item value="faq-3">
+<Accordion.Trigger>
+Can I use this in my project?
+</Accordion.Trigger>
+<Accordion.Content>
+Yes. Free to use for personal and commercial projects. No attribution required.
+But let us know if you do use it. We'd love to see what you build with it.
+</Accordion.Content>
+</Accordion.Item>
+</Accordion.Root>

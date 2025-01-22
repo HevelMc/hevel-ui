@@ -34,6 +34,15 @@
     --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -65,6 +74,15 @@
     --destructive-foreground: 0 0% 98%;
 
     --ring: 0 0% 83.1%;
+
+    --sidebar-background: 240 7% 7%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -75,4 +93,72 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.doc .shiki {
+  @apply scroll-m-20 rounded-lg p-4;
+}
+
+.doc h1 {
+  @apply text-4xl font-bold;
+}
+
+.doc h2 {
+  @apply text-3xl font-bold;
+}
+
+.doc h3 {
+  @apply text-2xl font-bold;
+}
+
+.doc h4 {
+  @apply text-xl font-bold;
+}
+
+.doc h5 {
+  @apply text-lg font-bold;
+}
+
+.doc h6 {
+  @apply text-base font-bold;
+}
+
+.doc a {
+  @apply font-medium underline underline-offset-4;
+}
+
+.doc ul {
+  @apply ml-4 list-disc;
+}
+
+.doc ol {
+  @apply ml-4 list-decimal;
+}
+
+.doc pre {
+  @apply rounded-lg bg-gray-800 p-4 text-white;
+}
+
+.doc :not(pre) > code {
+  @apply rounded-md bg-gray-50 px-2 py-1 font-mono text-sm text-gray-600 ring-1 ring-inset ring-gray-500/10 dark:bg-gray-400/10 dark:text-gray-400 dark:ring-gray-400/20;
+}
+
+.doc table {
+  @apply w-full;
+}
+
+.doc th {
+  @apply bg-muted/50 p-1;
+}
+
+.doc td {
+  @apply bg-muted/30 p-1;
+}
+
+.doc blockquote {
+  @apply my-2 border-l-4 border-accent px-4 py-2;
+}
+
+.doc img {
+  @apply max-w-[35%] rounded-lg;
 }

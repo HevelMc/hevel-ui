@@ -65,15 +65,22 @@
     filteredHeadingsList = hierarchy;
   }
 
-  const activeItem = writable<string | undefined>(undefined);
+  const activeItems: string[] = $state([]);
 
   function useActiveItem(itemIds: string[]) {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (let entry of entries) {
           if (entry.isIntersecting) {
-            $activeItem = entry.target.id;
+            if (!activeItems.includes(entry.target.id)) activeItems.push(entry.target.id);
+          } else {
+            if (activeItems.includes(entry.target.id)) activeItems.splice(activeItems.indexOf(entry.target.id), 1);
           }
+        }
+        activeItems.sort((a, b) => {
+          const aIndex = itemIds.indexOf(a);
+          const bIndex = itemIds.indexOf(b);
+          return aIndex - bIndex;
         });
       },
       { rootMargin: `0% 0% -10% 0%` }
@@ -111,11 +118,12 @@
         allItemIds.push(subItem.url.replace('#', ''));
       });
     });
-    return useActiveItem(allItemIds);
+    activeItems.push(...allItemIds);
+    useActiveItem(allItemIds);
   });
 </script>
 
 <div class="space-y-2 pt-8">
   <p class="inline-flex font-medium">On This Page</p>
-  <Tree tree={filteredHeadingsList} activeItem={$activeItem} />
+  <Tree tree={filteredHeadingsList} activeItem={activeItems[0]} />
 </div>

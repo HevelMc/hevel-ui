@@ -22,19 +22,21 @@
     initialPageSize?: number;
     initialSortBy?: { id: string; desc: boolean }[];
     selectedRowsActions?: { label: string; action: (rows: Row<TData>[]) => void }[];
+    onRowClick?: (row: Row<TData>) => void;
   }
 
   let {
     columns: userColumns,
     getData,
-    manualFiltering = false,
+    filters,
     manualPagination = false,
+    manualFiltering = false,
     manualSorting = false,
     searchPlaceholder,
     initialPageSize = 10,
     initialSortBy = [],
     selectedRowsActions,
-    filters
+    onRowClick
   }: Props = $props();
 
   let searchQuery = $state('');
@@ -166,7 +168,7 @@
           </Table.Row>
         {:else}
           {#each table.getRowModel().rows as row (row.id)}
-            <Table.Row data-state={row.getIsSelected() && 'selected'}>
+            <Table.Row data-state={row.getIsSelected() && 'selected'} onclick={() => onRowClick?.(row)}>
               {#each row.getVisibleCells() as cell (cell.id)}
                 <Table.Cell>
                   <FlexRender content={cell.column.columnDef.cell} context={cell.getContext()} />

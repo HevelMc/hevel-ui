@@ -5,4 +5,4 @@
   let { checked = false, onCheckedChange = (v) => (checked = v), ...restProps }: ComponentProps<typeof Checkbox> = $props();
 </script>
 
-<Checkbox bind:checked={() => checked, onCheckedChange} {...restProps} />
+<Checkbox bind:checked={() => checked, onCheckedChange} {...restProps} onclick={(e) => e.stopPropagation()} />

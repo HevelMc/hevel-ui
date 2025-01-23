@@ -147,6 +147,7 @@
         }
       }
     ]}
+    onRowClick={(row) => console.log(row)}
     {filters}
   />
 </div>

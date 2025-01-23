@@ -14,6 +14,13 @@
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import Tree from './Tree.svelte';
+  import { cn } from '#lib/index';
+
+  interface Props {
+    class?: string;
+  }
+
+  let { class: className }: Props = $props();
 
   let filteredHeadingsList = $state<TableOfContents>();
 
@@ -27,7 +34,6 @@
 
     const headings: HTMLHeadingElement[] = Array.from(div.querySelectorAll('h2, h3'));
 
-    console.log(headings);
     const hierarchy: TableOfContents = { items: [] };
     let currentLevel: TableOfContentsItem | undefined = undefined;
 
@@ -123,7 +129,7 @@
   });
 </script>
 
-<div class="space-y-2 pt-8">
+<div class={cn('space-y-2 pt-8', className)}>
   <p class="inline-flex font-medium">On This Page</p>
   <Tree tree={filteredHeadingsList} activeItem={activeItems[0]} />
 </div>

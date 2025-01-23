@@ -12,7 +12,7 @@ This approach ensures a cleaner and more maintainable codebase, especially when 
 
 ---
 
-## Adapting Imports from the [**shadcn-svelte documentation**](https://next.shadcn-svelte.com/docs)
+## Importing from [**shadcn-svelte**](https://next.shadcn-svelte.com/docs)
 
 When copying examples from the `shadcn-svelte` documentation, you may notice imports like this:
 

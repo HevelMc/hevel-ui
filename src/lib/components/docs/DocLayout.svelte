@@ -32,7 +32,7 @@
       </Breadcrumb.Root>
     </header>
     <div class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-      <div id="doc" class="doc mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 p-16 pt-8">
+      <div id="doc" class="doc mx-auto flex w-full flex-1 flex-col gap-6 p-4 xl:max-w-4xl xl:p-16 xl:pt-8">
         <div class="space-y-2">
           <h1>
             {currentItem?.child}
@@ -48,7 +48,7 @@
         {@render children()}
       </div>
 
-      <TableOfContent />
+      <TableOfContent class="sticky top-16 -mt-10 h-[calc(100vh-4rem)] py-8 max-xl:hidden" />
     </div>
   </Sidebar.Inset>
 </Sidebar.Provider>

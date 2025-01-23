@@ -35,7 +35,7 @@ and [shadcn-svelte](https://next.shadcn-svelte.com/docs/theming) documentations 
 | Focus ring color                                                             | `--ring`                   |
 | Border radius for `<Card />`, `<Input />`, and `<Button />`                  | `--radius`                 |
 
-## Use the color in your Svelte component
+## Use the colors
 
 You can use those colors in your own code using Tailwind CSS classes, for example:
 

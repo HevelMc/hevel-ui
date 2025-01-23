@@ -29,7 +29,7 @@ The concept behind [shadcn-ui](https://shadcn-ui.com) and [shadcn-svelte](https:
 
 This library simplifies that process by delivering pre-configured, ready-to-use components. You can customize them via the theme file or by overriding styles with TailwindCSS.
 
-If you prefer a more adaptable solution, consider using components directly from the [shadcn-svelte](https://shadcn-svelte.com) library.
+If you prefer a more adaptable solution, consider using components directly from the [shadcn-svelte](https://shadcn-svelte.com) library. Both libraries can be used together in the same project, allowing you to use a mix of pre-configured and custom components.
 
 </Accordion.Content>
 </Accordion.Item>

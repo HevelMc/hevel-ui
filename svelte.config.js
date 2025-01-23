@@ -6,7 +6,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 const theme = 'material-theme-darker';
 const highlighter = await createHighlighter({
   themes: [theme],
-  langs: ['javascript', 'typescript', 'svelte']
+  langs: ['javascript', 'typescript', 'svelte', 'bash', 'diff']
 });
 
 /** @type {import('@sveltejs/kit').Config} */

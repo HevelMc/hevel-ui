@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  const data = {
+  const data: { navMain: { title: string; items: { title: string; url: string; description?: string }[] }[] } = {
     navMain: [
       {
         title: 'Getting Started',
@@ -11,19 +11,18 @@
           },
           {
             title: 'Installation',
-            url: '#'
+            url: '/docs/installation',
+            description: 'How to install Hevel UI in your project.'
           },
           {
             title: 'Importing components',
-            url: '#'
+            url: '/docs/importing-components',
+            description: 'How to import Hevel UI and shadcn-svelte components in your project.'
           },
           {
             title: 'Theming',
-            url: '#'
-          },
-          {
-            title: 'Project Structure',
-            url: '#'
+            url: '/docs/theming',
+            description: 'Use CSS Variables to customize the look and feel of your application.'
           }
         ]
       },

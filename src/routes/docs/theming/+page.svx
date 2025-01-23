@@ -1,0 +1,78 @@
+<script lang="ts">
+  import DocPreview from '#lib/components/docs/DocPreview.svelte';
+  import { Badge } from '#lib/index';
+</script>
+
+We use CSS variables for styling. This allows you to easily change the colors of components without having to update class names.
+
+Hevel-UI and shadcn-svelte use the same CSS variables for theming. Therefore, you can use the [Shadcn Svelte Theme Builder](https://next.shadcn-svelte.com/themes) to generate a theme and use it in Hevel-UI.
+
+**CSS variables must be defined without the color space function**. See the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors#using-css-variables)
+and [shadcn-svelte](https://next.shadcn-svelte.com/docs/theming) documentations for more information.
+
+## List of CSS Variables
+
+| **Description**                                                              | **CSS Variable**           |
+| :--------------------------------------------------------------------------- | :------------------------- |
+| Default background color for `<body />`                                      | `--background`             |
+| Default foreground color                                                     | `--foreground`             |
+| Muted background colors (e.g., `<TabsList />`, `<Skeleton />`, `<Switch />`) | `--muted`                  |
+| Muted foreground color                                                       | `--muted-foreground`       |
+| Background color for `<Card />`                                              | `--card`                   |
+| Foreground color for `<Card />`                                              | `--card-foreground`        |
+| Background color for popovers (e.g., `<DropdownMenu />`, `<HoverCard />`)    | `--popover`                |
+| Foreground color for popovers                                                | `--popover-foreground`     |
+| Default border color                                                         | `--border`                 |
+| Border color for inputs (e.g., `<Input />`, `<Select />`, `<Textarea />`)    | `--input`                  |
+| Primary background color (e.g., for `<Button />`)                            | `--primary`                |
+| Primary foreground color                                                     | `--primary-foreground`     |
+| Secondary background color (e.g., for `<Button />`)                          | `--secondary`              |
+| Secondary foreground color                                                   | `--secondary-foreground`   |
+| Accent background color (e.g., hover effects on `<DropdownMenuItem />`)      | `--accent`                 |
+| Accent foreground color                                                      | `--accent-foreground`      |
+| Destructive background color (e.g., `<Button variant='destructive' />`)      | `--destructive`            |
+| Destructive foreground color                                                 | `--destructive-foreground` |
+| Focus ring color                                                             | `--ring`                   |
+| Border radius for `<Card />`, `<Input />`, and `<Button />`                  | `--radius`                 |
+
+## Use the color in your Svelte component
+
+You can use those colors in your own code using Tailwind CSS classes, for example:
+
+<DocPreview class="flex-row">
+  <Badge class="bg-primary text-primary-foreground">Primary</Badge>
+  <Badge class="bg-destructive text-destructive-foreground">Destructive</Badge>
+  <Badge class="bg-secondary text-secondary-foreground">Secondary</Badge>
+  <Badge class="bg-accent text-accent-foreground">Accent</Badge>
+  <Badge class="bg-muted text-muted-foreground">Muted</Badge>
+  <Badge class="bg-card text-card-foreground border-border">Card</Badge>
+  <Badge class="bg-popover text-popover-foreground border-border">Popover</Badge>
+  <Badge class="bg-input text-input-foreground">Input</Badge>
+  <Badge class="bg-border text-border-foreground">Border</Badge>
+  <Badge class="ring-ring ring-2 ring-offset-2 bg-background text-foreground">Ring</Badge>
+
+{#snippet code()}
+
+```svelte
+<script lang="ts">
+  import Badge from 'hevel-ui';
+</script>
+
+<!-- Note: Here we use the `class` prop to show the usage of variables 
+ in CSS classes, but we recommend using the `variant` prop to apply 
+ the right hover/focus styles as well. -->
+
+<Badge class="bg-primary text-primary-foreground">Primary</Badge>
+<Badge class="bg-destructive text-destructive-foreground">Destructive</Badge>
+<Badge class="bg-secondary text-secondary-foreground">Secondary</Badge>
+<Badge class="bg-accent text-accent-foreground">Accent</Badge>
+<Badge class="bg-muted text-muted-foreground">Muted</Badge>
+<Badge class="border-border bg-card text-card-foreground">Card</Badge>
+<Badge class="card-foreground bg-popover text-popover-foreground">Popover</Badge>
+<Badge class="text-input-foreground bg-input">Input</Badge>
+<Badge class="text-border-foreground bg-border">Border</Badge>
+<Badge class="bg-background text-foreground ring-2 ring-ring ring-offset-2">Ring</Badge>
+```
+
+{/snippet}
+</DocPreview>

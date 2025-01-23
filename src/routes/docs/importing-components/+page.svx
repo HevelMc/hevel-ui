@@ -1,0 +1,39 @@
+`hevel-ui` simplifies the process of importing components by exporting all components from the root of the package. This allows you to import everything you need in a clean and concise manner.
+
+## Example
+
+Instead of importing each component individually from specific paths, you can simply do:
+
+```svelte
+import { Button, DropdownMenu, LightSwitch, Sheet, AudioPlayer } from 'hevel-ui';
+```
+
+This approach ensures a cleaner and more maintainable codebase, especially when working with multiple components.
+
+---
+
+## Adapting Imports from the [**shadcn-svelte documentation**](https://next.shadcn-svelte.com/docs)
+
+When copying examples from the `shadcn-svelte` documentation, you may notice imports like this:
+
+```svelte
+<script lang="ts">
+  import {
+    Button,
+    buttonVariants
+  } from "#lib/components/ui/button/index.js";
+  import * as Dialog from "#lib/components/ui/dialog/index.js";
+  import { Input } from "#lib/components/ui/input/index.js";
+  import { Label } from "#lib/components/ui/label/index.js";
+</script>
+```
+
+In `hevel-ui`, the same imports are simplified to:
+
+```svelte
+<script lang="ts">
+  import { Button, buttonVariants, Dialog, Input, Label } from "hevel-ui";
+</script>
+```
+
+This structure is much cleaner and more efficient when working with many components. Instead of managing multiple paths, you can import everything you need directly from the root, reducing complexity and improving readability.

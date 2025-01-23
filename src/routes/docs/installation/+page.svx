@@ -1,0 +1,88 @@
+<script>
+  import { Accordion } from '#lib/index';
+</script>
+
+## Requirements
+
+Before installing `hevel-ui`, ensure that you have the following requirements:
+
+<Accordion.Root multiple>
+<Accordion.Item value="svelte">
+<Accordion.Trigger class="hover:no-underline">
+
+- [A SvelteKit project](https://kit.svelte.dev/docs#introduction)
+
+</Accordion.Trigger>
+<Accordion.Content class="[&>*]:space-y-2">
+
+```bash
+npm create svelte@latest my-app
+npm install
+```
+
+</Accordion.Content>
+
+</Accordion.Item>
+
+<Accordion.Item value="tailwindcss">
+<Accordion.Trigger class="hover:no-underline">
+
+- [Tailwind CSS](https://tailwindcss.com/docs/installation) and [Tailwind CSS animate plugin](https://github.com/jamiebuilds/tailwindcss-animate)
+
+</Accordion.Trigger>
+<Accordion.Content>
+
+```bash
+npx sv add tailwindcss
+npm install tailwindcss-animate
+```
+
+</Accordion.Content>
+</Accordion.Item>
+</Accordion.Root>
+
+## Installation
+
+Install `hevel-ui` in your app using `npm` or other package managers:
+
+```bash
+npm install hevel-ui
+```
+
+## Adding a Theme
+
+You can clone the default theme using the following command:
+
+```bash
+# Make sure to replace the file extension if your using PostCSS or SCSS
+cp -r node_modules/hevel-ui/themes/default.css src/lib/app.css
+```
+
+Alternatively, you can generate a theme using the [shadcn-svelte theme generator](https://www.shadcn-svelte.com/themes)
+
+For further details, refer to the [theme page](/docs/theming).
+
+## Tailwind Configuration
+
+To ensure proper integration, update your `tailwind.config.js` (or equivalent configuration file) to include the library's content and the `tailwindcss-animate` plugin. Update your configuration as shown below:
+
+```diff
+const config = {
+  ...
+-  content: ['./src/**/*.{html,js,svelte,ts}'],
++  content: ['./src/**/*.{html,js,svelte,ts}', 'node_modules/hevel-ui/**/*.{html,js,svelte,ts}'],
+  ...
++  plugins: [require('tailwindcss-animate')],
+  ...
+};
+```
+
+By following these steps, you can seamlessly integrate `hevel-ui` into your project.
+
+## Updating the Library
+
+To update the components, simply run the following command:
+
+```bash
+npm update hevel-ui
+```

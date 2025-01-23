@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, DropdownMenu, cn } from '#lib/index';
+  import { Button, DropdownMenu, cn } from '$lib/index';
   import type { Row } from '@tanstack/table-core';
   import { Ellipsis } from 'lucide-svelte';
 

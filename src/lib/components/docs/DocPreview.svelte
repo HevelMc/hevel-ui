@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, cn, Tabs } from '#lib/index';
+  import { Card, cn, Tabs } from '$lib/index';
   import type { Snippet } from 'svelte';
 
   interface Props {

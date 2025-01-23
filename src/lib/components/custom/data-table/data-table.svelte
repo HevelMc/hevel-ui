@@ -6,7 +6,7 @@
   import DataTableToolbar from './data-table-toolbar.svelte';
   import DataTablePagination from './data-table-pagination.svelte';
   import { createSvelteTable, type getDataFunction } from './data-table.svelte.js';
-  import { DataTableColumnHeader, renderComponent, Table } from '#lib/index.js';
+  import { DataTableColumnHeader, renderComponent, Table } from '$lib/index.js';
   import FlexRender from './flex-render.svelte';
   import { LoaderCircle, type Icon } from 'lucide-svelte';
   import { selectColumn } from './columns.js';

@@ -14,7 +14,7 @@
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import Tree from './Tree.svelte';
-  import { cn } from '#lib/index';
+  import { cn } from '$lib/index';
 
   interface Props {
     class?: string;

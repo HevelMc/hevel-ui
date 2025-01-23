@@ -1,7 +1,7 @@
 <script lang="ts" generics="TData">
   import Settings from 'lucide-svelte/icons/settings-2';
   import type { Table } from '@tanstack/table-core';
-  import { buttonVariants, DropdownMenu } from '#lib/index.js';
+  import { buttonVariants, DropdownMenu } from '$lib/index.js';
 
   let { table }: { table: Table<TData> } = $props();
 </script>

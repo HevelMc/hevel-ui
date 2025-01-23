@@ -1,5 +1,5 @@
 <script>
-  import { Accordion } from '#lib/index';
+  import { Accordion } from '$lib/index';
 </script>
 
 ## Requirements

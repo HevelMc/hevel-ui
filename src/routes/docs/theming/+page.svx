@@ -1,6 +1,6 @@
 <script lang="ts">
-  import DocPreview from '#lib/components/docs/DocPreview.svelte';
-  import { Badge } from '#lib/index';
+  import DocPreview from '$lib/components/docs/DocPreview.svelte';
+  import { Badge } from '$lib/index';
 </script>
 
 We use CSS variables for styling. This allows you to easily change the colors of components without having to update class names.

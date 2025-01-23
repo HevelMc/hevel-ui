@@ -6,8 +6,8 @@
   import type { HTMLAttributes } from 'svelte/elements';
   import type { Column } from '@tanstack/table-core';
   import type { WithoutChildren } from 'bits-ui';
-  import { cn } from '#lib/utils.js';
-  import { Button, DropdownMenu } from '#lib/index.js';
+  import { cn } from '$lib/utils.js';
+  import { Button, DropdownMenu } from '$lib/index.js';
 
   type Props = HTMLAttributes<HTMLDivElement> & {
     column: Column<any, any>;

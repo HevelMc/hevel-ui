@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { ButtonProps } from '#lib/components/ui/button/index.js';
-  import Button from '#lib/components/ui/button/button.svelte';
+  import type { ButtonProps } from '$lib/components/ui/button/index.js';
+  import Button from '$lib/components/ui/button/button.svelte';
   import { LoaderCircle } from 'lucide-svelte';
 
   interface Props extends ButtonProps {

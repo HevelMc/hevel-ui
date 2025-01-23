@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, cn } from '#lib/index.js';
+  import { Button, cn } from '$lib/index.js';
   import { Icon } from 'lucide-svelte';
 
   interface Props {

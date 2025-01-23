@@ -2,7 +2,7 @@
   import XIcon from 'lucide-svelte/icons/x';
   import type { Table } from '@tanstack/table-core';
   import { DataTableFacetedFilter, DataTableViewOptions } from './index.js';
-  import { Button, Input } from '#lib/index.js';
+  import { Button, Input } from '$lib/index.js';
   import type { Icon } from 'lucide-svelte';
 
   interface Props {

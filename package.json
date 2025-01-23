@@ -24,11 +24,8 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write ."
   },
-  "module": "./dist/index.js",
-  "main": "./dist/index.d.ts",
-  "imports": {
-    "#*": "./src/*"
-  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -38,8 +35,7 @@
   "files": [
     "dist",
     "!dist/**/*.test.*",
-    "!dist/**/*.spec.*",
-    "exports"
+    "!dist/**/*.spec.*"
   ],
   "peerDependencies": {
     "svelte": "^5.19.1"

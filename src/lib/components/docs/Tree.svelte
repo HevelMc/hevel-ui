@@ -1,6 +1,6 @@
 <script lang="ts">
   import Tree from './Tree.svelte';
-  import { cn } from '#lib/utils.js';
+  import { cn } from '$lib/utils.js';
   import type { TableOfContents, TableOfContentsItem } from './TableOfContent.svelte';
 
   type Props = {

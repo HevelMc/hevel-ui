@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, Separator, Sidebar } from '#lib/index';
+  import { Breadcrumb, Separator, Sidebar } from '$lib/index';
   import { page } from '$app/state';
   import DocSidebar, { getCurrentItem } from './DocSidebar.svelte';
   import TableOfContent from './TableOfContent.svelte';

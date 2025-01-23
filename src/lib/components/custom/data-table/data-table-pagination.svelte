@@ -4,7 +4,7 @@
   import DoubleArrowRight from 'lucide-svelte/icons/chevrons-right';
   import DoubleArrowLeft from 'lucide-svelte/icons/chevrons-left';
   import type { Table, Row } from '@tanstack/table-core';
-  import { Select, Button, DropdownMenu } from '#lib/index.js';
+  import { Select, Button, DropdownMenu } from '$lib/index.js';
   import { MoreVerticalIcon } from 'lucide-svelte';
 
   interface Props {

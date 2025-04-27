@@ -1,17 +1,19 @@
 <script lang="ts">
-  import { audioPlayer } from './index.js';
-  import Volume1 from 'lucide-svelte/icons/volume-1';
-  import Volume2 from 'lucide-svelte/icons/volume-2';
-  import VolumeX from 'lucide-svelte/icons/volume-x';
-  import Play from 'lucide-svelte/icons/play';
-  import Pause from 'lucide-svelte/icons/pause';
-  import X from 'lucide-svelte/icons/x';
   import { onDestroy, onMount } from 'svelte';
+  import { cn } from '$lib/index.js';
+  import { audioPlayer } from './index.js';
+  import { Volume1, Volume2, VolumeX, Play, Pause, X } from 'lucide-svelte';
 
-  let currentTime: number = $audioPlayer.volume;
+  interface Props {
+    class?: string;
+  }
+
+  let { class: className }: Props = $props();
+
+  let currentTime: number = $state($audioPlayer.volume);
   let interval: any = null;
   let mouseDown: boolean = false;
-  let volume = 1;
+  let volume = $state(1);
 
   function getDuration() {
     if (mouseDown) return;
@@ -44,19 +46,21 @@
 </script>
 
 {#if $audioPlayer.duration >= 0}
-  <div class="flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-sm">
+  <div class={cn('flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-sm', className)}>
     <span class="text-center text-lg">{$audioPlayer?.name}</span>
-    <div class="flex flex-row items-center gap-3">
-      <button on:click={() => ($audioPlayer.paused ? playAudio() : pauseAudio())}>
+    <div class="flex w-full flex-row items-center gap-3">
+      <button onclick={() => ($audioPlayer.paused ? playAudio() : pauseAudio())}>
         {#if $audioPlayer.paused}
-          <Play class="h-6 w-6 shrink-0 text-foreground" />
+          <Play class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
         {:else}
-          <Pause class="h-6 w-6 shrink-0 text-foreground" />
+          <Pause class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
         {/if}
       </button>
 
       <span>{formatDuration(currentTime)}</span>
 
+      <!-- We cannot use shadcn Input here because it doesn't expose drag events for now. -->
+      <!-- https://github.com/huntabyte/bits-ui/discussions/796 -->
       <input
         type="range"
         class="slider w-full accent-secondary-foreground"
@@ -65,11 +69,11 @@
         max={$audioPlayer.duration}
         step={0.01}
         name="duration"
-        on:mousedown={() => (mouseDown = true)}
-        on:mouseup={() => (mouseDown = false)}
-        on:touchstart={() => (mouseDown = true)}
-        on:touchend={() => (mouseDown = false)}
-        on:change={() => {
+        onmousedown={() => (mouseDown = true)}
+        onmouseup={() => (mouseDown = false)}
+        ontouchstart={() => (mouseDown = true)}
+        ontouchend={() => (mouseDown = false)}
+        onchange={() => {
           mouseDown = false;
           audioPlayer.setCurrentTime(currentTime);
         }}
@@ -78,11 +82,11 @@
       <span>{formatDuration($audioPlayer.duration)}</span>
 
       {#if volume == 0}
-        <VolumeX class="h-6 w-6 shrink-0 text-foreground" />
+        <VolumeX class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
       {:else if volume < 0.5}
-        <Volume1 class="h-6 w-6 shrink-0 text-foreground" />
+        <Volume1 class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
       {:else}
-        <Volume2 class="h-6 w-6 shrink-0 text-foreground" />
+        <Volume2 class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
       {/if}
 
       <input
@@ -92,12 +96,12 @@
         min={0}
         max={1}
         step={0.01}
-        on:change={() => audioPlayer.setVolume(volume)}
+        onchange={() => audioPlayer.setVolume(volume)}
         name="volume"
       />
 
-      <button on:click={() => audioPlayer.stop()}>
-        <X class="h-6 w-6 shrink-0 text-red-600 dark:text-red-400" />
+      <button onclick={() => audioPlayer.stop()}>
+        <X class="h-5 w-5 shrink-0 text-foreground" />
       </button>
     </div>
   </div>

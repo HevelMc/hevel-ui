@@ -1,0 +1,59 @@
+<script lang="ts">
+  import DocPreview from '$lib/components/docs/DocPreview.svelte';
+  import AudioPlayerDemo from './AudioPlayerDemo.svelte';
+  import { AudioPlayer } from '$lib/index';
+  import CodeBlock from '$lib/components/docs/CodeBlock.svelte';
+  import demoCode from './AudioPlayerDemo.svelte?raw';
+
+</script>
+
+<DocPreview>
+  <AudioPlayerDemo />
+  {#snippet code()}
+  <CodeBlock lang="svelte" code={demoCode} />
+  {/snippet}
+</DocPreview>
+
+## Usage
+
+```svelte
+<script>
+  import { AudioPlayer, audioPlayer } from '$lib/index.js';
+
+  // Without the name of the song
+  audioPlayer.start('url', 'id');
+  // With the name of the song
+  audioPlayer.start('url', 'id', 'Name of the song');
+
+  audioPlayer.stop();
+  audioPlayer.pause();
+  audioPlayer.play();
+</script>
+
+<AudioPlayer />
+```
+
+## Store
+
+The `audioPlayer` store is a writable store that contains the current state of the audio player.
+Therefore, only one instance of the audio player can be created at a time.
+This is useful for controlling the audio player from anywhere in the app, such as a navbar.
+
+You can hide the audio player from the UI if no audio is being played by surrounding it with a conditional block.
+
+```svelte
+{#if $audioPlayer.track_id !== null}
+  <AudioPlayer />
+{/if}
+```
+
+## Props
+
+- `class` - Add styles to the audio player by overriding the default styles.
+
+## Methods
+
+- `start(url: string, id: string, name?: string)` - Start playing the audio.
+- `stop()` - Stop playing the audio.
+- `pause()` - Pause the audio.
+- `play()` - Resume playing the audio.

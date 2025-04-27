@@ -31,7 +31,8 @@
         items: [
           {
             title: 'Audio Player',
-            url: '#'
+            url: '/docs/audio-player',
+            description: 'A simple audio player with play, pause, and volume control.'
           },
           {
             title: 'Combo Box',

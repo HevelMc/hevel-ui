@@ -1,6 +1,6 @@
 <script lang="ts">
   import { AudioPlayer, audioPlayer, Table } from '$lib/index.js';
-  import { Pause, Play } from 'lucide-svelte';
+  import { Pause, Play } from '@lucide/svelte';
 
   const tracks = [
     {

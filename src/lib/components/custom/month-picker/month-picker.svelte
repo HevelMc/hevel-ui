@@ -1,8 +1,8 @@
 <script lang="ts">
   import { cn } from '$lib/utils.js';
-  import CalendarIcon from 'lucide-svelte/icons/calendar';
-  import ChevronLeft from 'lucide-svelte/icons/chevron-left';
-  import ChevronRight from 'lucide-svelte/icons/chevron-right';
+  import CalendarIcon from '@lucide/svelte/icons/calendar';
+  import ChevronLeft from '@lucide/svelte/icons/chevron-left';
+  import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import { getMonthName, getMonthYearName, isAllowed, type Month } from './index.js';
   import { Button, buttonVariants, Popover } from '$lib/index.js';
 

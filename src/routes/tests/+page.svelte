@@ -2,8 +2,8 @@
   import { Button, Card, DatePicker, Input, Label, DatePickerRange, MonthPicker, buttonVariants } from '$lib/index.js';
   import { MonthPickerRange, Popover, SortableList, CopyButton, LightSwitch, LoaderButton } from '$lib/index.js';
   import { AudioPlayer, audioPlayer, ComboBox } from '$lib/index.js';
-  import Play from 'lucide-svelte/icons/play';
-  import Pause from 'lucide-svelte/icons/pause';
+  import Play from '@lucide/svelte/icons/play';
+  import Pause from '@lucide/svelte/icons/pause';
   import { resetMode, setMode } from 'mode-watcher';
 
   let sortableList = $state([

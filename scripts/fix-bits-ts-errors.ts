@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import glob from 'glob';
+import { glob } from 'glob';
 
 const baseDir = 'src/lib/components/ui';
 const filePattern = '**/index.ts';
@@ -16,11 +16,6 @@ function updateFile(filePath: string) {
   }
 }
 
-glob(path.join(baseDir, filePattern), (err, files) => {
-  if (err) {
-    console.error('Error finding files:', err);
-    return;
-  }
+const files = glob.sync(path.join(baseDir, filePattern));
 
-  files.forEach(updateFile);
-});
+files.forEach(updateFile);

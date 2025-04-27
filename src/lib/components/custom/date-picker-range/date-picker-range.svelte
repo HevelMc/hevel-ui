@@ -1,6 +1,6 @@
 <script lang="ts">
   import { DateFormatter } from '@internationalized/date';
-  import CalendarIcon from 'lucide-svelte/icons/calendar';
+  import CalendarIcon from '@lucide/svelte/icons/calendar';
   import type { CalendarMultipleRootProps, WithoutChildrenOrChild } from 'bits-ui';
   import { buttonVariants, Popover, RangeCalendar } from '$lib/components/ui/index.js';
   import { cn, type DateRange } from '$lib/utils.js';

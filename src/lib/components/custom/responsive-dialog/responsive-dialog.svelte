@@ -2,7 +2,7 @@
   import type { Snippet } from 'svelte';
   import * as Dialog from '../../ui/dialog/index.js';
   import * as Drawer from '../../ui/drawer/index.js';
-  import { MediaQuery } from 'runed';
+  import { MediaQuery } from 'svelte/reactivity';
 
   const desktop = new MediaQuery('(min-width: 748px)');
 
@@ -17,7 +17,7 @@
   let { open = $bindable(), trigger, title, description, children }: Props = $props();
 </script>
 
-{#if desktop.matches}
+{#if desktop.current}
   <Dialog.Root bind:open>
     {#if trigger}
       <Dialog.Trigger child={trigger} />

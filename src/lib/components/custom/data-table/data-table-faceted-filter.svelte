@@ -1,11 +1,11 @@
 <script lang="ts" generics="TData, TValue">
-  import CirclePlus from 'lucide-svelte/icons/circle-plus';
-  import Check from 'lucide-svelte/icons/check';
+  import CirclePlus from '@lucide/svelte/icons/circle-plus';
+  import Check from '@lucide/svelte/icons/check';
   import type { Column } from '@tanstack/table-core';
   import { SvelteSet } from 'svelte/reactivity';
   import { cn } from '$lib/utils.js';
   import { Badge, Button, Command, Popover, Separator } from '$lib/index.js';
-  import type { Icon } from 'lucide-svelte';
+  import type { Icon } from '@lucide/svelte';
 
   type Props<TData, TValue> = {
     column: Column<TData, TValue>;

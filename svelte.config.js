@@ -3,6 +3,13 @@ import { mdsvex, escapeSvelte } from 'mdsvex';
 import rehypeExternalLinks from 'rehype-external-links';
 import { createHighlighter } from 'shiki';
 import highlighterConfig from './src/highlighter.config.js';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const docLayoutPath = join(__dirname, './src/lib/components/docs/DocLayout.svelte');
 
 const highlighter = await createHighlighter(highlighterConfig);
 
@@ -10,7 +17,7 @@ const highlighter = await createHighlighter(highlighterConfig);
 const config = {
   preprocess: mdsvex({
     layout: {
-      _: 'src/lib/components/docs/DocLayout.svelte'
+      _: docLayoutPath
     },
     highlight: {
       highlighter: async (code, lang = 'text') => {

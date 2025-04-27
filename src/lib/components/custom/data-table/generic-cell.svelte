@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button, cn } from '$lib/index.js';
-  import { Icon } from 'lucide-svelte';
+  import { Icon } from '@lucide/svelte';
 
   interface Props {
     value: string;
@@ -21,7 +21,7 @@
     {/if}
     <span>{option?.label ?? value}</span>
   {:else if href}
-    <Button variant="link" {href} size="link">
+    <Button variant="link" {href} class="p-0">
       <span>{value}</span>
     </Button>
   {:else}

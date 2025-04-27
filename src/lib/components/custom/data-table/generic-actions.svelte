@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Button, DropdownMenu, cn } from '$lib/index';
   import type { Row } from '@tanstack/table-core';
-  import { Ellipsis } from 'lucide-svelte';
+  import { Ellipsis } from '@lucide/svelte';
 
   interface Props {
     actions: { label: string; icon?: any; class?: string; handler: (row: Row<any>) => void }[];

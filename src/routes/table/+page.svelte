@@ -2,7 +2,7 @@
   import { Badge, cn, DataTable, renderComponent, renderSnippet } from '$lib/index.js';
   import { GenericCell, GenericActions } from '$lib/index.js';
   import type { ColumnDef } from '@tanstack/table-core';
-  import { ArrowDown, ArrowRight, ArrowUp, CircleCheck, Circle, XCircle, CircleHelp, Clock } from 'lucide-svelte';
+  import { ArrowDown, ArrowRight, ArrowUp, CircleCheck, Circle, XCircle, CircleHelp, Clock } from '@lucide/svelte';
   import { data as demoData } from './tasks.js';
   import type { Snippet } from 'svelte';
 

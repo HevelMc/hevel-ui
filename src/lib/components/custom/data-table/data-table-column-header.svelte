@@ -1,8 +1,8 @@
 <script lang="ts">
-  import EyeOff from 'lucide-svelte/icons/eye-off';
-  import ArrowDown from 'lucide-svelte/icons/arrow-down';
-  import ArrowUp from 'lucide-svelte/icons/arrow-up';
-  import ChevronsUpDown from 'lucide-svelte/icons/chevrons-up-down';
+  import EyeOff from '@lucide/svelte/icons/eye-off';
+  import ArrowDown from '@lucide/svelte/icons/arrow-down';
+  import ArrowUp from '@lucide/svelte/icons/arrow-up';
+  import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
   import type { HTMLAttributes } from 'svelte/elements';
   import type { Column } from '@tanstack/table-core';
   import type { WithoutChildren } from 'bits-ui';

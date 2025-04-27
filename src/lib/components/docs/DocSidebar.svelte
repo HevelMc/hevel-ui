@@ -117,7 +117,7 @@
 </script>
 
 <script lang="ts">
-  import ChevronRight from 'lucide-svelte/icons/chevron-right';
+  import ChevronRight from '@lucide/svelte/icons/chevron-right';
   import type { ComponentProps } from 'svelte';
   import { Collapsible, Sidebar } from '$lib/index';
   import { page } from '$app/state';

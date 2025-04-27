@@ -2,7 +2,7 @@
   import { onDestroy, onMount } from 'svelte';
   import { cn } from '$lib/index.js';
   import { audioPlayer } from './index.js';
-  import { Volume1, Volume2, VolumeX, Play, Pause, X } from 'lucide-svelte';
+  import { Volume1, Volume2, VolumeX, Play, Pause, X } from '@lucide/svelte';
 
   interface Props {
     class?: string;

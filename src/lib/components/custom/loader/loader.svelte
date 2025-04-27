@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils.js';
-  import LoaderCircle from 'lucide-svelte/icons/loader-circle';
+  import LoaderCircle from '@lucide/svelte/icons/loader-circle';
   import type { Snippet } from 'svelte';
 
   interface Props {

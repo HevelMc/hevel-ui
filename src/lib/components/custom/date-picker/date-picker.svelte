@@ -3,7 +3,7 @@
   import { cn } from '$lib/utils.js';
   import { buttonVariants } from '$lib/components/ui/button/index.js';
   import * as Popover from '$lib/components/ui/popover/index.js';
-  import CalendarIcon from 'lucide-svelte/icons/calendar';
+  import CalendarIcon from '@lucide/svelte/icons/calendar';
   import { Calendar } from '$lib/components/ui/calendar/index.js';
   import type { CalendarSingleRootProps, WithoutChildrenOrChild } from 'bits-ui';
 

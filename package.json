@@ -7,7 +7,7 @@
   "type": "module",
   "description": "Hevel UI is a collection of Svelte components for building web applications.",
   "license": "MIT",
-  "version": "1.0.0-next.12",
+  "version": "1.0.0-next.13",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HevelMc/hevel-ui.git"
@@ -44,7 +44,7 @@
     "@tanstack/table-core": "^8.20.5",
     "clsx": "^2.1.1",
     "d3-scale": "^4.0.2",
-    "embla-carousel-autoplay": "8.1.6",
+    "embla-carousel-autoplay": "^8.1.6",
     "nanoid": "^5.0.9",
     "runed": "^0.15.4",
     "svelte": "^5.19.1",
@@ -92,5 +92,6 @@
     "typescript-eslint": "^8.21.0",
     "vaul-svelte": "1.0.0-next.3",
     "zod": "^3.24.1"
-  }
+  },
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
 }

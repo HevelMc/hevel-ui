@@ -1,9 +1,9 @@
 <script lang="ts" generics="TData">
-  import XIcon from '@lucide/svelte/icons/x';
-  import type { Table } from '@tanstack/table-core';
-  import { DataTableFacetedFilter, DataTableViewOptions } from './index.js';
-  import { Button, Input } from '$lib/index.js';
-  import type { Icon } from '@lucide/svelte';
+  import XIcon from "@lucide/svelte/icons/x";
+  import type { Table } from "@tanstack/table-core";
+  import { DataTableFacetedFilter, DataTableViewOptions } from "./index.js";
+  import { Button, Input } from "$lib/index.js";
+  import type { Icon } from "@lucide/svelte";
 
   interface Props {
     table: Table<TData>;
@@ -12,7 +12,7 @@
     filters?: { [key: string]: { label: string; value: string; icon?: typeof Icon }[] };
   }
 
-  let { table, searchPlaceholder, searchQuery = $bindable(''), filters = {} }: Props = $props();
+  let { table, searchPlaceholder, searchQuery = $bindable(""), filters = {} }: Props = $props();
 
   const isFiltered = $derived(table.getState().columnFilters.length > 0);
 </script>

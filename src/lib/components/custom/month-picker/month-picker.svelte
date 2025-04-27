@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { cn } from '$lib/utils.js';
-  import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-  import ChevronRight from '@lucide/svelte/icons/chevron-right';
-  import { getMonthName, getMonthYearName, isAllowed, type Month } from './index.js';
-  import { Button, buttonVariants, Popover } from '$lib/index.js';
+  import { cn } from "$lib/utils.js";
+  import CalendarIcon from "@lucide/svelte/icons/calendar";
+  import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+  import ChevronRight from "@lucide/svelte/icons/chevron-right";
+  import { getMonthName, getMonthYearName, isAllowed, type Month } from "./index.js";
+  import { Button, buttonVariants, Popover } from "$lib/index.js";
 
   interface Props {
     onValueChange?: (value: Month | undefined) => void;
@@ -23,9 +23,9 @@
     maxValue = undefined,
     minValue = undefined,
     disabled = false,
-    placeholder = 'Select a month',
+    placeholder = "Select a month",
     locale = undefined,
-    inputClass = ''
+    inputClass = ""
   }: Props = $props();
 
   let year = $state(value?.year ?? new Date().getFullYear());
@@ -43,10 +43,10 @@
     <Popover.Trigger
       class={cn(
         buttonVariants({
-          variant: 'outline',
-          class: 'justify-start text-left font-normal'
+          variant: "outline",
+          class: "justify-start text-left font-normal"
         }),
-        !value && 'text-muted-foreground',
+        !value && "text-muted-foreground",
         inputClass
       )}
     >
@@ -66,8 +66,8 @@
       <div class="grid w-full grid-cols-3 gap-y-1">
         {#each Array.from({ length: 12 }, (_, i) => i) as month}
           <Button
-            variant={month == value?.month && year == value?.year ? 'default' : 'ghost'}
-            class={cn(!isAllowed({ year, month }, minValue, maxValue) && 'text-muted-foreground')}
+            variant={month == value?.month && year == value?.year ? "default" : "ghost"}
+            class={cn(!isAllowed({ year, month }, minValue, maxValue) && "text-muted-foreground")}
             disabled={!isAllowed({ year, month }, minValue, maxValue) || disabled}
             onclick={() => changeValue({ year, month })}
           >

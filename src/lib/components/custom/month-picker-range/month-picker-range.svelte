@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { cn } from '$lib/utils.js';
-  import CalendarIcon from '@lucide/svelte/icons/calendar';
-  import ChevronLeft from '@lucide/svelte/icons/chevron-left';
-  import ChevronRight from '@lucide/svelte/icons/chevron-right';
+  import { cn } from "$lib/utils.js";
+  import CalendarIcon from "@lucide/svelte/icons/calendar";
+  import ChevronLeft from "@lucide/svelte/icons/chevron-left";
+  import ChevronRight from "@lucide/svelte/icons/chevron-right";
   import {
     getMonthName,
     getMonthYearName,
@@ -12,8 +12,8 @@
     isSameMonth,
     sortMonths,
     type Month
-  } from '../month-picker/index.js';
-  import { Button, buttonVariants, Popover } from '$lib/index.js';
+  } from "../month-picker/index.js";
+  import { Button, buttonVariants, Popover } from "$lib/index.js";
 
   interface Props {
     onValueChange?: (value: Month[] | undefined) => void;
@@ -32,9 +32,9 @@
     maxValue = undefined,
     minValue = undefined,
     disabled = false,
-    placeholder = 'Select a period',
+    placeholder = "Select a period",
     locale = undefined,
-    inputClass = ''
+    inputClass = ""
   }: Props = $props();
 
   let year = $state(value?.[0]?.year ?? new Date().getFullYear());
@@ -53,17 +53,17 @@
   }
 
   function getMonthVariant(month: Month) {
-    if (includesMonth(value ?? [], month)) return 'default';
-    if (value?.length == 2 && isInRange(month, value[0]!, value[1]!)) return 'secondary';
-    return 'ghost';
+    if (includesMonth(value ?? [], month)) return "default";
+    if (value?.length == 2 && isInRange(month, value[0]!, value[1]!)) return "secondary";
+    return "ghost";
   }
 
   function getMonthCorner(month: Month) {
-    if (isSameMonth(value?.[0], month) && isSameMonth(value?.[1], month)) return 'rounded-md';
-    if (isSameMonth(value?.[0], month)) return 'rounded-l-md rounded-r-none';
-    if (isSameMonth(value?.[1], month)) return 'rounded-r-md rounded-l-none';
-    if (value?.length == 2 && isInRange(month, value[0]!, value[1]!)) return 'rounded-none';
-    return '';
+    if (isSameMonth(value?.[0], month) && isSameMonth(value?.[1], month)) return "rounded-md";
+    if (isSameMonth(value?.[0], month)) return "rounded-l-md rounded-r-none";
+    if (isSameMonth(value?.[1], month)) return "rounded-r-md rounded-l-none";
+    if (value?.length == 2 && isInRange(month, value[0]!, value[1]!)) return "rounded-none";
+    return "";
   }
 </script>
 
@@ -72,10 +72,10 @@
     <Popover.Trigger
       class={cn(
         buttonVariants({
-          variant: 'outline',
-          class: 'justify-start text-left font-normal'
+          variant: "outline",
+          class: "justify-start text-left font-normal"
         }),
-        !value && 'text-muted-foreground',
+        !value && "text-muted-foreground",
         inputClass
       )}
     >
@@ -104,7 +104,7 @@
             <Button
               variant={getMonthVariant({ year, month })}
               class={cn(
-                !isAllowed({ year, month }, minValue, maxValue) && 'text-muted-foreground',
+                !isAllowed({ year, month }, minValue, maxValue) && "text-muted-foreground",
                 getMonthCorner({ year, month })
               )}
               disabled={!isAllowed({ year, month }, minValue, maxValue) || disabled}

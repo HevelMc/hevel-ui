@@ -1,6 +1,6 @@
 <script lang="ts" module>
-  import type { CellContext, ColumnDefTemplate, HeaderContext } from '@tanstack/table-core';
-  import { RenderComponentConfig, RenderSnippetConfig } from './render-helpers.js';
+  import type { CellContext, ColumnDefTemplate, HeaderContext } from "@tanstack/table-core";
+  import { RenderComponentConfig, RenderSnippetConfig } from "./render-helpers.js";
 </script>
 
 <script lang="ts" generics="TData, TValue, TContext extends HeaderContext<TData, TValue> | CellContext<TData, TValue>">
@@ -18,7 +18,7 @@
   let { content, context }: Props = $props();
 </script>
 
-{#if typeof content === 'string'}
+{#if typeof content === "string"}
   {content}
 {:else if content instanceof Function}
   <!-- It's unlikely that a CellContext will be passed to a Header -->

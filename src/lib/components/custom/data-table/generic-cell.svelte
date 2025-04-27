@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button, cn } from '$lib/index.js';
-  import { Icon } from '@lucide/svelte';
+  import { Button, cn } from "$lib/index.js";
+  import { Icon } from "@lucide/svelte";
 
   interface Props {
     value: string;
@@ -14,7 +14,7 @@
   let option = $derived(options?.find((o) => o.value === value));
 </script>
 
-<div class={cn('flex items-center gap-2 truncate', classes, option?.class)}>
+<div class={cn("flex items-center gap-2 truncate", classes, option?.class)}>
   {#if options}
     {#if option?.icon}
       <option.icon class="h-4 w-4" />

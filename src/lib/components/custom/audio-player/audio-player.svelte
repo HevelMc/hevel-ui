@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onDestroy, onMount } from 'svelte';
-  import { cn } from '$lib/index.js';
-  import { audioPlayer } from './index.js';
-  import { Volume1, Volume2, VolumeX, Play, Pause, X } from '@lucide/svelte';
+  import { onDestroy, onMount } from "svelte";
+  import { cn } from "$lib/index.js";
+  import { audioPlayer } from "./index.js";
+  import { Volume1, Volume2, VolumeX, Play, Pause, X } from "@lucide/svelte";
 
   interface Props {
     class?: string;
@@ -33,7 +33,7 @@
   function formatDuration(duration: number) {
     const minutes = Math.floor(duration / 60);
     const seconds = Math.floor(duration % 60);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   }
 
   onMount(() => {
@@ -46,7 +46,7 @@
 </script>
 
 {#if $audioPlayer.duration >= 0}
-  <div class={cn('flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-sm', className)}>
+  <div class={cn("flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-sm", className)}>
     <span class="text-center text-lg">{$audioPlayer?.name}</span>
     <div class="flex w-full flex-row items-center gap-3">
       <button onclick={() => ($audioPlayer.paused ? playAudio() : pauseAudio())}>

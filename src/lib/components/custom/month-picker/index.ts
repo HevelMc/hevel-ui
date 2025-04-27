@@ -4,7 +4,7 @@ export type Month = {
 };
 
 export function getMonthName(month: number, locale?: Intl.LocalesArgument): string {
-  return new Date(0, month).toLocaleString(locale, { month: 'long' }).capitalize();
+  return new Date(0, month).toLocaleString(locale, { month: "long" }).capitalize();
 }
 
 export function getMonthYearName(month: Month, locale?: Intl.LocalesArgument): string {

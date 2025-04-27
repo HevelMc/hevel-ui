@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { ButtonProps } from '$lib/components/ui/button/index.js';
-  import Button from '$lib/components/ui/button/button.svelte';
-  import { Sun, Moon } from '@lucide/svelte';
-  import { DropdownMenu } from '$lib/components/ui/index.js';
+  import type { ButtonProps } from "$lib/components/ui/button/index.js";
+  import Button from "$lib/components/ui/button/button.svelte";
+  import { Sun, Moon } from "@lucide/svelte";
+  import { DropdownMenu } from "$lib/components/ui/index.js";
 
   interface Props extends ButtonProps {
-    setMode: (mode: 'dark' | 'light' | 'system') => void;
+    setMode: (mode: "dark" | "light" | "system") => void;
     resetMode: () => void;
     lightText?: string;
     darkText?: string;
@@ -17,9 +17,9 @@
     onclick,
     setMode,
     resetMode,
-    lightText = 'Light',
-    darkText = 'Dark',
-    systemText = 'System',
+    lightText = "Light",
+    darkText = "Dark",
+    systemText = "System",
     ...restProps
   }: Props = $props();
 </script>
@@ -35,8 +35,8 @@
     {/snippet}
   </DropdownMenu.Trigger>
   <DropdownMenu.Content align="end">
-    <DropdownMenu.Item onclick={() => setMode('light')}>{lightText}</DropdownMenu.Item>
-    <DropdownMenu.Item onclick={() => setMode('dark')}>{darkText}</DropdownMenu.Item>
+    <DropdownMenu.Item onclick={() => setMode("light")}>{lightText}</DropdownMenu.Item>
+    <DropdownMenu.Item onclick={() => setMode("dark")}>{darkText}</DropdownMenu.Item>
     <DropdownMenu.Item onclick={() => resetMode()}>{systemText}</DropdownMenu.Item>
   </DropdownMenu.Content>
 </DropdownMenu.Root>

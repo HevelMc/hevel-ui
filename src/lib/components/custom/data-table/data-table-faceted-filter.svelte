@@ -1,11 +1,11 @@
 <script lang="ts" generics="TData, TValue">
-  import CirclePlus from '@lucide/svelte/icons/circle-plus';
-  import Check from '@lucide/svelte/icons/check';
-  import type { Column } from '@tanstack/table-core';
-  import { SvelteSet } from 'svelte/reactivity';
-  import { cn } from '$lib/utils.js';
-  import { Badge, Button, Command, Popover, Separator } from '$lib/index.js';
-  import type { Icon } from '@lucide/svelte';
+  import CirclePlus from "@lucide/svelte/icons/circle-plus";
+  import Check from "@lucide/svelte/icons/check";
+  import type { Column } from "@tanstack/table-core";
+  import { SvelteSet } from "svelte/reactivity";
+  import { cn } from "$lib/utils.js";
+  import { Badge, Button, Command, Popover, Separator } from "$lib/index.js";
+  import type { Icon } from "@lucide/svelte";
 
   type Props<TData, TValue> = {
     column: Column<TData, TValue>;
@@ -72,11 +72,11 @@
             >
               <div
                 class={cn(
-                  'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary',
-                  isSelected ? 'bg-primary text-primary-foreground' : 'opacity-50 [&_svg]:invisible'
+                  "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                  isSelected ? "bg-primary text-primary-foreground" : "opacity-50 [&_svg]:invisible"
                 )}
               >
-                <Check class={cn('h-4 w-4')} />
+                <Check class={cn("h-4 w-4")} />
               </div>
               {#if option.icon}
                 {@const Icon = option.icon}

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { flip } from 'svelte/animate';
-  import { createEventDispatcher, type Snippet } from 'svelte';
+  import { flip } from "svelte/animate";
+  import { createEventDispatcher, type Snippet } from "svelte";
 
   let isOver: string | boolean = $state(false);
   interface Props {
@@ -10,7 +10,7 @@
     child?: Snippet<[{ item: any; index: number }]>;
   }
 
-  let { list, disabled = false, child, placeholder = 'No items found' }: Props = $props();
+  let { list, disabled = false, child, placeholder = "No items found" }: Props = $props();
 
   const dispatch = createEventDispatcher();
 
@@ -25,7 +25,7 @@
   function onDragStart(e: DragEvent) {
     if (disabled) return;
     const dragged = getDraggedParent(e.target);
-    e.dataTransfer?.setData('source', dragged?.index.toString());
+    e.dataTransfer?.setData("source", dragged?.index.toString());
   }
 
   function onDragOver(e: DragEvent) {
@@ -45,7 +45,7 @@
     isOver = false;
     const dragged = getDraggedParent(e.target);
     reorder({
-      from: e.dataTransfer?.getData('source'),
+      from: e.dataTransfer?.getData("source"),
       to: dragged.index
     });
   }
@@ -54,7 +54,7 @@
     const newList = [...list];
     newList[from] = [newList[to], (newList[to] = newList[from])][0];
 
-    dispatch('sort', newList);
+    dispatch("sort", newList);
   };
 </script>
 

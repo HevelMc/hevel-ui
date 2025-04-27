@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button, DropdownMenu, cn } from '$lib/index';
-  import type { Row } from '@tanstack/table-core';
-  import { Ellipsis } from '@lucide/svelte';
+  import { Button, DropdownMenu, cn } from "$lib/index";
+  import type { Row } from "@tanstack/table-core";
+  import { Ellipsis } from "@lucide/svelte";
 
   interface Props {
     actions: { label: string; icon?: any; class?: string; handler: (row: Row<any>) => void }[];
@@ -21,9 +21,9 @@
         </Button>
       {/snippet}
     </DropdownMenu.Trigger>
-    <DropdownMenu.Content class={cn('w-[240px]', className)} align="end">
+    <DropdownMenu.Content class={cn("w-[240px]", className)} align="end">
       {#each actions as action}
-        <DropdownMenu.Item class={cn('gap-2', action.class)} onclick={() => action.handler(row)}>
+        <DropdownMenu.Item class={cn("gap-2", action.class)} onclick={() => action.handler(row)}>
           {#if action.icon}
             <action.icon class="h-4 w-4" />
           {/if}

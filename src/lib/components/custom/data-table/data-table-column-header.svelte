@@ -1,13 +1,13 @@
 <script lang="ts">
-  import EyeOff from '@lucide/svelte/icons/eye-off';
-  import ArrowDown from '@lucide/svelte/icons/arrow-down';
-  import ArrowUp from '@lucide/svelte/icons/arrow-up';
-  import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
-  import type { HTMLAttributes } from 'svelte/elements';
-  import type { Column } from '@tanstack/table-core';
-  import type { WithoutChildren } from 'bits-ui';
-  import { cn } from '$lib/utils.js';
-  import { Button, DropdownMenu } from '$lib/index.js';
+  import EyeOff from "@lucide/svelte/icons/eye-off";
+  import ArrowDown from "@lucide/svelte/icons/arrow-down";
+  import ArrowUp from "@lucide/svelte/icons/arrow-up";
+  import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
+  import type { HTMLAttributes } from "svelte/elements";
+  import type { Column } from "@tanstack/table-core";
+  import type { WithoutChildren } from "bits-ui";
+  import { cn } from "$lib/utils.js";
+  import { Button, DropdownMenu } from "$lib/index.js";
 
   type Props = HTMLAttributes<HTMLDivElement> & {
     column: Column<any, any>;
@@ -22,7 +22,7 @@
     {title}
   </div>
 {:else}
-  <div class={cn('flex items-center', className)} {...restProps}>
+  <div class={cn("flex items-center", className)} {...restProps}>
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
         {#snippet child({ props })}
@@ -30,9 +30,9 @@
             <span>
               {title}
             </span>
-            {#if column.getIsSorted() === 'desc'}
+            {#if column.getIsSorted() === "desc"}
               <ArrowDown class="ml-2 size-4" />
-            {:else if column.getIsSorted() === 'asc'}
+            {:else if column.getIsSorted() === "asc"}
               <ArrowUp class="ml-2 size-4" />
             {:else}
               <ChevronsUpDown class="ml-2 size-4" />

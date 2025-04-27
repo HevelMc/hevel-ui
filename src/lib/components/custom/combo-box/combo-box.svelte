@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Check from '@lucide/svelte/icons/check';
-  import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
-  import { tick } from 'svelte';
-  import * as Command from '$lib/components/ui/command/index.js';
-  import * as Popover from '$lib/components/ui/popover/index.js';
-  import { Button } from '$lib/components/ui/button/index.js';
-  import { cn } from '$lib/utils.js';
+  import Check from "@lucide/svelte/icons/check";
+  import ChevronsUpDown from "@lucide/svelte/icons/chevrons-up-down";
+  import { tick } from "svelte";
+  import * as Command from "$lib/components/ui/command/index.js";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { cn } from "$lib/utils.js";
 
   interface Props {
     items: { label: string; value: string }[];
@@ -22,11 +22,11 @@
 
   let {
     items,
-    value = $bindable(''),
-    selectPlaceholder = 'Select an item...',
-    searchPlaceholder = 'Search...',
-    noResultsPlaceholder = 'No results found.',
-    popupClasses = '',
+    value = $bindable(""),
+    selectPlaceholder = "Select an item...",
+    searchPlaceholder = "Search...",
+    noResultsPlaceholder = "No results found.",
+    popupClasses = "",
     disabled = false,
     shouldFilter = true,
     oninput,
@@ -56,7 +56,7 @@
       </Button>
     {/snippet}
   </Popover.Trigger>
-  <Popover.Content class={cn('p-0', popupClasses)}>
+  <Popover.Content class={cn("p-0", popupClasses)}>
     <Command.Root {shouldFilter}>
       <Command.Input placeholder={searchPlaceholder} oninput={(e) => oninput?.((e?.target as any)?.value)} />
       <Command.List>
@@ -71,7 +71,7 @@
                 onselect?.(item.value);
               }}
             >
-              <Check class={cn('mr-2 size-4', value !== item.value && 'text-transparent')} />
+              <Check class={cn("mr-2 size-4", value !== item.value && "text-transparent")} />
               {item.label}
             </Command.Item>
           {/each}

@@ -1,5 +1,5 @@
-import { writable, type Writable } from 'svelte/store';
-import AudioPlayer from './audio-player.svelte';
+import { writable, type Writable } from "svelte/store";
+import AudioPlayer from "./audio-player.svelte";
 
 function createAudio() {
   const {
@@ -15,11 +15,11 @@ function createAudio() {
     currentTime: number;
     volume: number;
   }> = writable({
-    audio: typeof Audio == 'undefined' ? undefined : new Audio(),
+    audio: typeof Audio == "undefined" ? undefined : new Audio(),
     paused: true,
     duration: 0,
     track_id: null,
-    name: '',
+    name: "",
     get currentTime() {
       return this.audio?.currentTime ?? 0;
     },
@@ -52,14 +52,14 @@ function createAudio() {
   }
 
   function start(url: string, track_id: string, name: string) {
-    console.log('start loading', url);
+    console.log("start loading", url);
     update((state) => {
       if (state.audio == undefined) return state;
       state.audio.src = url;
 
       state.audio.onloadedmetadata = function () {
         update((state) => {
-          console.log('start playing', url);
+          console.log("start playing", url);
           if (state.audio == undefined) return state;
           state.audio.currentTime = 0;
           state.track_id = track_id;
@@ -74,7 +74,7 @@ function createAudio() {
         update((state) => {
           state.paused = true;
           state.track_id = null;
-          state.name = '';
+          state.name = "";
           return state;
         });
       };
@@ -91,7 +91,7 @@ function createAudio() {
       state.paused = true;
       state.audio.currentTime = 0;
       state.track_id = null;
-      state.name = '';
+      state.name = "";
       return state;
     });
   }

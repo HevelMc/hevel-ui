@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte';
-  import * as Dialog from '../../ui/dialog/index.js';
-  import * as Drawer from '../../ui/drawer/index.js';
-  import { MediaQuery } from 'svelte/reactivity';
+  import type { Snippet } from "svelte";
+  import * as Dialog from "../../ui/dialog/index.js";
+  import * as Drawer from "../../ui/drawer/index.js";
+  import { MediaQuery } from "svelte/reactivity";
 
-  const desktop = new MediaQuery('(min-width: 748px)');
+  const desktop = new MediaQuery("(min-width: 748px)");
 
   interface Props {
     open: boolean;

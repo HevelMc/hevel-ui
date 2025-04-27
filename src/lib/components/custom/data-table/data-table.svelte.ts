@@ -8,7 +8,7 @@ import {
   type TableOptionsResolved,
   type TableState,
   createTable
-} from '@tanstack/table-core';
+} from "@tanstack/table-core";
 
 /**
  * Creates a reactive TanStack table object for Svelte.
@@ -90,7 +90,7 @@ function mergeObjects(...sources: any): any {
   const target = {};
   for (let i = 0; i < sources.length; i++) {
     let source = sources[i];
-    if (typeof source === 'function') source = source();
+    if (typeof source === "function") source = source();
     if (source) {
       const descriptors = Object.getOwnPropertyDescriptors(source);
       for (const key in descriptors) {
@@ -100,7 +100,7 @@ function mergeObjects(...sources: any): any {
           get() {
             for (let i = sources.length - 1; i >= 0; i--) {
               let s = sources[i];
-              if (typeof s === 'function') s = s();
+              if (typeof s === "function") s = s();
               const v = (s || {})[key];
               if (v !== undefined) return v;
             }

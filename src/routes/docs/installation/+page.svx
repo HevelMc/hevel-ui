@@ -16,7 +16,7 @@ Before installing `hevel-ui`, ensure that you have the following requirements:
 <Accordion.Content class="[&>*]:space-y-2">
 
 ```bash
-npm create svelte@latest my-app
+npx sv create my-app
 npm install
 ```
 

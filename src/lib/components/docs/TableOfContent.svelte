@@ -26,7 +26,6 @@
 
   function getHeadingsWithHierarchy(divId: string) {
     const div = document.getElementById(divId);
-    console.log(div);
 
     if (!div) {
       return { items: [] };

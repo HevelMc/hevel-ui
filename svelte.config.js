@@ -1,13 +1,10 @@
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex, escapeSvelte } from 'mdsvex';
-import { createHighlighter } from 'shiki';
 import rehypeExternalLinks from 'rehype-external-links';
+import { createHighlighter } from 'shiki';
+import highlighterConfig from './src/highlighter.config.js';
 
-const theme = 'material-theme-darker';
-const highlighter = await createHighlighter({
-  themes: [theme],
-  langs: ['javascript', 'typescript', 'svelte', 'bash', 'diff']
-});
+const highlighter = await createHighlighter(highlighterConfig);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,7 +14,7 @@ const config = {
     },
     highlight: {
       highlighter: async (code, lang = 'text') => {
-        const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+        const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: highlighterConfig.themes[0] }));
         return `{@html \`${html}\` }`;
       }
     },

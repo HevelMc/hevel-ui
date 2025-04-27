@@ -6,11 +6,11 @@
   import Pause from 'lucide-svelte/icons/pause';
   import { resetMode, setMode } from 'mode-watcher';
 
-  let sortableList = [
+  let sortableList = $state([
     { id: '1', name: 'Item A' },
     { id: '2', name: 'Item B' },
     { id: '3', name: 'Item C' }
-  ];
+  ]);
 
   function toggleAudio() {
     if ($audioPlayer?.track_id == null) {

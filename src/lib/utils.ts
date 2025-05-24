@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import type { DateRange, WithElementRef } from 'bits-ui';
+import type { DateRange } from 'bits-ui';
 import { today, parseDate, type DateValue } from '@internationalized/date';
 
 export { type DateRange, type DateValue, today, parseDate };
@@ -18,6 +18,13 @@ declare global {
 String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type WithoutChild<T> = T extends { child?: any } ? Omit<T, 'child'> : T;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type WithoutChildren<T> = T extends { children?: any } ? Omit<T, 'children'> : T;
+export type WithoutChildrenOrChild<T> = WithoutChildren<WithoutChild<T>>;
+export type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?: U | null };
 
 // Wrappers around svelte's `HTMLAttributes` types to add a `ref` prop can be bound to
 // to get a reference to the underlying DOM element the component is rendering.

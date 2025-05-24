@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { WithElementRef } from "bits-ui";
+	import type { WithElementRef } from "$lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 	import { getEmblaContext } from "./context.js";
 	import { cn } from "$lib/utils.js";

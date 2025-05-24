@@ -51,7 +51,7 @@
             {
               label: 'Delete',
               icon: XCircle,
-              class: 'text-red-500 data-[highlighted]:text-red-400',
+              class: 'text-red-500 data-highlighted:text-red-400',
               handler: (row) => {
                 data = data.filter((r) => r.id !== row.original.id);
                 table.fetchData();

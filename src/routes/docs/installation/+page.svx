@@ -13,7 +13,7 @@ Before installing `hevel-ui`, ensure that you have the following requirements:
 - [A SvelteKit project](https://kit.svelte.dev/docs#introduction)
 
 </Accordion.Trigger>
-<Accordion.Content class="[&>*]:space-y-2">
+<Accordion.Content class="*:space-y-2">
 
 ```bash
 npx sv create my-app

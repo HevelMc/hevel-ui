@@ -40,8 +40,8 @@
     <Popover.Content class="w-80">
       <div class="grid gap-4">
         <div class="space-y-2">
-          <h4 class="font-medium leading-none">Dimensions</h4>
-          <p class="text-sm text-muted-foreground">Set the dimensions for the layer.</p>
+          <h4 class="leading-none font-medium">Dimensions</h4>
+          <p class="text-muted-foreground text-sm">Set the dimensions for the layer.</p>
         </div>
         <div class="grid gap-2">
           <div class="grid grid-cols-3 items-center gap-4">
@@ -119,7 +119,7 @@
 
   <SortableList list={sortableList} on:sort={(event) => (sortableList = event.detail)}>
     {#snippet child({ item, index }: { item: any; index: number })}
-      <div class="rounded-md border border-border p-4">{index + 1}. {item.name}</div>
+      <div class="border-border rounded-md border p-4">{index + 1}. {item.name}</div>
     {/snippet}
   </SortableList>
 </div>

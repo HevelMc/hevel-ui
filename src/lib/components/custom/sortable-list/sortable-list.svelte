@@ -1,6 +1,7 @@
 <script lang="ts">
   import { flip } from 'svelte/animate';
   import { createEventDispatcher, type Snippet } from 'svelte';
+  import { cn } from '$lib/utils';
 
   let isOver: string | boolean = $state(false);
   interface Props {
@@ -62,7 +63,10 @@
   <ul class="flex list-none flex-col items-center p-0">
     {#each list as item, index (item.id)}
       <li
-        class="w-full border-2 border-dashed border-transparent transition-all"
+        class={cn(
+          'w-full border-2 border-dashed border-transparent transition-all',
+          item.id === isOver && 'border-foreground scale-105'
+        )}
         class:over={item.id === isOver}
         data-index={index}
         data-id={item.id}
@@ -86,9 +90,3 @@
     {placeholder}
   </p>
 {/if}
-
-<style lang="postcss">
-  .over {
-    @apply scale-105 border-foreground;
-  }
-</style>

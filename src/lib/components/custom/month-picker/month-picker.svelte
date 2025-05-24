@@ -53,7 +53,7 @@
       <CalendarIcon class="mr-2 h-4 w-4" />
       {value ? getMonthYearName(value, locale) : placeholder}
     </Popover.Trigger>
-    <Popover.Content class="w-sm flex flex-col gap-2 p-2">
+    <Popover.Content class="flex w-sm flex-col gap-2 p-2">
       <div class="flex items-center gap-2">
         <Button variant="outline" onclick={() => (year -= 1)}>
           <ChevronLeft class="h-4 w-4" />

@@ -23,7 +23,7 @@ Why **packaged** as a dependency?
 
 </Accordion.Trigger>
 
-<Accordion.Content class="[&>*]:space-y-2">
+<Accordion.Content class="*:space-y-2">
 
 The concept behind [shadcn-ui](https://shadcn-ui.com) and [shadcn-svelte](https://shadcn-svelte.com) emphasizes ownership and control over your codebase, allowing developers to determine how components are styled and constructed. While this approach offers great flexibility, it involves extra setup and maintenance efforts.
 

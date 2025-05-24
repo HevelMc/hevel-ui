@@ -46,7 +46,7 @@
 </script>
 
 {#if $audioPlayer.duration >= 0}
-  <div class={cn('flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-sm', className)}>
+  <div class={cn('flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-xs', className)}>
     <span class="text-center text-lg">{$audioPlayer?.name}</span>
     <div class="flex w-full flex-row items-center gap-3">
       <button onclick={() => ($audioPlayer.paused ? playAudio() : pauseAudio())}>

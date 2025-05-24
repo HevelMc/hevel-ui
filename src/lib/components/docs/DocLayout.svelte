@@ -13,7 +13,7 @@
   <DocSidebar />
   <Sidebar.Inset>
     <header
-      class="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center gap-4 border-b border-border/40 bg-background bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      class="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center gap-4 border-b border-border/40 bg-background bg-background/95 px-4 backdrop-blur-sm supports-backdrop-filter:bg-background/60"
     >
       <Sidebar.Trigger />
       <Separator orientation="vertical" class="mr-2 h-4" />

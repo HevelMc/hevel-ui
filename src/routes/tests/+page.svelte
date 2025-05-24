@@ -98,9 +98,9 @@
     </LoaderButton>
     <Button variant="outline" onclick={toggleAudio}>
       {#if $audioPlayer.paused}
-        <Play class="h-4 w-4" />
+        <Play class="size-4" />
       {:else}
-        <Pause class="h-4 w-4" />
+        <Pause class="size-4" />
       {/if}
     </Button>
     <Button href="/table" variant="outline">Table Page</Button>

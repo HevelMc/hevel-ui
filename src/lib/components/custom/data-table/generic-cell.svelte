@@ -17,7 +17,7 @@
 <div class={cn('flex items-center gap-2 truncate', classes, option?.class)}>
   {#if options}
     {#if option?.icon}
-      <option.icon class="h-4 w-4" />
+      <option.icon class="size-4" />
     {/if}
     <span>{option?.label ?? value}</span>
   {:else if href}

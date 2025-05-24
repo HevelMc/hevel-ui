@@ -130,7 +130,7 @@
 <Sidebar.Root bind:ref {...restProps}>
   <Sidebar.Header>
     <Sidebar.MenuButton size="lg" class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-      <img src="/favicon.png" alt="Hevel UI" class="h-8 w-8" />
+      <img src="/favicon.png" alt="Hevel UI" class="size-8" />
       <div class="flex flex-col gap-0.5 leading-none">
         <span class="font-semibold">Hevel UI</span>
         <span class="">Documentation</span>
@@ -144,7 +144,7 @@
       <Collapsible.Root title={group.title} open={true} class="group/collapsible">
         <Sidebar.Group>
           <Sidebar.GroupLabel
-            class="group/label mb-1 text-sm font-bold text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+            class="group/label text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground mb-1 text-sm font-bold"
           >
             {#snippet child({ props })}
               <Collapsible.Trigger {...props}>

@@ -33,9 +33,9 @@
       {#snippet child({ props })}
         <Button {...props} {...restProps} onclick={copy}>
           {#if !copied}
-            <Copy class="h-4 w-4" />
+            <Copy class="size-4" />
           {:else}
-            <Check class="h-4 w-4" />
+            <Check class="size-4" />
           {/if}
         </Button>
       {/snippet}

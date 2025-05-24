@@ -46,18 +46,18 @@
         {#each tracks as track, i}
           <Table.Row class="group" onclick={() => playMusic(track)}>
             <Table.Cell class="p-2 text-center">
-              <span class="text-sm text-muted-foreground group-hover:hidden">{i + 1}</span>
+              <span class="text-muted-foreground text-sm group-hover:hidden">{i + 1}</span>
               {#if $audioPlayer.track_id == track.id.toString() && !$audioPlayer.paused}
-                <Pause class="hidden h-4 w-4 fill-primary text-primary group-hover:inline" />
+                <Pause class="fill-primary text-primary hidden size-4 group-hover:inline" />
               {:else}
-                <Play class="hidden h-4 w-4 fill-primary text-primary group-hover:inline" />
+                <Play class="fill-primary text-primary hidden size-4 group-hover:inline" />
               {/if}
             </Table.Cell>
             <Table.Cell class="p-2">
-              <span class="text-lg text-primary">{track.title}</span>
+              <span class="text-primary text-lg">{track.title}</span>
             </Table.Cell>
             <Table.Cell class="p-2 text-center">
-              <span class="shrink-0 text-sm text-muted-foreground">{track.duration}</span>
+              <span class="text-muted-foreground shrink-0 text-sm">{track.duration}</span>
             </Table.Cell>
           </Table.Row>
         {/each}
@@ -65,6 +65,6 @@
     </Table.Root>
   </div>
   {#if $audioPlayer.track_id !== null}
-    <AudioPlayer class="border-none bg-muted/30" />
+    <AudioPlayer class="bg-muted/30 border-none" />
   {/if}
 </div>

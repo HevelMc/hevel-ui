@@ -46,14 +46,14 @@
 </script>
 
 {#if $audioPlayer.duration >= 0}
-  <div class={cn('flex flex-col rounded-lg border bg-card p-2 text-card-foreground shadow-xs', className)}>
+  <div class={cn('bg-card text-card-foreground flex flex-col rounded-lg border p-2 shadow-xs', className)}>
     <span class="text-center text-lg">{$audioPlayer?.name}</span>
     <div class="flex w-full flex-row items-center gap-3">
       <button onclick={() => ($audioPlayer.paused ? playAudio() : pauseAudio())}>
         {#if $audioPlayer.paused}
-          <Play class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
+          <Play class="fill-foreground text-foreground size-5 shrink-0" />
         {:else}
-          <Pause class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
+          <Pause class="fill-foreground text-foreground size-5 shrink-0" />
         {/if}
       </button>
 
@@ -63,7 +63,7 @@
       <!-- https://github.com/huntabyte/bits-ui/discussions/796 -->
       <input
         type="range"
-        class="slider w-full accent-secondary-foreground"
+        class="slider accent-secondary-foreground w-full"
         bind:value={currentTime}
         min={0}
         max={$audioPlayer.duration}
@@ -82,16 +82,16 @@
       <span>{formatDuration($audioPlayer.duration)}</span>
 
       {#if volume == 0}
-        <VolumeX class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
+        <VolumeX class="fill-foreground text-foreground size-5 shrink-0" />
       {:else if volume < 0.5}
-        <Volume1 class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
+        <Volume1 class="fill-foreground text-foreground size-5 shrink-0" />
       {:else}
-        <Volume2 class="h-5 w-5 shrink-0 fill-foreground text-foreground" />
+        <Volume2 class="fill-foreground text-foreground size-5 shrink-0" />
       {/if}
 
       <input
         type="range"
-        class="slider w-1/2 accent-secondary-foreground md:w-1/3"
+        class="slider accent-secondary-foreground w-1/2 md:w-1/3"
         bind:value={volume}
         min={0}
         max={1}
@@ -101,7 +101,7 @@
       />
 
       <button onclick={() => audioPlayer.stop()}>
-        <X class="h-5 w-5 shrink-0 text-foreground" />
+        <X class="text-foreground size-5 shrink-0" />
       </button>
     </div>
   </div>

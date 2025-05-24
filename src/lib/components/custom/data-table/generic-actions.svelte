@@ -16,7 +16,7 @@
   <DropdownMenu.Root>
     <DropdownMenu.Trigger>
       {#snippet child({ props })}
-        <Button {...props} variant="ghost" class="flex h-8 w-8 p-0 data-[state=open]:bg-muted">
+        <Button {...props} variant="ghost" class="data-[state=open]:bg-muted flex size-8 p-0">
           <Ellipsis class="size-4" />
         </Button>
       {/snippet}
@@ -25,7 +25,7 @@
       {#each actions as action}
         <DropdownMenu.Item class={cn('gap-2', action.class)} onclick={() => action.handler(row)}>
           {#if action.icon}
-            <action.icon class="h-4 w-4" />
+            <action.icon class="size-4" />
           {/if}
           <span>{action.label}</span>
         </DropdownMenu.Item>

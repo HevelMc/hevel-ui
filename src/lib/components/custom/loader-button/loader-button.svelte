@@ -22,7 +22,7 @@
   }}
 >
   {#if loading}
-    <LoaderCircle class="h-6 w-6 animate-spin" />
+    <LoaderCircle class="size-6 animate-spin" />
   {:else}
     {@render children?.()}
   {/if}

@@ -79,7 +79,7 @@
         inputClass
       )}
     >
-      <CalendarIcon class="mr-2 h-4 w-4" />
+      <CalendarIcon class="mr-2 size-4" />
       {#if !value || value.length == 0}
         {placeholder}
       {:else if value.length > 1}
@@ -91,11 +91,11 @@
     <Popover.Content class="flex w-sm flex-col gap-2 p-2">
       <div class="flex items-center gap-2">
         <Button variant="outline" onclick={() => (year -= 1)}>
-          <ChevronLeft class="h-4 w-4" />
+          <ChevronLeft class="size-4" />
         </Button>
         <span class="flex-1 text-center">{year}</span>
         <Button variant="outline" onclick={() => (year += 1)}>
-          <ChevronRight class="h-4 w-4" />
+          <ChevronRight class="size-4" />
         </Button>
       </div>
       <div class="grid w-full grid-cols-3 gap-y-1">

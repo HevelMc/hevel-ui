@@ -27,7 +27,7 @@
   <Popover.Trigger>
     {#snippet child({ props })}
       <Button {...props} variant="outline" size="sm" class="h-8 border-dashed">
-        <CirclePlus class="mr-2 h-4 w-4" />
+        <CirclePlus class="mr-2 size-4" />
         {title}
         {#if selectedValues.size > 0}
           <Separator orientation="vertical" class="mx-2 h-4" />
@@ -72,20 +72,20 @@
             >
               <div
                 class={cn(
-                  'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary',
+                  'border-primary mr-2 flex size-4 items-center justify-center rounded-sm border',
                   isSelected ? 'bg-primary text-primary-foreground' : 'opacity-50 [&_svg]:invisible'
                 )}
               >
-                <Check class={cn('h-4 w-4')} />
+                <Check class={cn('size-4')} />
               </div>
               {#if option.icon}
                 {@const Icon = option.icon}
-                <Icon class="mr-2 h-4 w-4 text-muted-foreground" />
+                <Icon class="text-muted-foreground mr-2 size-4" />
               {/if}
 
               <span>{option.label}</span>
               {#if facets?.get(option.value)}
-                <span class="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
+                <span class="ml-auto flex size-4 items-center justify-center font-mono text-xs">
                   <!-- {facets.get(option.value)} -->
                 </span>
               {/if}

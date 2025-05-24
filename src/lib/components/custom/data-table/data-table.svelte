@@ -144,7 +144,7 @@
 
 <div class="h-full w-full space-y-4">
   <DataTableToolbar {searchPlaceholder} bind:searchQuery {table} {filters} />
-  <div class="rounded-md border bg-background">
+  <div class="bg-background rounded-md border">
     <Table.Root>
       <Table.Header>
         {#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
@@ -163,7 +163,7 @@
         {#if data === undefined}
           <Table.Row>
             <Table.Cell colspan={columns.length} class="h-48 text-center">
-              <LoaderCircle class="inline-flex h-12 w-12 animate-spin" />
+              <LoaderCircle class="inline-flex size-12 animate-spin" />
             </Table.Cell>
           </Table.Row>
         {:else}
